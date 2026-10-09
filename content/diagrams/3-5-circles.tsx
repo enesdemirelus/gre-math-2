@@ -691,3 +691,21 @@ export function TangentQuestion() {
     </svg>
   );
 }
+
+export const registry = {
+  "3-5-circles/circle-parts": CircleParts,
+  "3-5-circles/congruent-circles": CongruentCircles,
+  "3-5-circles/arc": ArcFigure,
+  "3-5-circles/tangent": TangentFigure,
+  "3-5-circles/inscribed-polygon": InscribedPolygon,
+  "3-5-circles/circumscribed-polygon": CircumscribedPolygon,
+  "3-5-circles/concentric": ConcentricCircles,
+  "3-5-circles/center-positions": CenterPositions,
+  "3-5-circles/diameter-triangle": DiameterTriangle,
+  "3-5-circles/square-and-circle": SquareAndCircle,
+  "3-5-circles/inscribed-angle": InscribedAngleFig,
+  "3-5-circles/sector-example": SectorExample,
+  "3-5-circles/ring-chord": RingChord,
+  "3-5-circles/chord-angle-qc": ChordAngleQC,
+  "3-5-circles/tangent-question": TangentQuestion,
+};

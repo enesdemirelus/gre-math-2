@@ -278,3 +278,8 @@ export function DiameterExplorer() {
     </div>
   );
 }
+
+export const registry = {
+  "3-5-circles/sector-explorer": SectorExplorer,
+  "3-5-circles/diameter-explorer": DiameterExplorer,
+};
