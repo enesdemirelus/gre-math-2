@@ -228,7 +228,7 @@ export function OrderExplorer() {
   const MAX = 4;
   const W = 340;
   const pad = 20;
-  const Y = 100;
+  const Y = 72;
   const X = (v: number) => r2(pad + ((Math.max(MIN, Math.min(MAX, v)) - MIN) / (MAX - MIN)) * (W - 2 * pad));
 
   const vals = EXPRS.map((e) => ({ ...e, v: e.f(x) }));
@@ -241,22 +241,35 @@ export function OrderExplorer() {
   });
   const region = REGIONS.find((r) => r.test(x))?.name ?? "";
 
-  // stack labels so they do not collide: greedy rows by x position
-  const placed: { x: number; row: number }[] = [];
-  const rowsFor = sorted.map((e) => {
-    const px = X(e.v);
-    let row = 0;
-    while (placed.some((p) => p.row === row && Math.abs(p.x - px) < 30)) row++;
-    placed.push({ x: px, row });
-    return { ...e, px, row };
-  });
+  // spread labels horizontally (one row) so they never collide; leaders connect label to point
+  const GAP = 28;
+  const pxs = sorted.map((e) => X(e.v));
+  const lx = [...pxs];
+  for (let i = 1; i < lx.length; i++) lx[i] = Math.max(lx[i], lx[i - 1] + GAP);
+  // re-center each cluster of pushed labels over its points
+  let i0 = 0;
+  for (let i = 1; i <= lx.length; i++) {
+    if (i === lx.length || lx[i] - lx[i - 1] > GAP + 1e-6) {
+      const n = i - i0;
+      let shift = 0;
+      for (let j = i0; j < i; j++) shift += lx[j] - pxs[j];
+      shift /= n;
+      for (let j = i0; j < i; j++) lx[j] -= shift;
+      i0 = i;
+    }
+  }
+  // keep inside the drawing
+  const lo = 16 - Math.min(...lx);
+  const hi = W - 16 - Math.max(...lx);
+  const adj = lo > 0 ? lo : hi < 0 ? hi : 0;
+  const rowsFor = sorted.map((e, k) => ({ ...e, px: pxs[k], lx: r2(lx[k] + adj) }));
 
   const ticks: number[] = [];
   for (let k = MIN; k <= MAX; k++) ticks.push(k);
 
   return (
     <div className="explorer" style={{ display: "grid", gap: "0.6rem", justifyItems: "center" }}>
-      <svg viewBox={`0 0 ${W} 132`} width={W} style={{ maxWidth: "100%" }} role="img" aria-label={`Values of x, -x, x squared, x cubed and 1 over x for x = ${x}`}>
+      <svg viewBox={`0 0 ${W} 104`} width={W} style={{ maxWidth: "100%" }} role="img" aria-label={`Values of x, -x, x squared, x cubed and 1 over x for x = ${x}`}>
         <line x1={6} y1={Y} x2={W - 6} y2={Y} className="dg-line" />
         <path d={`M 4 ${Y} L 12 ${Y - 4.5} L 12 ${Y + 4.5} Z`} className="dg-point" />
         <path d={`M ${W - 4} ${Y} L ${W - 12} ${Y - 4.5} L ${W - 12} ${Y + 4.5} Z`} className="dg-point" />
@@ -271,13 +284,13 @@ export function OrderExplorer() {
         ))}
         {rowsFor.map((e) => {
           const off = Math.abs(e.v) > MAX;
-          const ly = Y - 16 - e.row * 17;
+          const ly = Y - 40;
           return (
             <g key={e.key}>
-              <line x1={e.px} y1={Y} x2={e.px} y2={ly + 4} className="dg-line dg-thin dg-dashed" />
+              <line x1={e.px} y1={Y - 5} x2={e.lx} y2={ly + 6} className="dg-line dg-thin dg-dashed" />
               <circle cx={e.px} cy={Y} r={e.key === "x" ? 4.5 : 3.2} className="dg-point" style={e.key === "x" ? { fill: "var(--accent)" } : undefined} />
-              <text x={e.px} y={ly} className="dg-label" textAnchor="middle" style={{ fontSize: 14 }}>
-                {off ? `${e.svg} ${e.v > 0 ? "→" : "←"}` : e.svg}
+              <text x={e.lx} y={ly} className="dg-label" textAnchor="middle" style={{ fontSize: 14 }}>
+                {off ? `${e.svg}${e.v > 0 ? "\u2192" : "\u2190"}` : e.svg}
               </text>
             </g>
           );
