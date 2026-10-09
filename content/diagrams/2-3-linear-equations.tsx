@@ -129,8 +129,8 @@ export function LineSolutions({ showPoints = true }: { showPoints?: boolean }) {
     { x: -3, y: 6, label: "(−3, 6)", dx: 8, dy: -8, anchor: "start" },
     { x: 0, y: 4, label: "(0, 4)", dx: 8, dy: -8, anchor: "start" },
     { x: 3, y: 2, label: "(3, 2)", dx: 8, dy: -8, anchor: "start" },
-    { x: 6, y: 0, label: "(6, 0)", dx: 2, dy: 18, anchor: "start" },
-    { x: 9, y: -2, label: "(9, −2)", dx: -8, dy: 2, anchor: "end" },
+    { x: 6, y: 0, label: "(6, 0)", dx: -6, dy: 17, anchor: "end" },
+    { x: 9, y: -2, label: "(9, −2)", dx: -6, dy: 17, anchor: "end" },
   ];
   return (
     <svg viewBox="0 0 330 222" width={330} role="img" aria-label="Graph of 2x + 3y = 12 with several solutions marked">
@@ -142,7 +142,7 @@ export function LineSolutions({ showPoints = true }: { showPoints?: boolean }) {
         y
       </text>
       <line x1={s[0]} y1={s[1]} x2={s[2]} y2={s[3]} className="dg-accent" />
-      <text x={px(W, 7.6) } y={py(W, 3.2)} className="dg-text" textAnchor="middle">
+      <text x={px(W, 7.6)} y={py(W, 3.2)} className="dg-text" textAnchor="middle">
         2x + 3y = 12
       </text>
       {showPoints &&

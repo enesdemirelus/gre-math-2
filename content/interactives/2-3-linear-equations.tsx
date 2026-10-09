@@ -111,7 +111,8 @@ export function SystemExplorer() {
   // elimination: subtract the equations y = m1 x + b1 and y = m2 x + b2
   const coef = fracTex(m1 - m2, 2);
   const rhs = fracTex(b2 - b1, 2);
-  const elimTex = `0 = (${half(m1)} - (${half(m2)}))x + (${half(b1)} - (${half(b2)})) \\;\\Longrightarrow\\; ${
+  const minus = (p: number, q: number) => `${half(p)} - ${q < 0 ? `(${half(q)})` : half(q)}`;
+  const elimTex = `0 = (${minus(m1, m2)})x + (${minus(b1, b2)}) \\;\\Longrightarrow\\; ${
     sameSlope ? `0 = ${fracTex(b1 - b2, 2)}` : `${coef === "1" ? "" : coef === "-1" ? "-" : coef}x = ${rhs}`
   }`;
 

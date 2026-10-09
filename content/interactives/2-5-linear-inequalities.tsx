@@ -37,7 +37,7 @@ function num(n: number): string {
 }
 
 const axTex = (a: number) => (a === 1 ? "x" : a === -1 ? "-x" : `${a}x`);
-const shiftWord = (b: number) => (b > 0 ? `subtract ${b} from` : `add ${-b} to`);
+const shiftWord = (b: number) => (b > 0 ? `subtract ${b}` : `add ${-b}`);
 
 /** TeX for a x + b. */
 function linTex(a: number, b: number): string {
@@ -99,19 +99,19 @@ export function InequalityBuilder() {
   if (mode === "single") {
     original = `${linTex(a, b)} ${op} ${c}`;
     lines.push(original);
-    if (b !== 0) lines.push(`${axTex(a)} ${op} ${c - b} \\quad \\text{(${shiftWord(b)} both sides)}`);
+    if (b !== 0) lines.push(`${axTex(a)} ${op} ${c - b} \\quad \\text{(${shiftWord(b)})}`);
     const bound = (c - b) / a;
     const opF = a < 0 ? flip(op) : op;
     flipped = a < 0;
     resultTex = `x ${opF} ${fracTex(c - b, a)}`;
-    if (a !== 1) lines.push(`${resultTex} \\quad \\text{(divide both sides by ${a}${a < 0 ? "; reverse the sign" : ""})}`);
+    if (a !== 1) lines.push(`${resultTex} \\quad \\text{(divide by ${a}${a < 0 ? "; reverse" : ""})}`);
     boundaries = [bound];
     const open = opF === "<" || opF === ">";
     pieces = opF === "<" || opF === "\\le" ? [{ from: null, to: bound, fromOpen: false, toOpen: open }] : [{ from: bound, to: null, fromOpen: open, toOpen: false }];
   } else {
     original = `${L} ${op1} ${linTex(a, b)} ${op2} ${R}`;
     lines.push(original);
-    if (b !== 0) lines.push(`${L - b} ${op1} ${axTex(a)} ${op2} ${R - b} \\quad \\text{(${shiftWord(b)} all three parts)}`);
+    if (b !== 0) lines.push(`${L - b} ${op1} ${axTex(a)} ${op2} ${R - b} \\quad \\text{(${shiftWord(b)})}`);
     const lo = (L - b) / a;
     const hi = (R - b) / a;
     flipped = a < 0;
@@ -121,10 +121,10 @@ export function InequalityBuilder() {
       boundaries = [lo, hi];
       pieces = lo < hi || (lo === hi && op1 === "\\le" && op2 === "\\le") ? [{ from: lo, to: hi, fromOpen: op1 === "<", toOpen: op2 === "<" }] : [];
     } else {
-      lines.push(`${fracTex(L - b, a)} ${flip(op1)} x ${flip(op2)} ${fracTex(R - b, a)} \\quad \\text{(divide by ${a}; reverse both signs)}`);
+      lines.push(`${fracTex(L - b, a)} ${flip(op1)} x ${flip(op2)} ${fracTex(R - b, a)} \\quad \\text{(divide by ${a}; reverse)}`);
       // rewrite left to right: hi op2 x op1 lo
       resultTex = `${fracTex(R - b, a)} ${op2} x ${op1} ${fracTex(L - b, a)}`;
-      lines.push(resultTex + ` \\quad \\text{(same statement, read from the left)}`);
+      lines.push(resultTex + ` \\quad \\text{(rewritten)}`);
       boundaries = [hi, lo];
       pieces = hi < lo || (hi === lo && op1 === "\\le" && op2 === "\\le") ? [{ from: hi, to: lo, fromOpen: op2 === "<", toOpen: op1 === "<" }] : [];
     }
@@ -280,11 +280,11 @@ export function InequalityBuilder() {
       </div>
       <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         <div style={{ overflowX: "auto" }}>
-          <Tex display tex={`\\begin{aligned} ${lines.map((l) => `&${l}`).join(" \\\\ ")} \\end{aligned}`} />
+          <Tex display tex={`\\begin{aligned} ${lines.map((l) => `&{${l}}`).join(" \\\\ ")} \\end{aligned}`} />
         </div>
         {flipped && (
           <div>
-            <strong>Sign reversed:</strong> you divided by the negative number {a}, so the direction of the inequality {mode === "double" ? "signs" : "sign"} reversed (MR p. 52).
+            <strong>Sign reversed:</strong> you divided by the negative number −{-a}, so the direction of the inequality {mode === "double" ? "signs" : "sign"} reversed (MR p. 52).
           </div>
         )}
         <div>
