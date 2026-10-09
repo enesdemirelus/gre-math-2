@@ -73,10 +73,10 @@ interface Piece {
 
 export function InequalityBuilder() {
   const [mode, setMode] = useState<"single" | "double">("single");
-  const [a, setA] = useState(-3);
-  const [b, setB] = useState(5);
-  const [op, setOp] = useState<Op>("\\le");
-  const [c, setC] = useState(-7);
+  const [a, setA] = useState(-2);
+  const [b, setB] = useState(7);
+  const [op, setOp] = useState<Op>("<");
+  const [c, setC] = useState(-3);
   // double: L op1 ax + b op2 R, op1/op2 in {<, \le}
   const [L, setL] = useState(-7);
   const [R, setR] = useState(9);

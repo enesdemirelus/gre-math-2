@@ -17,7 +17,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Most translations are mechanical once you read them slowly. "The cube of $n$ is halved, and then 4 is added" is $\frac{n^3}{2} + 4$. A rent $p$ "decreased by 15 percent" is $0.85p$, and a population $q$ "increased by 8 percent" is $1.08q$. If a restaurant bill of $b$ dollars gets a \$6 tip added and the total is split equally among 5 friends, each pays $\frac{b + 6}{5}$ dollars (MR p. 54 gives three translations of this kind).`,
+      text: String.raw`Most translations are mechanical once you read them slowly. "The cube of $n$ is halved, and then 4 is added" is $\frac{n^3}{2} + 4$. A rent $p$ "decreased by 15 percent" is $0.85p$, and a population $q$ "increased by 8 percent" is $1.08q$. If a restaurant bill of $b$ dollars gets a \$6 tip added and the total is split equally among 4 friends, each pays $\frac{b + 6}{4}$ dollars (MR p. 54 gives three translations of this kind).`,
     },
     {
       kind: "aside",
@@ -106,12 +106,12 @@ const section: Section = {
     { kind: "heading", text: "Work problems: add the rates" },
     {
       kind: "p",
-      text: String.raw`A work problem is a rate problem in disguise. If a machine finishes a job in 3 hours, its [[work-rate|rate]] is $\frac{1}{3}$ of the job per hour. When machines work simultaneously, their rates add, and the combined time is the reciprocal of the combined rate (MR pp. 56–57). Times never add.`,
+      text: String.raw`A work problem is a rate problem in disguise. If a machine finishes a job in 5 hours, its [[work-rate|rate]] is $\frac{1}{5}$ of the job per hour. When machines work simultaneously, their rates add, and the combined time is the reciprocal of the combined rate (MR pp. 56–57). Times never add.`,
     },
     { kind: "math", tex: String.raw`\frac{1}{a} + \frac{1}{b} = \frac{1}{T} \quad\Longrightarrow\quad T = \frac{ab}{a + b}`, key: true },
     {
       kind: "p",
-      text: String.raw`For example, pipe $A$ alone fills a tank in 4 hours and pipe $B$ alone in 6 hours. Together they fill $\frac{1}{4} + \frac{1}{6} = \frac{5}{12}$ of the tank per hour, so the tank takes $\frac{12}{5} = 2.4$ hours, or 2 hours 24 minutes. A quick sanity check: the combined time must be less than the faster machine's time alone (4 hours) and more than half of it (2 hours).`,
+      text: String.raw`For example, pipe $A$ alone fills a tank in 4 hours and pipe $B$ alone in 6 hours. Together they fill $\frac{1}{4} + \frac{1}{6} = \frac{5}{12}$ of the tank per hour, so the tank takes $\frac{12}{5} = 2.4$ hours, or 2 hours 24 minutes. A quick sanity check: the combined time must be less than the faster machine's time alone (4 hours) and at least half of it (2 hours), with exactly half only when the two machines are equally fast.`,
     },
     {
       kind: "interactive",
@@ -121,7 +121,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Three variations come up often. If one pipe _drains_, its rate counts as negative: a fill pipe at $\frac{1}{4}$ per hour with a drain at $\frac{1}{10}$ per hour fills at $\frac{3}{20}$ per hour. If a machine works alone for a while first, subtract the part it finished and divide the rest of the job by the combined rate. And if the job is "$k$ liters" or "a batch of $n$ parts" rather than "one job," the answer is the same: the job size cancels.`,
+      text: String.raw`Three variations come up often. If one pipe _drains_, its rate counts as negative: a fill pipe at $\frac{1}{4}$ per hour with a drain at $\frac{1}{10}$ per hour fills at $\frac{3}{20}$ per hour. If a machine works alone for a while first, subtract the part it finished and divide the rest of the job by the combined rate. And if the job is "$k$ liters" or "$m$ boxes packed" rather than "one job," the answer is the same: the job size cancels.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -184,7 +184,7 @@ const section: Section = {
       kind: "aside",
       tone: "watch",
       title: "Interest traps",
-      text: String.raw`"Earns \$1,000 in interest" is a statement about $V - P$, not $V$: set $V \ge P + 1{,}000$. For quarterly compounding the rate per period is $\frac{r}{400}$ and the exponent is $4t$; changing one without the other is the classic slip. And "6 percent" is $r = 6$ in the ETS formulas, so do not divide by 100 twice.`,
+      text: String.raw`"Earns \$750 in interest" is a statement about $V - P$, not $V$: set $V \ge P + 750$. For quarterly compounding the rate per period is $\frac{r}{400}$ and the exponent is $4t$; changing one without the other is the classic slip. And "6 percent" is $r = 6$ in the ETS formulas, so do not divide by 100 twice.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -262,6 +262,7 @@ const section: Section = {
       term: "revenue",
       turkish: "gelir / hasılat",
       definition: String.raw`The money taken in from sales: the number of units sold times the selling price per unit.`,
+      note: "The MR uses the word (Example 2.7.9) but does not define it; units × price is the standard meaning, not stated in the ETS Math Review.",
       source: "MR p. 58",
     },
     {
@@ -368,20 +369,20 @@ const section: Section = {
       id: "ex4",
       type: "mcm",
       difficulty: "medium",
-      stem: String.raw`A container holds 40 liters of a solution that is 25 percent acid by volume. Which of the following, each done separately to the original solution, would produce a solution that is exactly 20 percent acid by volume? Indicate all such actions.`,
+      stem: String.raw`A container holds 50 liters of a solution that is 24 percent acid by volume. Which of the following, each done separately to the original solution, would produce a solution that is exactly 20 percent acid by volume? Indicate all such actions.`,
       choices: [
         String.raw`Add 5 liters of water.`,
         String.raw`Add 10 liters of water.`,
         String.raw`Add 10 liters of a solution that is 10 percent acid.`,
         String.raw`Add 20 liters of a solution that is 10 percent acid.`,
-        String.raw`Pour out 8 liters of the solution and replace them with 8 liters of water.`,
+        String.raw`Add 5 liters of a solution that is 10 percent acid and 5 liters of water.`,
       ],
-      answer: [1, 3, 4],
+      answer: [1, 3],
       explanation: [
-        String.raw`The original solution has $(0.25)(40) = 10$ liters of acid. For each action, compute acid over total.`,
-        String.raw`5 L water: $\frac{10}{45} \approx 22.2\%$. No. 10 L water: $\frac{10}{50} = 20\%$. Yes.`,
-        String.raw`10 L of 10%: acid $10 + 1 = 11$, total 50, $\frac{11}{50} = 22\%$. No. 20 L of 10%: acid $10 + 2 = 12$, total 60, $\frac{12}{60} = 20\%$. Yes.`,
-        String.raw`Pour out 8 L: the 8 liters removed are 25% acid, so they take 2 liters of acid with them, leaving 8 liters of acid in 32 liters. Adding 8 liters of water restores the total to 40: $\frac{8}{40} = 20\%$. Yes.`,
+        String.raw`The original solution has $(0.24)(50) = 12$ liters of acid. For each action, compute acid over total.`,
+        String.raw`5 L water: $\frac{12}{55} \approx 21.8\%$. No. 10 L water: $\frac{12}{60} = 20\%$. Yes.`,
+        String.raw`10 L of 10%: acid $12 + 1 = 13$, total 60, $\frac{13}{60} \approx 21.7\%$. No. 20 L of 10%: acid $12 + 2 = 14$, total 70, $\frac{14}{70} = 20\%$. Yes.`,
+        String.raw`5 L of 10% and 5 L water: acid $12 + 0.5 = 12.5$, total 60, $\frac{12.5}{60} \approx 20.8\%$. No. Trap: it adds the same 10 liters as the 10-liter water option but brings in extra acid, so it overshoots 20%.`,
       ],
     },
   ],
@@ -402,9 +403,9 @@ const section: Section = {
     },
     {
       id: "q3",
-      prompt: String.raw`Working alone, machine $A$ does a job in 3 hours and machine $B$ does it in 6 hours. How long do they take working together?`,
-      answer: String.raw`2 hours`,
-      explanation: String.raw`$\frac{1}{3} + \frac{1}{6} = \frac{1}{2}$ of the job per hour, so 2 hours.`,
+      prompt: String.raw`Working alone, machine $A$ does a job in 4 hours and machine $B$ does it in 12 hours. How long do they take working together?`,
+      answer: String.raw`3 hours`,
+      explanation: String.raw`$\frac{1}{4} + \frac{1}{12} = \frac{1}{3}$ of the job per hour, so 3 hours.`,
     },
     {
       id: "q4",
@@ -504,14 +505,14 @@ const section: Section = {
         id: "z6",
         type: "mc1",
         difficulty: "hard",
-        stem: String.raw`An investor will deposit \$8,000 for 2 years at an annual interest rate of $r$ percent, compounded semiannually (twice a year). If $r$ is an integer and the investment must earn at least \$1,000 in interest, what is the least possible value of $r$?`,
+        stem: String.raw`An investor will deposit \$8,000 for 2 years at an annual interest rate of $r$ percent, compounded semiannually (twice a year). If $r$ is an integer and the value of the investment at the end of the 2 years must be at least \$9,000, what is the least possible value of $r$?`,
         choices: [String.raw`$5$`, String.raw`$6$`, String.raw`$7$`, String.raw`$8$`, String.raw`$9$`],
         answer: 1,
         explanation: [
-          String.raw`With $n = 2$ and $t = 2$: $V = 8{,}000\left(1 + \frac{r}{200}\right)^{4}$. Earning at least \$1,000 means $V \ge 9{,}000$.`,
+          String.raw`$V \ge 9{,}000$, where, with $n = 2$ and $t = 2$, $V = 8{,}000\left(1 + \frac{r}{200}\right)^{4}$.`,
           String.raw`Divide by 8,000: $\left(1 + \frac{r}{200}\right)^4 \ge 1.125$. Taking positive fourth roots preserves the inequality: $r \ge 200\left(\sqrt[4]{1.125} - 1\right) \approx 5.98$.`,
           String.raw`So the least integer is 6. Check both neighbors: $8{,}000(1.03)^4 \approx 9{,}004.07 \ge 9{,}000$, but $8{,}000(1.025)^4 \approx 8{,}830.50 < 9{,}000$.`,
-          String.raw`Trap: simple interest would need $8{,}000 \cdot \frac{2r}{100} \ge 1{,}000$, i.e. $r \ge 6.25$, suggesting 7; compounding brings the threshold just under 6.`,
+          String.raw`Trap: simple interest would need $8{,}000\left(1 + \frac{2r}{100}\right) \ge 9{,}000$, i.e. $r \ge 6.25$, suggesting 7; compounding brings the threshold just under 6.`,
         ],
       },
       {

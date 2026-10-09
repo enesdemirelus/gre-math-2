@@ -9,7 +9,9 @@ import { registry as s_1_6_ratio } from "./1-6-ratio";
 import { registry as s_1_7_percent } from "./1-7-percent";
 import { registry as s_2_1_algebraic_expressions } from "./2-1-algebraic-expressions";
 import { registry as s_2_2_rules_of_exponents } from "./2-2-rules-of-exponents";
+import { registry as s_2_3_linear_equations } from "./2-3-linear-equations";
 import { registry as s_2_4_quadratic_equations } from "./2-4-quadratic-equations";
+import { registry as s_2_5_linear_inequalities } from "./2-5-linear-inequalities";
 import { registry as s_2_7_applications } from "./2-7-applications";
 import { registry as s_3_5_circles } from "./3-5-circles";
 
@@ -24,7 +26,9 @@ export const interactives: Record<string, ComponentType<any>> = {
   ...s_1_7_percent,
   ...s_2_1_algebraic_expressions,
   ...s_2_2_rules_of_exponents,
+  ...s_2_3_linear_equations,
   ...s_2_4_quadratic_equations,
+  ...s_2_5_linear_inequalities,
   ...s_2_7_applications,
   ...s_3_5_circles,
 };
