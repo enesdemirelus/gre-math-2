@@ -32,6 +32,7 @@ You write the complete content for one or two sections of the GRE Quant review s
 - Every `source` must cite the page(s) the definition really comes from (MR p. X and/or MC p. Y).
 - Turkish terms must be the standard MEB textbook terms. When unsure between two, give both separated by " / ".
 - Figure labels must not touch lines. Offset point labels away from the figure.
+- Do not reuse the MR's own example numbers anywhere (lesson, terms, quick questions): reviewers flag copied ETS examples. Use new numbers for the same idea.
 - Keep inline math short. Put long equations in `math` blocks, which scroll on mobile; long inline math gets clipped on phones.
 
 ## Verification before you finish (required)
