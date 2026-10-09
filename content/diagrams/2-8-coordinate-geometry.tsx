@@ -2,6 +2,8 @@
 // Every figure is an xy-plane drawn to scale (MC p. 10): equal units on both axes,
 // grid lines at every integer. All positions are computed from plane coordinates.
 
+import type React from "react";
+
 type Pt = [number, number];
 
 const r2 = (n: number) => Math.round(n * 100) / 100;
@@ -119,13 +121,13 @@ export function Plane(props: PlaneProps) {
   const Y = (v: number) => r2(pad + (y[1] - v) * u);
   const P = (p: Pt): Pt => [X(p[0]), Y(p[1])];
 
-  const grid: JSX.Element[] = [];
+  const grid: React.ReactElement[] = [];
   for (let i = Math.ceil(x[0]); i <= x[1]; i++)
     if (i !== 0) grid.push(<line key={`gx${i}`} x1={X(i)} y1={Y(y[0])} x2={X(i)} y2={Y(y[1])} className="dg-line dg-thin" style={{ strokeOpacity: 0.16 }} />);
   for (let j = Math.ceil(y[0]); j <= y[1]; j++)
     if (j !== 0) grid.push(<line key={`gy${j}`} x1={X(x[0])} y1={Y(j)} x2={X(x[1])} y2={Y(j)} className="dg-line dg-thin" style={{ strokeOpacity: 0.16 }} />);
 
-  const nums: JSX.Element[] = [];
+  const nums: React.ReactElement[] = [];
   if (!noNumbers) {
     const hasXAxis = y[0] <= 0 && y[1] >= 0;
     const hasYAxis = x[0] <= 0 && x[1] >= 0;
@@ -413,7 +415,7 @@ export function Distance({ midpoint = false }: { midpoint?: boolean }) {
   const C: Pt = [4, -1];
   return (
     <Plane
-      x={[-3, 6]}
+      x={[-5, 6]}
       y={[-3, 8]}
       u={22}
       every={2}
@@ -429,11 +431,11 @@ export function Distance({ midpoint = false }: { midpoint?: boolean }) {
           : [
               { at: [1, -1.6], text: "6" },
               { at: [4.5, 3], text: "8" },
-              { at: [0.4, 3.6], text: "10" },
+              { at: [1.7, 2.45], text: "10" },
             ]
       }
       points={[
-        { at: A, name: "A", coords: true, dir: "nw", off: 9 },
+        { at: A, name: "A", coords: true, dir: "w", off: 9 },
         { at: B, name: "B", coords: true, dir: "w", off: 9 },
         { at: C, name: "C", coords: true, dir: "se", off: 7 },
         ...(midpoint ? [{ at: [1, 3] as Pt, name: "M", coords: true, dir: "se" as Dir, off: 8, accent: true }] : []),
@@ -458,15 +460,15 @@ export function SlopeFigure({ highlight = "all" }: { highlight?: SlopeHighlight 
     { at: Pp, name: "P", coords: true, dir: "w", off: 9 },
     { at: Q, name: "Q", coords: true, dir: "w", off: 9 },
   ];
-  if (highlight === "all" || highlight === "y-intercept") pts.push({ at: [0, 0.5], dir: "e", off: 0, accent: highlight === "y-intercept", hollow: highlight !== "y-intercept" });
-  if (highlight === "all" || highlight === "x-intercept") pts.push({ at: [-1 / 3, 0], dir: "e", off: 0, accent: highlight === "x-intercept", hollow: highlight !== "x-intercept" });
+  if (highlight === "y-intercept") pts.push({ at: [0, 0.5], dir: "e", off: 0, accent: highlight === "y-intercept", hollow: highlight !== "y-intercept" });
+  if (highlight === "x-intercept") pts.push({ at: [-1 / 3, 0], dir: "e", off: 0, accent: highlight === "x-intercept", hollow: highlight !== "x-intercept" });
   const texts: TextSpec[] = [];
   if (showTri) {
     texts.push({ at: [1, -1.6], text: "run = 4" });
     texts.push({ at: [3.25, 2], text: "rise = 6", anchor: "start" });
   }
-  if (highlight === "y-intercept") texts.push({ at: [0.45, 0.75], text: "(0, 1/2)", anchor: "start" });
-  if (highlight === "x-intercept") texts.push({ at: [-0.5, -0.55], text: "(−1/3, 0)", anchor: "end" });
+  if (highlight === "y-intercept") texts.push({ at: [0.35, -0.5], text: "(0, 1/2)", anchor: "start" });
+  if (highlight === "x-intercept") texts.push({ at: [-0.6, 0.55], text: "(−1/3, 0)", anchor: "end" });
   return (
     <Plane
       x={[-4, 6]}

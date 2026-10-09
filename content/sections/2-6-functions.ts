@@ -13,7 +13,7 @@ const section: Section = {
     { kind: "heading", text: "A function is a rule with one output per input" },
     {
       kind: "p",
-      text: String.raw`An algebraic expression in one variable can be used to define a [[function]] of that variable. Functions are usually named with letters such as $f$, $g$ and $h$. The expression $4x - 7$, for instance, defines a function $p$ by $p(x) = 4x - 7$. The symbol $p(x)$ is read "$p$ of $x$" and is called the [[value|value of $p$ at $x$]]: you get it by substituting a number for $x$ in the expression. So $p(3) = 4(3) - 7 = 5$ (MR p. 53).`,
+      text: String.raw`An algebraic expression in one variable can be used to define a [[function]] of that variable. Functions are usually named with letters such as $f$, $g$ and $h$. The expression $4x - 7$, for instance, defines a function $p$ by $p(x) = 4x - 7$. The symbol $p(x)$ is read "$p$ of $x$" and is called the [[value|value]] of $p$ at $x$: you get it by substituting a number for $x$ in the expression. So $p(3) = 4(3) - 7 = 5$ (MR p. 53).`,
     },
     { kind: "math", tex: String.raw`p(x) = 4x - 7 \quad\Longrightarrow\quad p(3) = 4(3) - 7 = 5`, key: false },
     {
