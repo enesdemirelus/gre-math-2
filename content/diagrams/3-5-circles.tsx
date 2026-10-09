@@ -133,7 +133,7 @@ export function CircleParts({ highlight = "all" }: { highlight?: CirclePart }) {
           <line x1={S[0]} y1={S[1]} x2={T[0]} y2={T[1]} className={diaAccent ? "dg-accent" : "dg-line"} />
           {highlight === "pi" ? (
             <>
-              <Label at={sideLabelPos(S, T, -12)}>d</Label>
+              <Label at={sideLabelPos(S, O, -12)}>d</Label>
               <OutLabel cx={cx} cy={cy} r={R} deg={60} text="C" off={14} />
             </>
           ) : (
@@ -222,15 +222,16 @@ export function ArcFigure({ highlight = "lesson" }: { highlight?: ArcHighlight }
   return (
     <svg viewBox="0 0 260 225" width={260} role="img" aria-label="Arc ABC and central angle">
       {highlight === "sector" && <path d={sectorD(cx, cy, R, aC, aA)} className="dg-accent-fill" />}
-      <circle cx={cx} cy={cy} r={R} className="dg-line" />
-      {shortArcAccent && <path d={arcD(cx, cy, R, aC, aA)} className="dg-accent" />}
-      {highlight === "minor-major" && (
+      {highlight === "minor-major" ? (
         <>
           <path d={arcD(cx, cy, R, aA, aC + 360)} className="dg-line dg-dashed" />
-          <OutLabel cx={cx} cy={cy} r={R} deg={40} text="minor" off={26} />
-          <OutLabel cx={cx} cy={cy} r={R} deg={235} text="major" off={26} />
+          <Label at={onC(cx, cy, R - 24, aB)} cls="dg-text">minor</Label>
+          <Label at={onC(cx, cy, R - 26, 250)} cls="dg-text">major</Label>
         </>
+      ) : (
+        <circle cx={cx} cy={cy} r={R} className="dg-line" />
       )}
+      {shortArcAccent && <path d={arcD(cx, cy, R, aC, aA)} className="dg-accent" />}
       {radii && (
         <>
           <line x1={cx} y1={cy} x2={A[0]} y2={A[1]} className={radiiCls} />
@@ -520,7 +521,7 @@ export function SquareAndCircle() {
       <line x1={sq[1][0]} y1={sq[1][1]} x2={sq[3][0]} y2={sq[3][1]} className="dg-line dg-dashed" />
       <Dot at={c1} />
       <Label at={[c1[0] + 13, c1[1] - 5]}>O</Label>
-      <Label at={[c1[0], sq[2][1] + 12]}>s</Label>
+      <Label at={[c1[0], sq[2][1] + 15]}>s</Label>
       <Label at={sideLabelPos(sq[1], c1, -10)}>r</Label>
       <Label at={[c1[0], 178]} cls="dg-text">diagonal = 2r</Label>
       {/* right */}
@@ -684,7 +685,7 @@ export function TangentQuestion() {
       <Label at={[O[0], O[1] + 15]}>O</Label>
       <Label at={[Q[0] + 2, Q[1] + 15]}>Q</Label>
       <Label at={[P[0] + 6, P[1] + 15]}>P</Label>
-      <Label at={onC(T[0], T[1], 14, tDeg + 25)}>T</Label>
+      <Label at={onC(T[0], T[1], 16, tDeg + 55)}>T</Label>
       <Label at={sideLabelPos(T, P, -12)} cls="dg-text">12</Label>
       <Label at={[(Q[0] + P[0]) / 2, Q[1] + 14]} cls="dg-text">8</Label>
     </svg>

@@ -94,7 +94,7 @@ export function SectorExplorer() {
   const areaDec = ((x / 360) * Math.PI * r * r).toFixed(2);
 
   return (
-    <div className="explorer">
+    <div className="explorer" style={{ display: "grid", gap: "0.6rem", justifyItems: "center" }}>
       <svg
         ref={svgRef}
         viewBox="0 0 260 240"
@@ -131,17 +131,17 @@ export function SectorExplorer() {
         <circle cx={handle[0]} cy={handle[1]} r={9} className="dg-accent" style={{ cursor: "grab" }} />
         <circle cx={handle[0]} cy={handle[1]} r={3} className="dg-point" />
       </svg>
-      <div className="explorer-controls">
+      <div className="explorer-controls" style={{ display: "grid", gap: "0.5rem", width: "100%", maxWidth: 360 }}>
         <label>
           Central angle <Tex tex={`x = ${x}^\\circ`} />
-          <input type="range" min={1} max={359} step={1} value={x} onChange={(e) => setX(Number(e.target.value))} />
+          <input type="range" style={{ width: "100%" }} min={1} max={359} step={1} value={x} onChange={(e) => setX(Number(e.target.value))} />
         </label>
         <label>
           Radius <Tex tex={`r = ${r}`} />
-          <input type="range" min={1} max={12} step={1} value={r} onChange={(e) => setR(Number(e.target.value))} />
+          <input type="range" style={{ width: "100%" }} min={1} max={12} step={1} value={r} onChange={(e) => setR(Number(e.target.value))} />
         </label>
       </div>
-      <div className="explorer-readout">
+      <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         <div>
           <Tex tex={`\\text{fraction of the circle} = \\frac{${x}}{360} = ${frac(x, 360)}`} />
         </div>
@@ -214,7 +214,7 @@ export function DiameterExplorer() {
   const labelSide = t < 180 ? 1 : -1; // B above or below AC
 
   return (
-    <div className="explorer">
+    <div className="explorer" style={{ display: "grid", gap: "0.6rem", justifyItems: "center" }}>
       <svg
         ref={svgRef}
         viewBox="0 0 280 245"
@@ -256,13 +256,13 @@ export function DiameterExplorer() {
           );
         })()}
       </svg>
-      <div className="explorer-controls">
+      <div className="explorer-controls" style={{ display: "grid", gap: "0.5rem", width: "100%", maxWidth: 360 }}>
         <label>
           <input type="checkbox" checked={showRadius} onChange={(e) => setShowRadius(e.target.checked)} /> Draw radius{" "}
           <Tex tex="OB" />
         </label>
       </div>
-      <div className="explorer-readout">
+      <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         <div>
           <Tex tex={`\\text{angle } ABC = ${angB.toFixed(1)}^\\circ`} />
         </div>
