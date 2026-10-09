@@ -6,13 +6,13 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 |---|---|---|
 | Shell: sidebar, KaTeX, vocab hover (EN + TR), flashcards, matching, quiz, glossary, formulas, practice, progress | done | lint/tsc/build pass; screenshots checked |
 | Conventions page | queued | |
-| 1.1 Integers | writing | |
+| 1.1 Integers | reviewing | |
 | 1.2 Fractions | writing | |
 | 1.3 Exponents and Roots | writing | |
 | 1.4 Decimals | writing | |
 | 1.5 Real Numbers | writing | |
 | 1.6 Ratio | writing | |
-| 1.7 Percent | writing | |
+| 1.7 Percent | done | content: 3 fixed (Turkish ×2, citation); questions: 1 fixed (z1 too easy → replaced) |
 | 2.1 Algebraic Expressions | queued | |
 | 2.2 Rules of Exponents | writing | |
 | 2.3 Solving Linear Equations | queued | |

@@ -29,8 +29,8 @@ function reduced(n: number, d: number): [number, number] {
 
 function Stepper({ label, value, min, max, onChange }: { label: string; value: number; min: number; max: number; onChange: (v: number) => void }) {
   return (
-    <label style={{ display: "grid", gridTemplateColumns: "6.5rem 1fr 2.2rem", alignItems: "center", gap: "0.4rem" }}>
-      <span>{label}</span>
+    <label style={{ display: "grid", gridTemplateColumns: "8.2rem 1fr 2.2rem", alignItems: "center", gap: "0.4rem" }}>
+      <span style={{ whiteSpace: "nowrap" }}>{label}</span>
       <input type="range" min={min} max={max} step={1} value={value} onChange={(e) => onChange(Number(e.target.value))} style={{ width: "100%" }} />
       <span style={{ textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{value}</span>
     </label>
@@ -49,11 +49,11 @@ const PAIRS: [number, number, number, number][] = [
   [6, 9, 8, 12],
 ];
 
-export function FractionCompare() {
-  const [a, setA] = useState(5);
-  const [b, setB] = useState(8);
-  const [c, setC] = useState(7);
-  const [d, setD] = useState(11);
+export function FractionCompare({ initial = [5, 8, 7, 11] }: { initial?: [number, number, number, number] }) {
+  const [a, setA] = useState(initial[0]);
+  const [b, setB] = useState(initial[1]);
+  const [c, setC] = useState(initial[2]);
+  const [d, setD] = useState(initial[3]);
   const [pick, setPick] = useState(0);
 
   const x = a / b;
@@ -122,9 +122,19 @@ export function FractionCompare() {
     );
   };
 
+  // Zoomed strip when the two points nearly coincide on the main line.
+  const zoom = close && x !== y;
+  const mid = (x + y) / 2;
+  const half = Math.abs(x - y) * 1.6;
+  const ZY = 132;
+  const zx = (v: number) => r2(170 + ((v - mid) / half) * 130);
+  const zl = mid - half;
+  const zr = mid + half;
+  const height = zoom ? 178 : 100;
+
   return (
     <div className="explorer" style={{ display: "grid", gap: "0.6rem", justifyItems: "center" }}>
-      <svg viewBox="0 0 340 100" width={340} style={{ maxWidth: "100%" }} role="img" aria-label={`Number line showing ${a}/${b} and ${c}/${d}`}>
+      <svg viewBox={`0 0 340 ${height}`} width={340} style={{ maxWidth: "100%" }} role="img" aria-label={`Number line showing ${a}/${b} and ${c}/${d}`}>
         <line x1={X0 - 12} y1={Y} x2={X1 + 12} y2={Y} className="dg-line" />
         {minor.map((v, i) => (
           <line key={`m${i}`} x1={xOf(v)} y1={Y - 3.5} x2={xOf(v)} y2={Y + 3.5} className="dg-line dg-thin" />
@@ -141,6 +151,32 @@ export function FractionCompare() {
         <circle cx={py} cy={Y} r={5} className="dg-accent" />
         {label(x, a, b, dxP, "p")}
         {label(y, c, d, dxQ, "q")}
+        {zoom && (
+          <g>
+            <line x1={xOf(zl)} y1={Y + 30} x2={40} y2={ZY - 4} className="dg-line dg-thin dg-dashed" />
+            <line x1={xOf(zr)} y1={Y + 30} x2={300} y2={ZY - 4} className="dg-line dg-thin dg-dashed" />
+            <line x1={40} y1={ZY} x2={300} y2={ZY} className="dg-line" />
+            <line x1={40} y1={ZY - 6} x2={40} y2={ZY + 6} className="dg-line dg-thin" />
+            <line x1={300} y1={ZY - 6} x2={300} y2={ZY + 6} className="dg-line dg-thin" />
+            <text x={40} y={ZY + 20} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
+              {zl.toFixed(3)}
+            </text>
+            <text x={300} y={ZY + 20} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
+              {zr.toFixed(3)}
+            </text>
+            <circle cx={zx(x)} cy={ZY} r={5} className="dg-point" />
+            <circle cx={zx(y)} cy={ZY} r={5} className="dg-accent" />
+            <text x={zx(x)} y={ZY - 16} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
+              {`${a < 0 ? "\u2212" + -a : a}/${b}`}
+            </text>
+            <text x={zx(y)} y={ZY - 16} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
+              {`${c < 0 ? "\u2212" + -c : c}/${d}`}
+            </text>
+            <text x={170} y={ZY + 34} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 11 }}>
+              zoomed in
+            </text>
+          </g>
+        )}
       </svg>
       <div className="explorer-controls" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 380 }}>
         <Stepper label="1st numerator" value={a} min={-12} max={12} onChange={setA} />
@@ -155,7 +191,8 @@ export function FractionCompare() {
       </div>
       <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         <div>
-          <Tex tex={`\\text{Common denominator } ${L}:\\quad ${fracTex(a, b)} = ${fracTex(a * (L / b), L)},\\quad ${fracTex(c, d)} = ${fracTex(c * (L / d), L)}`} />
+          <Tex tex={`\\text{Common denominator } ${L}{:}`} />{" "}
+          <Tex tex={`${fracTex(a, b)} = ${fracTex(a * (L / b), L)},\\quad ${fracTex(c, d)} = ${fracTex(c * (L / d), L)}`} />
         </div>
         <div>
           <Tex tex={`\\text{Cross products: } (${a})(${d}) = ${ad},\\quad (${b})(${c}) = ${bc}`} />
