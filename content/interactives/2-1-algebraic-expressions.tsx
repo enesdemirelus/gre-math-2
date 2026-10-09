@@ -86,7 +86,7 @@ export function IdentityExplorer({ initialMode = "sum" }: { initialMode?: Mode }
         ))}
       </div>
       <div style={{ width: "100%", maxWidth: 360, display: "flex", justifyContent: "center" }}>
-        <div style={{ width: "100%", maxWidth: mode === "dos" ? 360 : 270 }}>
+        <div className="diagram" style={{ margin: 0, width: "100%", maxWidth: mode === "dos" ? 360 : 270 }}>
           <AreaModel mode={mode} a={a} b={bb} numbers />
         </div>
       </div>
