@@ -34,7 +34,7 @@ const section: Section = {
       kind: "aside",
       tone: "gre",
       title: "How the GRE writes it",
-      text: String.raw`ETS writes a segment and its length the same way: $PQ$ is the chord _and_ its length (MC p. 9). There is no bar over the letters. Equal lengths are stated in words ("$OA = OB$") or follow from the fact that all radii are equal; ETS figures never use tick marks.`,
+      text: String.raw`ETS writes a segment and its length the same way: $PQ$ is the chord _and_ its length (MC p. 9). There is no bar over the letters. Equal lengths are stated in words ("$OA = OB$") or follow from the fact that all radii are equal. ETS figures do not use tick marks; neither the Math Review nor the Conventions uses them.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -162,7 +162,7 @@ const section: Section = {
       kind: "p",
       text: String.raw`The last case is the one the GRE loves. If one side of an inscribed triangle is a diameter, the triangle is a right triangle, and the right angle is at the vertex opposite the diameter. Conversely, if an inscribed triangle is a right triangle, one of its sides (the hypotenuse) is a diameter (MR p. 110). So the moment you see a triangle with one side running through the center and the third vertex on the circle, write down "right angle" and reach for the Pythagorean theorem or the special triangles.`,
     },
-    { kind: "math", tex: String.raw`AC \text{ is a diameter, } B \text{ on the circle} \;\Longleftrightarrow\; \text{the measure of angle } ABC \text{ is } 90^\circ`, key: true },
+    { kind: "math", tex: String.raw`A, B, C \text{ on the circle: } AC \text{ is a diameter} \;\Longleftrightarrow\; \text{the measure of angle } ABC \text{ is } 90^\circ`, key: true },
     {
       kind: "interactive",
       key: "3-5-circles/diameter-explorer",
@@ -233,7 +233,7 @@ const section: Section = {
       turkish: String.raw`çember (eğri); içindeki bölge: daire`,
       definition: String.raw`Given a point $O$ in a plane and a positive number $r$, the set of points in the plane that are a distance of $r$ from $O$. "The area of a circle" means the area of the region it encloses.`,
       diagram: { key: "3-5-circles/circle-parts", props: { highlight: "circle" } },
-      source: "MR p. 106",
+      source: "MR p. 106; MC p. 8",
     },
     {
       id: "center",
@@ -373,7 +373,7 @@ const section: Section = {
     {
       id: "inscribed-polygon",
       term: "inscribed (polygon in a circle)",
-      turkish: "çembere içten çizilmiş çokgen / çemberin içine çizilmiş çokgen",
+      turkish: "çemberin içine çizilmiş çokgen / kirişler çokgeni",
       definition: String.raw`A polygon is inscribed in a circle if all its vertices lie on the circle.`,
       diagram: { key: "3-5-circles/inscribed-polygon", props: { highlight: "polygon" } },
       source: "MR p. 110",
@@ -537,7 +537,7 @@ const section: Section = {
         answer: "B",
         explanation: [
           String.raw`$OA = OB = 6$ (radii), so triangle $AOB$ is isosceles and its other two angles are equal: each is $\frac{180 - 58}{2} = 61$ degrees.`,
-          String.raw`In a triangle, the longer side is opposite the larger angle. $AB$ is opposite the $58^\circ$ angle and $OA = 6$ is opposite a $61^\circ$ angle, so $AB < 6$.`,
+          String.raw`Compare with the $60^\circ$ case: if angle $AOB$ were $60^\circ$, triangle $AOB$ would be equilateral and $AB$ would equal 6. With a smaller central angle, $A$ and $B$ are closer together, so $AB < 6$. (Equivalently, the longer side of a triangle is opposite the larger angle: $AB$ is opposite $58^\circ$ while $OA = 6$ is opposite $61^\circ$. This is a standard fact, though not stated in the ETS Math Review.)`,
           String.raw`Quantity B is greater. The figure makes $AB$ look longer than the radius, but it is not drawn to scale; only the given angle counts. (If the angle were $60^\circ$, the triangle would be equilateral and $AB$ would equal 6.)`,
         ],
       },
@@ -607,7 +607,7 @@ const section: Section = {
         answer: [1, 2, 3],
         explanation: [
           String.raw`Translate the chord condition into a condition on the central angle $AOB$. Triangle $AOB$ has $OA = OB = 6$.`,
-          String.raw`If angle $AOB$ is $60^\circ$, the triangle is equilateral and $AB = 6$. If angle $AOB$ is $90^\circ$, it is an isosceles right triangle and $AB = 6\sqrt{2}$. As $B$ moves along the circle away from $A$ (up to a diameter), the central angle and the chord grow together, so $6 < AB < 6\sqrt{2}$ means the measure of angle $AOB$ is strictly between $60^\circ$ and $90^\circ$.`,
+          String.raw`If angle $AOB$ is $60^\circ$, the triangle is equilateral and $AB = 6$. If angle $AOB$ is $90^\circ$, it is an isosceles right triangle and $AB = 6\sqrt{2}$. As $B$ moves along the circle away from $A$ (up to a diameter), the central angle and the chord grow together (a standard fact, though not stated in the ETS Math Review), so $6 < AB < 6\sqrt{2}$ means the measure of angle $AOB$ is strictly between $60^\circ$ and $90^\circ$.`,
           String.raw`Arc length $= \frac{x}{360}\cdot 12\pi$: at $60^\circ$ it is $2\pi \approx 6.28$ and at $90^\circ$ it is $3\pi \approx 9.42$. So the arc length is strictly between $2\pi$ and $3\pi$.`,
           String.raw`Check: $2\pi$ no (endpoint excluded); $\frac{5\pi}{2} \approx 7.85$ yes; $8$ yes; $9$ yes; $3\pi$ no; $10$ no.`,
         ],

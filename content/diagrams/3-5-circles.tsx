@@ -683,7 +683,7 @@ export function TangentQuestion() {
         <Dot key={i} at={p} />
       ))}
       <Label at={[O[0], O[1] + 15]}>O</Label>
-      <Label at={[Q[0] + 2, Q[1] + 15]}>Q</Label>
+      <Label at={[Q[0] + 9, Q[1] + 17]}>Q</Label>
       <Label at={[P[0] + 6, P[1] + 15]}>P</Label>
       <Label at={onC(T[0], T[1], 16, tDeg + 55)}>T</Label>
       <Label at={sideLabelPos(T, P, -12)} cls="dg-text">12</Label>
