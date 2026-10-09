@@ -33,7 +33,9 @@ export type LessonBlock =
       title?: string;
       text: RichText;
     }
-  | { kind: "list"; items: RichText[] }; // use sparingly; the lesson is prose
+  | { kind: "list"; items: RichText[] } // use sparingly; the lesson is prose
+  /** Interactive explorer registered in content/interactives/index.ts (client component). */
+  | { kind: "interactive"; key: string; props?: Record<string, unknown>; title?: string; caption?: RichText };
 
 export interface Term {
   id: string; // kebab-case, unique within the section

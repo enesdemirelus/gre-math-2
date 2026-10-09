@@ -1,0 +1,32 @@
+{
+  "name": "gre-math-2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "check": "tsx scripts/check-content.ts",
+    "export-review": "tsx scripts/export-for-review.ts",
+    "shots": "tsx scripts/screenshots.ts"
+  },
+  "dependencies": {
+    "katex": "^0.19.0",
+    "next": "^15.5.27",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@playwright/test": "^1.64.0",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.27",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

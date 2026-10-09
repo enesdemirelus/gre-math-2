@@ -45,3 +45,10 @@ Every answer must be verified by you numerically (you may run python3 via Bash t
 
 ## Raw strings
 Write every RichText/LaTeX string as `String.raw\`...\``. Inside it never write `${` (that is template interpolation) – use `$ {` or restructure.
+
+## Interactive explorers (make the site better than the PDF)
+Each section's lesson should contain **1–2 interactive explorers** (`{ kind: "interactive", key, props?, title?, caption? }`) where they genuinely help build intuition or speed — e.g. a slider for a central angle that live-updates arc length and sector area as fractions of $2\pi r$ and $\pi r^2$; a draggable point; a "generate a random case" button that shows a quick computation; a number line where you place values. Keep them small and focused on what the GRE tests.
+- Write them in `content/interactives/<section-id>.tsx`, starting with `"use client";`. React hooks allowed; no external libraries. Use the same `dg-*` SVG classes; for UI controls use plain `<input type="range">`, `<button>` (global styles apply). To render math inside them, import `{ Tex }` from `@/components/Tex` (props: `tex: string`, `display?: boolean`).
+- Register in `content/interactives/index.ts` with key `"<section-id>/<name>"`.
+- Must be mathematically exact (round displayed values sensibly, show exact forms in terms of π where natural).
+- Must work with mouse and touch (pointer events) and at 390px width.
