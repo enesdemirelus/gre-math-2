@@ -90,6 +90,8 @@ export function RoundingInterval({
   places = 2,
   loClosed = true,
   hiClosed = false,
+  targetPlaces,
+  labelEvery = 1,
 }: {
   min?: number;
   max?: number;
@@ -100,6 +102,9 @@ export function RoundingInterval({
   places?: number;
   loClosed?: boolean;
   hiClosed?: boolean;
+  targetPlaces?: number;
+  /** label every k-th tick */
+  labelEvery?: number;
 }) {
   const X0 = 30;
   const X1 = 310;
@@ -117,16 +122,18 @@ export function RoundingInterval({
       {ticks.map((t, k) => (
         <g key={k}>
           <line x1={xOf(t)} y1={Y - 6} x2={xOf(t)} y2={Y + 6} className="dg-line dg-thin" />
-          <text x={xOf(t)} y={Y + 22} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
-            {minus(t.toFixed(places))}
-          </text>
+          {k % labelEvery === 0 && (
+            <text x={xOf(t)} y={Y + 22} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
+              {minus(t.toFixed(places))}
+            </text>
+          )}
         </g>
       ))}
       <circle cx={xOf(lo)} cy={Y} r={5} className={loClosed ? "dg-point" : "dg-accent"} style={loClosed ? undefined : { fill: "var(--bg, #fff)" }} />
       <circle cx={xOf(hi)} cy={Y} r={5} className={hiClosed ? "dg-point" : "dg-accent"} style={hiClosed ? undefined : { fill: "var(--bg, #fff)" }} />
       <line x1={xOf(target)} y1={Y - 16} x2={xOf(target)} y2={Y - 8} className="dg-line dg-thin" />
       <text x={xOf(target)} y={Y - 26} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
-        {`rounds to ${minus(target.toFixed(Math.max(0, places - 1)))}`}
+        {`rounds to ${minus(target.toFixed(targetPlaces ?? Math.max(0, places - 1)))}`}
       </text>
     </svg>
   );

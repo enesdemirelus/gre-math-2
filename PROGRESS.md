@@ -6,7 +6,7 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 |---|---|---|
 | Shell: sidebar, KaTeX, vocab hover (EN + TR), flashcards, matching, quiz, glossary, formulas, practice, progress | done | lint/tsc/build pass; screenshots checked |
 | Conventions page | queued | |
-| 1.1 Integers | reviewing | |
+| 1.1 Integers | done | content: 3 fixed ("multiple" for reals per MC p. 5, Turkish); questions: 2 too-easy items replaced |
 | 1.2 Fractions | writing | |
 | 1.3 Exponents and Roots | writing | |
 | 1.4 Decimals | writing | |
