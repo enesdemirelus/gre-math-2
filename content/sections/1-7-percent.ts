@@ -366,13 +366,15 @@ const section: Section = {
       {
         id: "z1",
         type: "qc",
-        difficulty: "easy",
-        quantityA: String.raw`$35\%$ of $72$`,
-        quantityB: String.raw`$72\%$ of $35$`,
-        answer: "C",
+        difficulty: "medium",
+        given: String.raw`$x$ and $y$ are positive numbers with $x > y$.`,
+        quantityA: String.raw`The number obtained by taking $x\%$ of $y$ and then increasing the result by $y\%$`,
+        quantityB: String.raw`The number obtained by taking $y\%$ of $x$ and then increasing the result by $x\%$`,
+        answer: "B",
         explanation: [
-          String.raw`$35\%$ of $72$ is $\frac{35 \times 72}{100}$ and $72\%$ of $35$ is $\frac{72 \times 35}{100}$: the same product.`,
-          String.raw`Both equal $25.2$. The quantities are equal.`,
+          String.raw`First steps: $x\%$ of $y$ is $\frac{xy}{100}$, and $y\%$ of $x$ is also $\frac{xy}{100}$. Swapping the percent and the number never changes "percent of".`,
+          String.raw`The increases are different. Quantity A is $\frac{xy}{100}\left(1 + \frac{y}{100}\right)$ and Quantity B is $\frac{xy}{100}\left(1 + \frac{x}{100}\right)$.`,
+          String.raw`The common factor $\frac{xy}{100}$ is positive, so compare $1 + \frac{y}{100}$ with $1 + \frac{x}{100}$. Since $x > y$, Quantity B is greater. (Check: $x = 50$, $y = 20$ gives $10 \times 1.2 = 12$ versus $10 \times 1.5 = 15$.)`,
         ],
       },
       {
