@@ -19,7 +19,7 @@ for id in "$@"; do
   for f in content/sections/$id.ts content/diagrams/$id.tsx content/interactives/$id.tsx; do [ -f "$f" ] && files="$files $f"; done
 done
 git add $files
-git commit -qm "Add section(s): $*
+git diff --cached --quiet || git commit -qm "Add section(s): $*
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01FYZPQEg3a7TeuPwUY3kGZX"
