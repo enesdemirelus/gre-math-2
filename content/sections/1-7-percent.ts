@@ -178,7 +178,7 @@ const section: Section = {
     {
       id: "whole",
       term: "whole",
-      turkish: "bütün / tüm",
+      turkish: "bütün",
       definition: String.raw`In the fraction equivalent of a percent, the denominator: the amount that counts as $100\%$. More generally it is called the base.`,
       source: "MR pp. 21–22, 24",
     },
@@ -192,7 +192,7 @@ const section: Section = {
     {
       id: "base",
       term: "base (of a percent)",
-      turkish: "esas değer / taban değer",
+      turkish: "esas değer / ilk değer (başlangıç değeri)",
       definition: String.raw`The whole that a percent is taken of. When the number compared is greater than the base, the percent is greater than $100\%$. For a percent change, the base is the initial value, before the change.`,
       source: "MR pp. 24–25",
     },
@@ -231,8 +231,8 @@ const section: Section = {
       id: "percent-greater-than",
       term: "p% greater than / p% less than",
       turkish: "%p fazlası / %p eksiği",
-      definition: String.raw`"$A$ is $p\%$ greater than $B$" means $A = \left(1 + \frac{p}{100}\right)B$; "$A$ is $p\%$ less than $B$" means $A = \left(1 - \frac{p}{100}\right)B$. The base is the quantity after "than."`,
-      source: "MR p. 26",
+      definition: String.raw`"$A$ is $p\%$ greater than $B$" means $A = \left(1 + \frac{p}{100}\right)B$; "$A$ is $p\%$ less than $B$" means $A = \left(1 - \frac{p}{100}\right)B$. This is a percent change with base $B$, the initial quantity (MR p. 25), read as in the MR's example "6% greater than" $= 1.06\times$ (MR p. 26).`,
+      source: "MR pp. 25–26",
     },
     {
       id: "multiplier",
