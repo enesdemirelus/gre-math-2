@@ -2,6 +2,8 @@
 // Coordinate planes are drawn to scale (MC p. 11): equal units on both axes, every point computed
 // from y = ax^2 + bx + c.
 
+import type { ReactElement } from "react";
+
 const r2 = (n: number) => Math.round(n * 100) / 100;
 
 export interface PlaneWindow {
@@ -47,7 +49,7 @@ export function Axes({ w, tickLabels = [] as number[], yTickLabels = [] as numbe
   const right = toX(w, w.xmax);
   const top = toY(w, w.ymax);
   const bottom = toY(w, w.ymin);
-  const ticks: JSX.Element[] = [];
+  const ticks: ReactElement[] = [];
   for (let x = Math.ceil(w.xmin); x <= Math.floor(w.xmax); x++) {
     if (x === 0) continue;
     ticks.push(<line key={`tx${x}`} x1={toX(w, x)} y1={Y0 - 3} x2={toX(w, x)} y2={Y0 + 3} className="dg-line dg-thin" />);

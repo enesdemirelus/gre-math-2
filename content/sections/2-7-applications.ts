@@ -13,11 +13,11 @@ const section: Section = {
     { kind: "heading", text: "From words to algebra" },
     {
       kind: "p",
-      text: String.raw`Every [[word-problem|word problem]] starts with a translation. The Math Review calls translating verbal descriptions into algebraic expressions "an essential initial step," and in its first worked example it adds that assigning a variable to the quantity being sought "is an important beginning to solving the problem" (MR pp. 54–55). So the first line of your scratch work should always be a sentence of the form "let $x$ be …", with units.`,
+      text: String.raw`Every [[word-problem|word problem]] starts with a translation. The Math Review calls translating verbal descriptions into algebraic expressions "an essential initial step," and in its average example it adds that assigning a variable to the quantity being sought "is an important beginning to solving the problem" (MR pp. 54–55). So the first line of your scratch work should always be a sentence of the form "let $x$ be …", with units.`,
     },
     {
       kind: "p",
-      text: String.raw`Most translations are mechanical once you read them slowly. "The square of $x$ is multiplied by 3, and then 5 is subtracted" is $3x^2 - 5$. A price $p$ "decreased by 15 percent" is $0.85p$, and a salary $s$ "increased by 8 percent" is $1.08s$. If $y$ liters are shared so that one person gets 2 liters and the other 3 people split the rest equally, each of the 3 gets $\frac{y-2}{3}$ liters (MR p. 54 has examples of exactly this kind).`,
+      text: String.raw`Most translations are mechanical once you read them slowly. "The cube of $n$ is halved, and then 4 is added" is $\frac{n^3}{2} + 4$. A rent $p$ "decreased by 15 percent" is $0.85p$, and a population $q$ "increased by 8 percent" is $1.08q$. If a restaurant bill of $b$ dollars gets a \$6 tip added and the total is split equally among 5 friends, each pays $\frac{b + 6}{5}$ dollars (MR p. 54 gives three translations of this kind).`,
     },
     {
       kind: "aside",
@@ -76,7 +76,7 @@ const section: Section = {
     {
       kind: "aside",
       tone: "watch",
-      text: String.raw`Do not add percentages. Mixing 10 liters of a 10 percent solution with 10 liters of a 40 percent solution gives 25 percent only because the volumes are equal; with unequal volumes, add the ingredient amounts and divide by the total volume.`,
+      text: String.raw`Do not average the percentages blindly. Mixing 10 liters of a 10 percent solution with 10 liters of a 40 percent solution gives 25 percent only because the volumes are equal; with unequal volumes, add the ingredient amounts and divide by the total volume.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -168,7 +168,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`\text{compounded } n \text{ times per year:}\quad V = P\left(1 + \frac{r}{100n}\right)^{nt}`, key: true },
     {
       kind: "p",
-      text: String.raw`Take \$5,000 at 4 percent for 3 years. Simple interest gives $5{,}000(1 + 0.12) = \$5{,}600$. Compounded annually, $5{,}000(1.04)^3 = \$5{,}624.32$. Compounded quarterly, $n = 4$, so each quarter pays $\frac{4}{400} = 1$ percent and there are $4 \times 3 = 12$ quarters: $5{,}000(1.01)^{12} \approx \$5{,}634.13$. More frequent compounding at the same annual rate always ends a little higher, and the gap between simple and compound interest widens with time.`,
+      text: String.raw`Take \$5,000 at 4 percent for 3 years. Simple interest gives $5{,}000(1 + 0.12) = \$5{,}600$. Compounded annually, $5{,}000(1.04)^3 = \$5{,}624.32$. Compounded quarterly, $n = 4$, so each quarter pays $\frac{4}{400} = 1$ percent and there are $4 \times 3 = 12$ quarters: $5{,}000(1.01)^{12} \approx \$5{,}634.13$. Here each more frequent compounding ends a little higher, and the gap between simple and compound interest widens with time; the explorer below lets you watch both effects.`,
     },
     {
       kind: "interactive",
@@ -178,7 +178,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The formulas also run backwards. To have \$11,025 after 2 years at 5 percent compounded annually, you need $P(1.05)^2 = 11{,}025$, so $P = \frac{11{,}025}{1.1025} = \$10{,}000$ (MR p. 60 solves one like this). To find a rate, isolate the power and take a root: since both sides are positive, taking the positive square root, fourth root or any other positive root of each side preserves the direction of an inequality, and a fourth root is a square root taken twice (MR pp. 60–61).`,
+      text: String.raw`The formulas also run backwards. To have \$11,025 after 2 years at 5 percent compounded annually, you need $P(1.05)^2 = 11{,}025$, so $P = \frac{11{,}025}{1.1025} = \$10{,}000$ (MR pp. 59–60 solves one like this). To find a rate, isolate the power and take a root: since both sides are positive, taking the positive square root, fourth root or any other positive root of each side preserves the direction of an inequality, and a fourth root is a square root taken twice (MR pp. 60–61).`,
     },
     {
       kind: "aside",
@@ -197,7 +197,7 @@ const section: Section = {
       kind: "aside",
       tone: "watch",
       title: "Classic traps",
-      text: String.raw`Averaging two speeds instead of dividing total distance by total time. Adding times (or averaging them) in a work problem instead of adding rates. Adding percentages of solutions with different volumes. Mixing minutes and hours. Reporting the wrong unknown from a system. Using the value $V$ when the question asks for the interest $V - P$, or forgetting to change both the rate per period and the number of periods when compounding is not annual.`,
+      text: String.raw`Averaging two speeds instead of dividing total distance by total time. Adding times (or averaging them) in a work problem instead of adding rates. Averaging the percentages of solutions with different volumes. Mixing minutes and hours. Reporting the wrong unknown from a system. Using the value $V$ when the question asks for the interest $V - P$, or forgetting to change both the rate per period and the number of periods when compounding is not annual.`,
     },
   ],
 
