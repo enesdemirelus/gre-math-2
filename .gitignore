@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+# ETS source files are copyrighted; keep them local only
+sources/*.pdf
+sources/*.txt
