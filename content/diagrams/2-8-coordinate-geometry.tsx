@@ -596,12 +596,12 @@ export function SymmetryYX({ highlight = "all" }: { highlight?: "all" | "axis" }
       lines={[
         { m: 1, k: 0, dashed: true, thin: true, accent: highlight === "axis", label: "y = x", labelAt: [6, 5.2] },
         { m: 3, k: -6, label: "y = 3x − 6", labelAt: [1.25, 5.4] },
-        { m: 1 / 3, k: 2, label: "y = ⅓x + 2", labelAt: [6.9, 2.75], labelAnchor: "end" },
+        { m: 1 / 3, k: 2, label: "y = ⅓x + 2", labelAt: [7, 2.2], labelAnchor: "end" },
       ]}
       points={[
         { at: [2, 0], coords: true, dir: "se", off: 7 },
         { at: [0, 2], coords: true, dir: "nw", off: 7 },
-        { at: [3, 3], coords: true, dir: "se", off: 9, accent: highlight === "axis" },
+        { at: [3, 3], coords: true, dir: "nw", off: 9, accent: highlight === "axis" },
       ]}
       label="y = 3x - 6 and its reflection about y = x"
     />
