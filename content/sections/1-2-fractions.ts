@@ -104,7 +104,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`n\tfrac{a}{b} = n + \frac{a}{b} = \frac{nb + a}{b} \qquad (n \ge 0)`, key: true },
     {
       kind: "p",
-      text: String.raw`A negative mixed number puts the minus sign in front of the whole thing: $-10\frac{1}{2} = -\left(10 + \frac{1}{2}\right) = -\frac{21}{2}$ (MC p. 6), not $-10 + \frac{1}{2}$. Before you multiply or divide mixed numbers, always convert them to fractions.`,
+      text: String.raw`A negative mixed number puts the minus sign in front of the whole thing: $-6\frac{2}{3} = -\left(6 + \frac{2}{3}\right) = -\frac{20}{3}$ (MC p. 6), not $-6 + \frac{2}{3}$. Before you multiply or divide mixed numbers, always convert them to fractions.`,
     },
     {
       kind: "aside",
@@ -161,7 +161,7 @@ const section: Section = {
     { kind: "heading", text: "A fraction of a quantity" },
     {
       kind: "p",
-      text: String.raw`In word problems, "$\frac{2}{5}$ of $N$" means $\frac{2}{5}N$, and the numbers are exact: if one-fifth of 50 marbles are green, exactly 10 are green and the other 40 are not (MC p. 17). The GRE likes to chain fractions with the phrase "of the remainder." Each step takes a fraction of what is _left_, so the leftover fractions multiply.`,
+      text: String.raw`In word problems, "$\frac{2}{5}$ of $N$" means $\frac{2}{5}N$, and the numbers are exact: if three-eighths of 40 pens are blue, exactly 15 are blue and the other 25 are not (MC p. 17). The GRE likes to chain fractions with the phrase "of the remainder." Each step takes a fraction of what is _left_, so the leftover fractions multiply.`,
     },
     {
       kind: "p",
@@ -171,7 +171,7 @@ const section: Section = {
     {
       kind: "aside",
       tone: "gre",
-      text: String.raw`"What fraction of the class are girls?" asks for $\frac{\text{part}}{\text{whole}}$, usually in lowest terms. When a Numeric Entry question asks for a fraction, it gives two boxes and accepts any equivalent fraction, so $\frac{6}{8}$ and $\frac{3}{4}$ both count; you do not have to reduce, but you must not round.`,
+      text: String.raw`"What fraction of the class are girls?" asks for $\frac{\text{part}}{\text{whole}}$, usually in lowest terms. When a Numeric Entry question asks for a fraction, it gives two boxes and accepts any equivalent fraction, so $\frac{6}{8}$ and $\frac{3}{4}$ both count (from the GRE test directions, not the ETS Math Review); you do not have to reduce, but you must not round.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -254,8 +254,7 @@ const section: Section = {
       term: "lowest terms",
       turkish: "en sade hâl (sadeleşmeyen kesir)",
       definition: String.raw`A fraction is in lowest terms when its numerator and denominator have no common factor greater than 1, e.g. $\frac{3}{5}$ but not $\frac{6}{10}$.`,
-      note: "Not named in the ETS Math Review",
-      source: "MR p. 8",
+      source: "MR p. 8; term used on MR p. 20",
     },
     {
       id: "common-denominator",
@@ -284,7 +283,7 @@ const section: Section = {
       id: "mixed-number",
       term: "mixed number",
       turkish: "tam sayılı kesir",
-      definition: String.raw`An expression such as $4\frac{3}{8}$, made of an integer part and a fraction part between 0 and 1; it means $4 + \frac{3}{8} = \frac{35}{8}$.`,
+      definition: String.raw`An expression such as $5\frac{2}{7}$, made of an integer part and a fraction part between 0 and 1; it means $5 + \frac{2}{7} = \frac{37}{7}$.`,
       source: "MR pp. 9–10; MC p. 6",
     },
     {

@@ -105,7 +105,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Why must a non-terminating decimal repeat? In the long division of $a$ by $b$, each step leaves a remainder from 1 to $b - 1$ (a remainder of 0 means the decimal has ended). So within $b$ steps some remainder must come back, and from then on the division retraces the same steps, so the digits repeat with a block of at most $b - 1$ digits. The explorer shows the remainders for any fraction you choose.`,
+      text: String.raw`In long division, once a remainder comes back, the digits from that point on repeat. The explorer shows the remainders for any fraction you choose.`,
     },
     {
       kind: "interactive",
@@ -209,7 +209,7 @@ const section: Section = {
     {
       id: "decimal-point",
       term: "decimal point",
-      turkish: "ondalık ayırıcı (Türkçede virgül)",
+      turkish: "virgül (ondalık gösterimde)",
       definition: String.raw`The period written to the right of the ones digit. Commas separate groups of three digits to the left of it in numbers 1,000 or greater.`,
       source: "MC p. 4",
     },
@@ -475,7 +475,7 @@ const section: Section = {
         explanation: [
           String.raw`Write each number by place value. $t = 500 + 0.3 + 0.007 = 500.307$ (the hundredths digit is 0 because there is no $10^{-2}$ term). $s = 40 + 0.09 = 40.09$ (the ones and tenths digits are 0).`,
           String.raw`Line up the decimal points: $500.307 - 40.090 = 460.217$.`,
-          String.raw`Trap: dropping the zero placeholders and writing $t = 500.37$ or $s = 40.9$ leads to the wrong choices.`,
+          String.raw`Trap: dropping the zero placeholders (writing $t = 500.37$ or $s = 40.9$) puts digits in the wrong places and gives $460.28$ or $459.407$ instead of $460.217$. Fill every empty place with 0 before lining up the decimal points.`,
         ],
       },
       {
