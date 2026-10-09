@@ -402,13 +402,14 @@ const section: Section = {
       {
         id: "z1",
         type: "qc",
-        difficulty: "easy",
-        quantityA: String.raw`$\frac{1}{3} + \frac{1}{4} + \frac{1}{5}$`,
-        quantityB: String.raw`$\frac{4}{5}$`,
-        answer: "B",
+        difficulty: "medium",
+        quantityA: String.raw`$\frac{1}{3} + \frac{1}{5} + \frac{1}{7}$`,
+        quantityB: String.raw`$\frac{2}{3}$`,
+        answer: "A",
         explanation: [
-          String.raw`The least common denominator of 3, 4 and 5 is 60: $\frac{20}{60} + \frac{15}{60} + \frac{12}{60} = \frac{47}{60}$.`,
-          String.raw`$\frac{4}{5} = \frac{48}{60}$, so Quantity B is greater (by $\frac{1}{60}$).`,
+          String.raw`The least common denominator of 3, 5 and 7 is 105: $\frac{35}{105} + \frac{21}{105} + \frac{15}{105} = \frac{71}{105}$.`,
+          String.raw`$\frac{2}{3} = \frac{70}{105}$, so Quantity A is greater, by only $\frac{1}{105}$.`,
+          String.raw`Trap: estimating $\frac{1}{3} + \frac{1}{5} + \frac{1}{7} \approx 0.33 + 0.2 + 0.14 = 0.67$ against $\frac{2}{3} \approx 0.67$ is too rough here. When the quantities are this close, compute exactly with a common denominator.`,
         ],
       },
       {
