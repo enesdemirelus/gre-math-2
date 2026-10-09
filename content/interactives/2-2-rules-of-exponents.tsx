@@ -82,7 +82,7 @@ function changeBase(rng: Rng): Problem {
     base: p,
     answer: ans,
     steps: [
-      { text: `Rewrite each base as a power of ${p} and use Rule 7, (x^a)^b = x^{ab}.`, tex: `${q1}^{${m}} = (${p}^{${e1}})^{${m}} = ${p}^{${e1 * m}},\\quad ${q2}^{${n}} = (${p}^{${e2}})^{${n}} = ${p}^{${e2 * n}}` },
+      { text: `Rewrite each base as a power of ${p} and use Rule 7.`, tex: `${q1}^{${m}} = (${p}^{${e1}})^{${m}} = ${p}^{${e1 * m}},\\quad ${q2}^{${n}} = (${p}^{${e2}})^{${n}} = ${p}^{${e2 * n}}` },
       { text: "Rule 2 for the numerator.", tex: `${p}^{${e1 * m}}\\cdot ${p}^{${e2 * n}} = ${p}^{${top}}` },
       { text: "Rule 3 for the quotient.", tex: `\\frac{${p}^{${top}}}{${p}^{${c}}} = ${p}^{${minus(top, c)}} = ${p}^{${ans}}` },
     ],
@@ -207,6 +207,7 @@ export function ExponentDrill() {
   const [status, setStatus] = useState<null | "right" | "wrong">(null);
   const [showSol, setShowSol] = useState(false);
   const [score, setScore] = useState({ right: 0, tried: 0 });
+  const [attempted, setAttempted] = useState(false);
   const prob = useMemo(() => makeProblem(seed, kind), [seed, kind]);
 
   const next = (k = kind) => {
@@ -215,12 +216,16 @@ export function ExponentDrill() {
     setInput("");
     setStatus(null);
     setShowSol(false);
+    setAttempted(false);
   };
   const check = () => {
     const v = Number(input.trim().replace("−", "-"));
     if (input.trim() === "" || !Number.isFinite(v)) return;
     const ok = v === prob.answer;
-    if (status === null) setScore((s) => ({ right: s.right + (ok ? 1 : 0), tried: s.tried + 1 }));
+    if (!attempted) {
+      setAttempted(true);
+      setScore((s) => ({ right: s.right + (ok ? 1 : 0), tried: s.tried + 1 }));
+    }
     setStatus(ok ? "right" : "wrong");
     if (ok) setShowSol(true);
   };

@@ -18,19 +18,19 @@ const section: Section = {
     {
       kind: "math",
       tex: String.raw`\begin{array}{lll}
-\text{Rule 1:} & x^{-a} = \dfrac{1}{x^a} & 4^{-3} = \dfrac{1}{64} \\[10pt]
-\text{Rule 2:} & x^a\, x^b = x^{a+b} & 3^2 \cdot 3^4 = 3^6 \\[10pt]
-\text{Rule 3:} & \dfrac{x^a}{x^b} = x^{a-b} = \dfrac{1}{x^{b-a}} & \dfrac{t^3}{t^8} = t^{-5} = \dfrac{1}{t^5} \\[10pt]
-\text{Rule 4:} & x^0 = 1 & (-3)^0 = 1 \\[10pt]
+\text{Rule 1:} & x^{-a} = \dfrac{1}{x^a} & 5^{-2} = \dfrac{1}{25} \\[10pt]
+\text{Rule 2:} & x^a\, x^b = x^{a+b} & 2^3 \cdot 2^5 = 2^8 \\[10pt]
+\text{Rule 3:} & \dfrac{x^a}{x^b} = x^{a-b} = \dfrac{1}{x^{b-a}} & \dfrac{s^4}{s^9} = s^{-5} = \dfrac{1}{s^5} \\[10pt]
+\text{Rule 4:} & x^0 = 1 & (-7)^0 = 1 \\[10pt]
 \text{Rule 5:} & x^a\, y^a = (xy)^a & 2^3 \cdot 5^3 = 10^3 \\[10pt]
-\text{Rule 6:} & \left(\dfrac{x}{y}\right)^a = \dfrac{x^a}{y^a} & \left(\dfrac{r}{2t}\right)^3 = \dfrac{r^3}{8t^3} \\[10pt]
-\text{Rule 7:} & \left(x^a\right)^b = x^{ab} & \left(3y^4\right)^2 = 9y^8
+\text{Rule 6:} & \left(\dfrac{x}{y}\right)^a = \dfrac{x^a}{y^a} & \left(\dfrac{a}{3b}\right)^2 = \dfrac{a^2}{9b^2} \\[10pt]
+\text{Rule 7:} & \left(x^a\right)^b = x^{ab} & \left(2y^3\right)^4 = 16y^{12}
 \end{array}`,
       key: true,
     },
     {
       kind: "p",
-      text: String.raw`These rules are [[identity|identities]]: they hold for every allowed value of the letters, and their job is to simplify expressions (MR p. 42). Read them as three families. Rules 2 and 3 handle the **same base**: multiply by adding exponents, divide by subtracting. Rules 5 and 6 handle the **same exponent**: a product or quotient of different bases can be gathered under one exponent, and an exponent outside parentheses distributes over a product or quotient inside. Rule 7 handles a **power of a power**: multiply the exponents. Rules 1 and 4 are the definitions of negative and zero exponents from Section 1.3, and $0^0$ is still not defined (MR p. 42).`,
+      text: String.raw`These rules are [[identity|identities]]: they hold for every allowed value of the letters, and their job is to simplify expressions (MR p. 42). Read them as three families. [[product-rule|Rule 2]] and [[quotient-rule|Rule 3]] handle the **same base**: multiply by adding exponents, divide by subtracting. Rules 5 and 6 handle the **same exponent**: a product or quotient of different bases can be gathered under one exponent, and an exponent outside parentheses distributes over a product or quotient inside. Rule 7 handles a [[power-rule|power of a power]]: multiply the exponents. Rules 1 and 4 are the definitions of negative and zero exponents from Section 1.3, and $0^0$ is still not defined (MR p. 42).`,
     },
     {
       kind: "p",
@@ -71,7 +71,7 @@ const section: Section = {
       kind: "p",
       text: String.raw`Once two powers have the same base, you can compare their exponents directly. The Math Review states the property carefully: for all integers $a$ and $b$ and all positive numbers $x$ except $x = 1$, if $x^a = x^b$, then $a = b$ (MR p. 40).`,
     },
-    { kind: "math", tex: String.raw`x > 0,\ x \ne 1,\ \ x^a = x^b \;\Longrightarrow\; a = b`, key: true },
+    { kind: "math", tex: String.raw`x > 0,\ x \ne 1,\ a, b \text{ integers},\ \ x^a = x^b \;\Longrightarrow\; a = b`, key: true },
     {
       kind: "p",
       text: String.raw`The hypotheses are there for a reason. With base 1, $1^2 = 1^7$ but $2 \ne 7$; with base $-1$, $(-1)^2 = (-1)^4$; with base 0, $0^2 = 0^5$. So the method is: rewrite both sides with one positive base other than 1, set the exponents equal, and solve the resulting linear equation. For example:`,
@@ -143,7 +143,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Case 1: Rule 5 needs the _same_ exponent; $2^4 \cdot 3^2 = 144$, while $6^6 = 46{,}656$. Case 2: a power of a power multiplies exponents, a product adds them, so $\left(4^2\right)^3 = 4^6$ but $4^2 \cdot 4^3 = 4^5$. Case 3: exponents do not distribute over sums; $(x + y)^2 = x^2 + 2xy + y^2$, and it is the middle term $2xy$ that the false version drops. Case 4: $(-x)^2 = x^2$; watch where each negative sign is. Case 5: roots do not distribute over sums either ($\sqrt{9 + 16} = 5$, not 7). Case 6: a sum in the denominator cannot be split, although a sum in the numerator can: $\frac{x + y}{a} = \frac{x}{a} + \frac{y}{a}$ (MR p. 43).`,
+      text: String.raw`Case 1: Rule 5 needs the _same_ exponent; $3^2 \cdot 5^3 = 1{,}125$, while $15^5 = 759{,}375$. Case 2: a power of a power multiplies exponents, a product adds them, so $\left(3^2\right)^4 = 3^8$ but $3^2 \cdot 3^4 = 3^6$. Case 3: exponents do not distribute over sums; $(x + y)^2 = x^2 + 2xy + y^2$ (the correct [[expansion]]), and it is the middle term $2xy$ that the false version drops. Case 4: $(-x)^2 = x^2$; watch where each negative sign is. Case 5: roots do not distribute over sums either ($\sqrt{9 + 16} = 5$, not 7). Case 6: a sum in the denominator cannot be split, although a sum in the numerator can: $\frac{x + y}{a} = \frac{x}{a} + \frac{y}{a}$ (MR p. 43).`,
     },
     {
       kind: "aside",
@@ -185,7 +185,7 @@ const section: Section = {
     {
       id: "raised-to-power",
       term: "raised to the power",
-      turkish: "kuvvetini almak (üssünü almak)",
+      turkish: "kuvvetini almak / kuvvetine yükseltmek",
       definition: String.raw`"$x$ is raised to the power $a$" describes the expression $x^a$; for example, $2^5$ is 2 raised to the fifth power.`,
       source: "MR p. 40",
     },
@@ -218,7 +218,7 @@ const section: Section = {
     {
       id: "power-rule",
       term: "power of a power (Rule 7)",
-      turkish: "üssün üssü (kuvvetin kuvveti)",
+      turkish: "kuvvetin kuvveti / üslü ifadenin kuvveti",
       definition: String.raw`A power raised to a power: multiply the exponents. Not to be confused with a product of powers, where exponents are added.`,
       formula: String.raw`\left(x^a\right)^b = x^{ab}`,
       note: "The Math Review calls it Rule 7 and gives it no name",
@@ -236,7 +236,7 @@ const section: Section = {
       id: "factor-out",
       term: "factor out",
       turkish: "ortak çarpan parantezine almak",
-      definition: String.raw`To write a factor common to every term of an expression outside parentheses, as in $15y^2 - 9y = 3y(5y - 3)$. With powers: $2^{12} + 2^{10} = 2^{10}\left(2^2 + 1\right)$.`,
+      definition: String.raw`To write a factor common to every term of an expression outside parentheses, as in $12y^2 - 8y = 4y(3y - 2)$. With powers: $2^{12} + 2^{10} = 2^{10}\left(2^2 + 1\right)$.`,
       source: "MR p. 38",
     },
     {
@@ -421,7 +421,7 @@ const section: Section = {
         answer: 3,
         explanation: [
           String.raw`You do not need $x$ itself. Write $8^{x+1}$ in terms of $2^x$: $8^{x+1} = 8^x \cdot 8$.`,
-          String.raw`$8^x = \left(2^3\right)^x = \left(2^x\right)^3 = 3^3 = 27$ (Rule 7, which holds for any real exponent when the base is positive).`,
+          String.raw`$8^x = \left(2^3\right)^x = \left(2^x\right)^3 = 3^3 = 27$ (Rule 7 extended to non-integer exponents, which is valid for a positive base; the Math Review states Rule 7 only for integer exponents).`,
           String.raw`So $8^{x+1} = 27 \cdot 8 = 216$.`,
           String.raw`Traps: $27$ forgets the $+1$; $24 = 8 \cdot 3$ forgets to cube; $72 = 8 \cdot 9$ squares instead of cubing.`,
         ],

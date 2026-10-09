@@ -37,7 +37,7 @@ const section: Section = {
     { kind: "heading", text: "Three or more quantities" },
     {
       kind: "p",
-      text: String.raw`With three or more positive quantities $r$, $s$ and $t$, the relative sizes are written "$r$ to $s$ to $t$" (or $r : s : t$). Such a ratio is reduced by dividing every term by the [[gcd|greatest common divisor]] of _all_ the terms (MR p. 20). For example, 12 to 42 to 30 has greatest common divisor 6 and reduces to 2 to 7 to 5. Notice that 12 to 42 alone would reduce further, to 2 to 7, but you must divide all three terms by the same number.`,
+      text: String.raw`With three or more positive quantities $r$, $s$ and $t$, the relative sizes are written "$r$ to $s$ to $t$" (MR p. 20). Many books also write $r : s : t$, which this page uses for brevity; the Math Review does not. Such a ratio is reduced by dividing every term by the [[gcd|greatest common divisor]] of _all_ the terms (MR p. 20). For example, 12 to 42 to 30 has greatest common divisor 6 and reduces to 2 to 7 to 5. Notice that 12 to 42 alone would reduce further, to 2 to 7, but you must divide all three terms by the same number.`,
     },
     {
       kind: "diagram",
@@ -149,7 +149,7 @@ const section: Section = {
       id: "lowest-terms",
       term: "lowest terms (of a ratio)",
       turkish: "en sade hâl (sadeleştirilmiş oran)",
-      definition: String.raw`A ratio is reduced to lowest terms by dividing every term by the greatest common divisor of all the terms, as with fractions: 8 to 12 is 2 to 3, and 5 to 30 to 20 is 1 to 6 to 4.`,
+      definition: String.raw`A ratio is reduced to lowest terms by dividing every term by the greatest common divisor of all the terms, as with fractions: 10 to 15 is 2 to 3, and 6 to 24 to 18 is 1 to 4 to 3.`,
       source: "MR p. 20",
     },
     {
@@ -157,7 +157,7 @@ const section: Section = {
       term: "greatest common divisor",
       turkish: "en büyük ortak bölen (EBOB)",
       definition: String.raw`The greatest positive integer that is a divisor of each of the given integers. Dividing all the terms of a ratio by it reduces the ratio to lowest terms.`,
-      source: "MR pp. 5, 20; MC p. 5",
+      source: "MR pp. 4, 20; MC p. 5",
     },
     {
       id: "part-to-part",
@@ -180,7 +180,7 @@ const section: Section = {
       id: "proportion",
       term: "proportion",
       turkish: "orantı",
-      definition: String.raw`An equation relating two ratios, for example $\frac{9}{12} = \frac{3}{4}$.`,
+      definition: String.raw`An equation relating two ratios, for example $\frac{10}{25} = \frac{2}{5}$.`,
       formula: String.raw`\frac{a}{b} = \frac{c}{d}`,
       source: "MR p. 20",
     },
@@ -188,14 +188,14 @@ const section: Section = {
       id: "cross-multiplication",
       term: "cross multiplication",
       turkish: "içler dışlar çarpımı",
-      definition: String.raw`Solving a proportion $\frac{a}{b} = \frac{c}{d}$ by rewriting it as $ad = bc$. For example, $\frac{x}{49} = \frac{3}{21}$ gives $21x = (3)(49)$, so $x = 7$.`,
+      definition: String.raw`Solving a proportion $\frac{a}{b} = \frac{c}{d}$ by rewriting it as $ad = bc$. For example, $\frac{x}{56} = \frac{5}{8}$ gives $8x = (5)(56)$, so $x = 35$.`,
       formula: String.raw`\frac{a}{b} = \frac{c}{d} \iff ad = bc`,
       source: "MR pp. 20–21",
     },
     {
       id: "rate",
       term: "rate",
-      turkish: "birim oran / hız",
+      turkish: "birim oran / oran",
       definition: String.raw`A ratio of two quantities measured in different units, such as miles per hour or dollars per pound. On the GRE, "average" without "arithmetic mean" can refer to a rate.`,
       note: "Not defined in the ETS Math Review's section on ratio",
       source: "MC p. 13",

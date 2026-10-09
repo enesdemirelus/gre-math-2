@@ -93,7 +93,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The same idea measures the gap between any two numbers: the [[distance|distance between $a$ and $b$]] on the number line is $|a - b|$ (equivalently $|b - a|$). ETS uses this in its own sample-question explanations, and the GRE's convention that "the difference between two quantities" means the positive difference is the same idea (MC p. 17). The distance from $-2$ to $5$ is $|5 - (-2)| = 7$.`,
+      text: String.raw`The same idea measures the gap between any two numbers: the [[distance|distance between $a$ and $b$]] on the number line is $|a - b|$ (equivalently $|b - a|$). This formula is not stated in the ETS Math Review; it extends the MR's definition of $|x|$ as the distance from $x$ to 0 (MR p. 18), and it matches the convention that "the difference between two quantities" means the positive difference (MC p. 17). The distance from $-2$ to $5$ is $|5 - (-2)| = 7$.`,
     },
     { kind: "math", tex: String.raw`\text{distance between } a \text{ and } b = |a - b|`, key: true },
     {
@@ -194,7 +194,7 @@ const section: Section = {
       kind: "aside",
       tone: "watch",
       title: "Classic traps",
-      text: String.raw`Assuming a variable is positive or an integer when the question does not say so (the GRE allows all real numbers unless restricted; MC pp. 5–6). Forgetting the second solution of $|x| = k$. Counting the endpoints of an interval described with "between." Thinking $\frac{0}{0}$ or $\frac{5}{0}$ is 0. Assuming $|a + b| = |a| + |b|$ when the signs might differ. And assuming $x^2 > x$ for every $x$: it fails for $0 \le x \le 1$.`,
+      text: String.raw`Assuming a variable is positive or an integer when the question does not say so (the GRE allows all real numbers unless restricted; MC pp. 5–6). Forgetting the second solution of $|x| = k$. Counting the endpoints of an interval described with "between." Thinking $\frac{0}{0}$ or $\frac{2}{0}$ is 0. Assuming $|a + b| = |a| + |b|$ when the signs might differ. And assuming $x^2 > x$ for every $x$: it fails for $0 \le x \le 1$.`,
     },
   ],
 
@@ -205,7 +205,6 @@ const section: Section = {
       term: "real numbers",
       turkish: "gerçek sayılar / reel sayılar",
       definition: String.raw`The set consisting of all rational numbers and all irrational numbers. It includes all integers, fractions and decimals. On the GRE, all numbers are real numbers.`,
-      formula: String.raw`\mathbb{R}`,
       source: "MR p. 16; MC p. 4",
     },
     {
@@ -301,14 +300,14 @@ const section: Section = {
       definition: String.raw`On the number line, the distance between $a$ and $b$ is $|a - b|$, which equals $|b - a|$. Distances are nonnegative.`,
       formula: String.raw`|a - b|`,
       diagram: { key: "1-5-real-numbers/distance" },
-      note: "Not stated in the ETS Math Review; used in the ETS Quantitative Reasoning strategies guide",
+      note: "Not stated in the ETS Math Review",
       source: "MC pp. 11, 17",
     },
     {
       id: "triangle-inequality",
       term: "triangle inequality",
       turkish: "üçgen eşitsizliği",
-      definition: String.raw`For all real numbers $r$ and $s$, $|r + s| \le |r| + |s|$. For example, $|5 + (-2)| = 3 \le 7 = |5| + |-2|$.`,
+      definition: String.raw`For all real numbers $r$ and $s$, $|r + s| \le |r| + |s|$. For example, $|6 + (-4)| = 2 \le 10 = |6| + |-4|$.`,
       formula: String.raw`|r + s| \le |r| + |s|`,
       source: "MR p. 19",
     },
@@ -343,7 +342,7 @@ const section: Section = {
       id: "undefined",
       term: "undefined",
       turkish: "tanımsız",
-      definition: String.raw`Has no value as a real number. Division by 0 is undefined: $5 \div 0$, $\frac{-7}{0}$ and $\frac{0}{0}$ are all undefined.`,
+      definition: String.raw`Has no value as a real number. Division by 0 is undefined: $8 \div 0$, $\frac{-3}{0}$ and $\frac{0}{0}$ are all undefined.`,
       source: "MR p. 19; MC p. 7",
     },
   ],
