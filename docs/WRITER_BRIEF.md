@@ -41,3 +41,6 @@ You write the complete content for one or two sections of the GRE Quant review s
 
 ## Report back (≤200 words)
 Counts (lesson blocks, terms, examples, quick, quiz by type and difficulty), interactives built, judgement calls on scope or Turkish, and anything uncertain.
+
+## Save early
+Runs can be cut off by rate limits. Write each file to disk as soon as you have a first complete draft and refine it in place, rather than holding everything until the end. If a file for your section already exists (from an earlier interrupted run), read it and continue from it.
