@@ -7,7 +7,9 @@ import s_1_4_decimals from "./1-4-decimals";
 import s_1_5_real_numbers from "./1-5-real-numbers";
 import s_1_6_ratio from "./1-6-ratio";
 import s_1_7_percent from "./1-7-percent";
+import s_2_1_algebraic_expressions from "./2-1-algebraic-expressions";
 import s_2_2_rules_of_exponents from "./2-2-rules-of-exponents";
+import s_2_4_quadratic_equations from "./2-4-quadratic-equations";
 import s_2_7_applications from "./2-7-applications";
 import s_3_5_circles from "./3-5-circles";
 
@@ -19,7 +21,9 @@ export const SECTIONS: Record<string, Section> = {
   "1-5-real-numbers": s_1_5_real_numbers,
   "1-6-ratio": s_1_6_ratio,
   "1-7-percent": s_1_7_percent,
+  "2-1-algebraic-expressions": s_2_1_algebraic_expressions,
   "2-2-rules-of-exponents": s_2_2_rules_of_exponents,
+  "2-4-quadratic-equations": s_2_4_quadratic_equations,
   "2-7-applications": s_2_7_applications,
   "3-5-circles": s_3_5_circles,
 };

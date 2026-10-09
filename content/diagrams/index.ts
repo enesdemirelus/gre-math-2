@@ -6,6 +6,8 @@ import { registry as s_1_3_exponents_and_roots } from "./1-3-exponents-and-roots
 import { registry as s_1_4_decimals } from "./1-4-decimals";
 import { registry as s_1_5_real_numbers } from "./1-5-real-numbers";
 import { registry as s_1_6_ratio } from "./1-6-ratio";
+import { registry as s_2_1_algebraic_expressions } from "./2-1-algebraic-expressions";
+import { registry as s_2_4_quadratic_equations } from "./2-4-quadratic-equations";
 import { registry as s_2_7_applications } from "./2-7-applications";
 import { registry as s_3_5_circles } from "./3-5-circles";
 
@@ -17,6 +19,8 @@ export const diagrams: Record<string, ComponentType<any>> = {
   ...s_1_4_decimals,
   ...s_1_5_real_numbers,
   ...s_1_6_ratio,
+  ...s_2_1_algebraic_expressions,
+  ...s_2_4_quadratic_equations,
   ...s_2_7_applications,
   ...s_3_5_circles,
 };

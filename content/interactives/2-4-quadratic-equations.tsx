@@ -56,9 +56,9 @@ export function QuadraticExplorer() {
     (b === 0 ? "" : ` ${b < 0 ? "-" : "+"} ${coef(b)}x`) +
     (c === 0 ? "" : ` ${c < 0 ? "-" : "+"} ${fmt(Math.abs(c))}`) +
     " = 0";
-  const discTex = `b^2 - 4ac = ${par(b)}^2 - 4${par(a)}${par(c)} = ${fmt(D)} ${sign}`;
+  const discTex = `b^2 - 4ac = ${par(b)}^2 - 4(${fmt(a)})(${fmt(c)}) = ${fmt(D)} ${sign}`;
   const formulaTex =
-    `x = \\frac{-${par(b)} \\pm \\sqrt{${fmt(D)}}}{2${par(a)}}` +
+    `x = \\frac{-${par(b)} \\pm \\sqrt{${fmt(D)}}}{2(${fmt(a)})}` +
     (D >= 0 ? ` = \\frac{${fmt(-b)} \\pm ${exact2(sqrtD) ? fmt(sqrtD) : `\\sqrt{${fmt(D)}}`}}{${fmt(2 * a)}}` : "");
   const rootsTex =
     roots.length === 2

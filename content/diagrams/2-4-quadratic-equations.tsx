@@ -115,17 +115,6 @@ export function ParabolaFigure({ highlight = "all" }: { highlight?: Highlight })
           </text>
         </g>
       )}
-      {(highlight === "all" || highlight === "parabola") && (
-        <text x={toX(w, 6.15)} y={toY(w, 6.2)} className="dg-text" textAnchor="end" fontSize="13">
-          <tspan className="dg-label">y</tspan>
-          {" = "}
-          <tspan className="dg-label">x</tspan>
-          <tspan dy={-6} fontSize="9">2</tspan>
-          <tspan dy={6}>{" − 6"}</tspan>
-          <tspan className="dg-label">x</tspan>
-          {" + 5"}
-        </text>
-      )}
       {on("axis") && (
         <text x={vx + 6} y={toY(w, 5.6)} className="dg-text" textAnchor="start" fontSize="13">
           <tspan className="dg-label">x</tspan> = 3

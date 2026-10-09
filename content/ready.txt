@@ -8,3 +8,5 @@
 1-2-fractions
 1-4-decimals
 2-7-applications
+2-1-algebraic-expressions
+2-4-quadratic-equations
