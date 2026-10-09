@@ -16,6 +16,7 @@ function gcd(a: number, b: number): number {
 }
 const lcm = (a: number, b: number) => (a / gcd(a, b)) * b;
 const r2 = (n: number) => Math.round(n * 100) / 100;
+const fmt = (v: number, k: number) => (v < 0 ? "\u2212" + (-v).toFixed(k) : v.toFixed(k));
 
 /** TeX for n/d (d > 0), with the sign in front. */
 function fracTex(n: number, d: number): string {
@@ -159,20 +160,20 @@ export function FractionCompare({ initial = [5, 8, 7, 11] }: { initial?: [number
             <line x1={40} y1={ZY - 6} x2={40} y2={ZY + 6} className="dg-line dg-thin" />
             <line x1={300} y1={ZY - 6} x2={300} y2={ZY + 6} className="dg-line dg-thin" />
             <text x={40} y={ZY + 20} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
-              {zl.toFixed(3)}
+              {fmt(zl, 3)}
             </text>
             <text x={300} y={ZY + 20} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
-              {zr.toFixed(3)}
+              {fmt(zr, 3)}
             </text>
             <circle cx={zx(x)} cy={ZY} r={5} className="dg-point" />
             <circle cx={zx(y)} cy={ZY} r={5} className="dg-accent" />
-            <text x={zx(x)} y={ZY - 16} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
+            <text x={zx(x)} y={ZY + 18} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
               {`${a < 0 ? "\u2212" + -a : a}/${b}`}
             </text>
-            <text x={zx(y)} y={ZY - 16} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
+            <text x={zx(y)} y={ZY + 18} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
               {`${c < 0 ? "\u2212" + -c : c}/${d}`}
             </text>
-            <text x={170} y={ZY + 34} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 11 }}>
+            <text x={170} y={ZY - 14} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 11 }}>
               zoomed in
             </text>
           </g>
@@ -191,14 +192,14 @@ export function FractionCompare({ initial = [5, 8, 7, 11] }: { initial?: [number
       </div>
       <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         <div>
-          <Tex tex={`\\text{Common denominator } ${L}{:}`} />{" "}
-          <Tex tex={`${fracTex(a, b)} = ${fracTex(a * (L / b), L)},\\quad ${fracTex(c, d)} = ${fracTex(c * (L / d), L)}`} />
+          Common denominator <Tex tex={`${L}`} />: <Tex tex={`${fracTex(a, b)} = ${fracTex(a * (L / b), L)}`} /> and{" "}
+          <Tex tex={`${fracTex(c, d)} = ${fracTex(c * (L / d), L)}`} />
         </div>
         <div>
-          <Tex tex={`\\text{Cross products: } (${a})(${d}) = ${ad},\\quad (${b})(${c}) = ${bc}`} />
+          Cross products: <Tex tex={`(${a})(${d}) = ${ad}`} /> and <Tex tex={`(${b})(${c}) = ${bc}`} />
         </div>
         <div>
-          <Tex tex={`\\text{So } ${fracTex(a, b)} \\; ${rel} \\; ${fracTex(c, d)} \\qquad (${x.toFixed(4)} \\text{ vs. } ${y.toFixed(4)})`} />
+          So <Tex tex={`${fracTex(a, b)} \\; ${rel} \\; ${fracTex(c, d)}`} /> <span style={{ opacity: 0.75 }}>({fmt(x, 4)} vs. {fmt(y, 4)})</span>
         </div>
         {(ra !== a || rc !== c) && (
           <div>
