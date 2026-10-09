@@ -1,5 +1,5 @@
 // Original diagrams for section 1.5 Real Numbers.
-// Number lines are drawn to scale (MC p. 10): every x-coordinate is computed from the value.
+// Number lines are drawn to scale (MC p. 11): every x-coordinate is computed from the value.
 
 const r2 = (n: number) => Math.round(n * 100) / 100;
 
