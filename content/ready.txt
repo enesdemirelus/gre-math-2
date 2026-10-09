@@ -3,3 +3,5 @@
 1-1-integers
 1-5-real-numbers
 1-6-ratio
+1-3-exponents-and-roots
+2-2-rules-of-exponents

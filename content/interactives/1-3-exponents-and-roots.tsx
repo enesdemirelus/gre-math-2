@@ -34,8 +34,8 @@ const PRESETS: { label: string; k: number }[] = [
   { label: "x > 1", k: 160 },
 ];
 
-export function PowersExplorer() {
-  const [k, setK] = useState(50); // x = k / 100
+export function PowersExplorer({ initialX = 0.5 }: { initialX?: number }) {
+  const [k, setK] = useState(Math.round(initialX * 20) * 5); // x = k / 100
   const [showOrder, setShowOrder] = useState(true);
   const x = k / 100;
 
@@ -49,7 +49,7 @@ export function PowersExplorer() {
 
   // number line geometry (drawn to scale on [-LIM, LIM])
   const W = 360;
-  const LIM = 4;
+  const LIM = 2;
   const pad = 22;
   const lineY = 150;
   const X = (v: number) => pad + ((v + LIM) / (2 * LIM)) * (W - 2 * pad);
@@ -99,12 +99,14 @@ export function PowersExplorer() {
         <line x1={6} y1={lineY} x2={W - 6} y2={lineY} className="dg-line" />
         <path d={`M 13 ${lineY - 4.5} L 6 ${lineY} L 13 ${lineY + 4.5}`} className="dg-line" />
         <path d={`M ${W - 13} ${lineY - 4.5} L ${W - 6} ${lineY} L ${W - 13} ${lineY + 4.5}`} className="dg-line" />
-        {Array.from({ length: 2 * LIM + 1 }, (_, i) => i - LIM).map((t) => (
+        {Array.from({ length: 4 * LIM + 1 }, (_, i) => i / 2 - LIM).map((t) => (
           <g key={t}>
-            <line x1={X(t)} y1={lineY - 5} x2={X(t)} y2={lineY + 5} className="dg-line dg-thin" />
-            <text x={X(t)} y={lineY + 22} className="dg-text" textAnchor="middle">
-              {t < 0 ? `−${-t}` : `${t}`}
-            </text>
+            <line x1={X(t)} y1={lineY - (Number.isInteger(t) ? 6 : 3)} x2={X(t)} y2={lineY + (Number.isInteger(t) ? 6 : 3)} className="dg-line dg-thin" />
+            {Number.isInteger(t) && (
+              <text x={X(t)} y={lineY + 22} className="dg-text" textAnchor="middle">
+                {t < 0 ? `−${-t}` : `${t}`}
+              </text>
+            )}
           </g>
         ))}
         {placed.map((it) => {
@@ -125,7 +127,7 @@ export function PowersExplorer() {
       <div className="explorer-controls" style={{ display: "grid", gap: "0.5rem", width: "100%", maxWidth: 360 }}>
         <label>
           <Tex tex={`x = ${fmt(x)}`} />
-          <input type="range" style={{ width: "100%" }} min={-300} max={300} step={5} value={k} onChange={(e) => setK(Number(e.target.value))} />
+          <input type="range" style={{ width: "100%" }} min={-250} max={250} step={5} value={k} onChange={(e) => setK(Number(e.target.value))} />
         </label>
         <div className="row" style={{ justifyContent: "center" }}>
           {PRESETS.map((p) => (

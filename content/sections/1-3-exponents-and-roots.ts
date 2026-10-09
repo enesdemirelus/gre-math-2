@@ -92,7 +92,7 @@ x > 1: & \tfrac{1}{x} < 1 < \sqrt{x} < x < x^2 < x^3
       kind: "interactive",
       key: "1-3-exponents-and-roots/powers-explorer",
       title: "Powers explorer",
-      caption: String.raw`Move the slider or pick a region. The number line is drawn to scale on $-4 \le x \le 4$; an arrow on a label means the value is off the line. Watch what happens at the boundaries $x = -1$, $0$ and $1$, where some of the values become equal.`,
+      caption: String.raw`Move the slider or pick a region. The number line is drawn to scale from $-2$ to $2$; an arrow on a label means the value is off the line. Watch what happens at the boundaries $x = -1$, $0$ and $1$, where some of the values become equal.`,
     },
     {
       kind: "aside",
