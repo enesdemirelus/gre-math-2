@@ -174,3 +174,11 @@ All questions are original, modeled on the format in QRS and on the QR page, wit
 - **Question reviewer:** gets the *exported questions without keys*. Solves every worked example and quiz question independently, then compares with the key file. Flags wrong keys, ambiguous wording, more than one defensible answer, off-format questions, out-of-scope math, and questions too easy for GRE medium–hard.
 - **Automated checks:** `check-content` (structure, types, KaTeX parse) and `next build` must pass.
 - Fixes are made, then reviewed again by a new reviewer until it reports nothing.
+
+## 8. Beyond the PDF (added after plan review)
+- **Interactive explorers** in each lesson (1–2 per section): sliders, draggable points, random-case generators that build intuition for exactly what the GRE tests.
+- **Glossary** (`/glossary`): every term across all sections, searchable in English or Turkish, with diagrams; cross-topic flashcards and matching.
+- **Formula sheet** (`/formulas`): generated from the lessons' key formulas, linked back to sections.
+- **Mixed practice** (`/practice`): build a test from chosen sections, GRE-style one question per screen, mark-for-review, review grid, optional GRE-pace timer, results by section and question type.
+- **Progress** (`/progress`): best scores, flashcards known, and a mistakes list you can re-attempt.
+- The user asked for no questions until the site is finished; decisions in §6 are taken as proposed.
