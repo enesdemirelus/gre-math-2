@@ -189,6 +189,24 @@ export function checkSection(section: Section, diagramReg: Registry, interactive
 }
 
 function main() {
+  const si = process.argv.indexOf("--section");
+  if (si >= 0) {
+    const id = process.argv[si + 1];
+    const load = async (path: string) => {
+      try {
+        return (await import(path)) as { registry?: Registry };
+      } catch (e) {
+        if ((e as { code?: string }).code === "ERR_MODULE_NOT_FOUND" || /Cannot find module/.test(String(e))) return {};
+        throw e;
+      }
+    };
+    return Promise.all([import(`../content/sections/${id}`), load(`../content/diagrams/${id}`), load(`../content/interactives/${id}`)]).then(([s, d, it]) => {
+      const sec = (s as { default: Section }).default;
+      const entry = OUTLINE.find((o) => o.id === id);
+      if (!entry) makeReporter(id).err("outline", "id not in OUTLINE");
+      checkSection(sec, { ...diagrams, ...(d.registry ?? {}) }, { ...interactives, ...(it.registry ?? {}) });
+    });
+  }
   const demo = process.argv.includes("--demo");
   if (demo) {
     return import("./fixtures/demo-section").then((m) => {
@@ -213,6 +231,6 @@ function main() {
 }
 
 main().then(() => {
-  console.log(`\nChecked ${process.argv.includes("--demo") ? "demo fixture" : `${Object.keys(SECTIONS).length} section(s) + conventions`}: ${errors} error(s), ${warnings} warning(s).`);
+  console.log(`\nChecked ${process.argv.includes("--section") ? "section " + process.argv[process.argv.indexOf("--section") + 1] : process.argv.includes("--demo") ? "demo fixture" : `${Object.keys(SECTIONS).length} section(s) + conventions`}: ${errors} error(s), ${warnings} warning(s).`);
   process.exit(errors > 0 ? 1 : 0);
 });
