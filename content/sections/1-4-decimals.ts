@@ -26,7 +26,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`4{,}068.257 = 4(10^3) + 0(10^2) + 6(10^1) + 8(10^0) + 2(10^{-1}) + 5(10^{-2}) + 7(10^{-3})`, key: true },
     {
       kind: "p",
-      text: String.raw`The GRE names digits by their place: in $4{,}068.257$ the [[tens-digit|tens digit]] is 6, the [[tenths-digit|tenths digit]] is 2, the [[hundredths-digit|hundredths digit]] is 5 and the [[thousandths-digit|thousandths digit]] is 7. Notice the near-twins: _tens_ (left of the point) and _tenths_ (right of the point) are different places. Click the digits below to see each place and its value.`,
+      text: String.raw`The GRE names digits by their place: in $4{,}068.257$ the [[units-digit|ones (units) digit]] is 8, the [[tens-digit|tens digit]] is 6, the [[tenths-digit|tenths digit]] is 2, the [[hundredths-digit|hundredths digit]] is 5 and the [[thousandths-digit|thousandths digit]] is 7. Notice the near-twins: _tens_ (left of the point) and _tenths_ (right of the point) are different places. Click the digits below to see each place and its value.`,
     },
     {
       kind: "interactive",

@@ -430,13 +430,14 @@ const section: Section = {
       {
         id: "z9",
         type: "ne",
-        difficulty: "easy",
-        stem: String.raw`A recipe uses flour and sugar in the ratio 7 to 2 by weight. If 945 grams of flour are used, how many grams of sugar are needed?`,
-        answer: { kind: "decimal", value: "270" },
+        difficulty: "medium",
+        stem: String.raw`A mixture contains only flour and sugar, in the ratio 7 to 2 by weight. How many grams of sugar must be added to 945 grams of the mixture so that the ratio of flour to sugar by weight becomes 3 to 2?`,
+        answer: { kind: "decimal", value: "280" },
         suffix: "grams",
         explanation: [
-          String.raw`Proportion: $\frac{945}{s} = \frac{7}{2}$, so $7s = 2 \cdot 945 = 1{,}890$ and $s = 270$.`,
-          String.raw`Or with parts: 7 parts are 945 grams, so one part is 135 grams and 2 parts are 270 grams.`,
+          String.raw`The mixture has $7 + 2 = 9$ parts, so one part is $945 \div 9 = 105$ grams: $735$ grams of flour and $210$ grams of sugar.`,
+          String.raw`Only sugar is added, so the flour stays $735$ grams. For a $3$ to $2$ ratio the sugar must be $735 \cdot \frac{2}{3} = 490$ grams.`,
+          String.raw`Sugar to add: $490 - 210 = 280$ grams. Trap: scaling the whole 945 grams to 3:2 (sugar $= 378$) forgets that the flour cannot change.`,
         ],
       },
       {

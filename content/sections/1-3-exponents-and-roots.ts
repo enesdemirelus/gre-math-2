@@ -412,14 +412,16 @@ x > 1: & \tfrac{1}{x} < 1 < \sqrt{x} < x < x^2 < x^3
       {
         id: "z1",
         type: "qc",
-        difficulty: "easy",
+        difficulty: "hard",
+        given: String.raw`$n$ is a positive integer.`,
         quantityA: String.raw`$-3^4$`,
-        quantityB: String.raw`$(-3)^3$`,
-        answer: "B",
+        quantityB: String.raw`$(-3)^{2n+1}$`,
+        answer: "D",
         explanation: [
-          String.raw`Quantity A: exponentiation comes before negation, so $-3^4 = -(3^4) = -81$.`,
-          String.raw`Quantity B: an odd power of a negative number is negative, $(-3)^3 = -27$.`,
-          String.raw`$-27 > -81$, so Quantity B is greater. Trap: reading $-3^4$ as $(-3)^4 = 81$ gives (A).`,
+          String.raw`Quantity A: exponentiation comes before negation, so $-3^4 = -(3^4) = -81$. (Reading it as $(-3)^4 = 81$ is the classic trap.)`,
+          String.raw`Quantity B: $2n + 1$ is odd, and an odd power of a negative number is negative, so $(-3)^{2n+1} = -3^{2n+1}$. Its absolute value grows with $n$.`,
+          String.raw`$n = 1$: Quantity B is $(-3)^3 = -27 > -81$, so B is greater. $n = 2$: Quantity B is $(-3)^5 = -243 < -81$, so A is greater.`,
+          String.raw`Both orders are possible, so the relationship cannot be determined.`,
         ],
       },
       {
