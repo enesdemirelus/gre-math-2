@@ -30,7 +30,7 @@ const section: Section = {
     { kind: "heading", text: "Factors, multiples and divisibility" },
     {
       kind: "p",
-      text: String.raw`When integers are multiplied, each of them is a [[factor]] (or **divisor**) of the product, the product is a [[multiple]] of each of them, and the product is [[divisible]] by each of them (MR p. 3). Since $(4)(15) = 60$, both $4$ and $15$ are factors of $60$, and $60$ is a multiple of both. These words are reserved for integers (MC p. 4).`,
+      text: String.raw`When integers are multiplied, each of them is a [[factor]] (or **divisor**) of the product, the product is a [[multiple]] of each of them, and the product is [[divisible]] by each of them (MR p. 3). Since $(4)(15) = 60$, both $4$ and $15$ are factors of $60$, and $60$ is a multiple of both. The words factor, divisor and divisible are used only for integers; _multiple_ can also describe real numbers, as long as the multiplier is an integer (for example, $1.2$ is a multiple of $0.4$) (MC p. 5).`,
     },
     {
       kind: "p",
@@ -249,8 +249,8 @@ const section: Section = {
       id: "multiple",
       term: "multiple",
       turkish: "kat",
-      definition: String.raw`An integer $t$ is a multiple of each of its factors: if $rs = t$ for integers $r$ and $s$, then $t$ is a multiple of $r$ and of $s$. Every nonzero integer has infinitely many multiples, and 0 is a multiple of every integer.`,
-      source: "MR pp. 3–4; MC p. 4",
+      definition: String.raw`An integer $t$ is a multiple of each of its factors: if $rs = t$ for integers $r$ and $s$, then $t$ is a multiple of $r$ and of $s$. Every nonzero integer has infinitely many multiples, and 0 is a multiple of every integer. On the GRE, "multiple" can also be used with real numbers: $t$ is a multiple of $s$ if $t = rs$ for an integer $r$ (e.g. $-2\pi$ is a multiple of $\pi$).`,
+      source: "MR pp. 3–4; MC pp. 4–5",
     },
     {
       id: "divisible",
@@ -328,7 +328,7 @@ const section: Section = {
     {
       id: "composite",
       term: "composite number",
-      turkish: "asal olmayan sayı / bileşik sayı",
+      turkish: "bileşik sayı",
       definition: String.raw`An integer greater than 1 that is not a prime number. The first ten are 4, 6, 8, 9, 10, 12, 14, 15, 16, 18.`,
       source: "MR p. 7; MC p. 5",
     },
