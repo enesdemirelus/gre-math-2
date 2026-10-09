@@ -531,15 +531,15 @@ const section: Section = {
       {
         id: "z8",
         type: "mcm",
-        difficulty: "medium",
-        stem: String.raw`A company's cost to produce $x$ units of a gadget is \$5,000 plus \$8 per unit, and each unit is sold for \$18. If all $x$ units produced are sold, which of the following values of $x$ give a profit of at least \$2,000? Indicate all such values.`,
-        choices: [String.raw`$500$`, String.raw`$650$`, String.raw`$699$`, String.raw`$700$`, String.raw`$750$`, String.raw`$1{,}000$`],
+        difficulty: "hard",
+        stem: String.raw`A company's cost to produce $x$ units of a gadget is \$5,000 plus \$8 per unit, and each unit sold brings in \$18. If only 90 percent of the $x$ units produced are sold, which of the following values of $x$ give a profit of at least \$2,000? Indicate all such values.`,
+        choices: [String.raw`$700$`, String.raw`$800$`, String.raw`$850$`, String.raw`$860$`, String.raw`$900$`, String.raw`$1{,}000$`],
         answer: [3, 4, 5],
         explanation: [
-          String.raw`Profit $=$ revenue $-$ cost $= 18x - (5{,}000 + 8x) = 10x - 5{,}000$.`,
-          String.raw`$10x - 5{,}000 \ge 2{,}000$ gives $x \ge 700$.`,
-          String.raw`So 700, 750 and 1,000 work. At $x = 699$ the profit is \$1,990, just short.`,
-          String.raw`Trap: dividing \$2,000 by the \$10 margin per unit gives 200 and ignores the fixed \$5,000.`,
+          String.raw`Revenue comes only from the units sold: $18(0.9x) = 16.2x$. The cost is for every unit produced: $5{,}000 + 8x$.`,
+          String.raw`Profit $= 16.2x - (5{,}000 + 8x) = 8.2x - 5{,}000$. Setting $8.2x - 5{,}000 \ge 2{,}000$ gives $x \ge \frac{7{,}000}{8.2} \approx 853.7$.`,
+          String.raw`So 860, 900 and 1,000 work. At $x = 850$ the profit is $8.2(850) - 5{,}000 = \$1{,}970$, just short.`,
+          String.raw`Trap: charging revenue on all $x$ units gives $10x - 5{,}000 \ge 2{,}000$, so $x \ge 700$, and wrongly includes 700, 800 and 850.`,
         ],
       },
       {
