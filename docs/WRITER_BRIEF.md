@@ -33,6 +33,7 @@ You write the complete content for one or two sections of the GRE Quant review s
 - Turkish terms must be the standard MEB textbook terms. When unsure between two, give both separated by " / ".
 - Figure labels must not touch lines. Offset point labels away from the figure.
 - Do not reuse the MR's own example numbers anywhere (lesson, terms, quick questions): reviewers flag copied ETS examples. Use new numbers for the same idea.
+- Quiz: NO "easy" items. Reviewers reject any quiz question solvable in under 30 seconds with one routine step (pure substitution, one distribute-and-solve, a single proportion). Every quiz item needs a twist: a case split, a trap, a combined condition, or two linked steps.
 - Keep inline math short. Put long equations in `math` blocks, which scroll on mobile; long inline math gets clipped on phones.
 
 ## Verification before you finish (required)
