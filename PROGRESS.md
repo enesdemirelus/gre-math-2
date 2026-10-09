@@ -13,15 +13,15 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 1.5 Real Numbers | done | content: 4 fixed (|a−b| labeled as not MR, notes, copied examples); questions: clean |
 | 1.6 Ratio | done | content: 4 fixed (notation, citation, copied examples, Turkish); questions: 1 too-easy item replaced |
 | 1.7 Percent | done | content: 3 fixed (Turkish ×2, citation); questions: 1 fixed (z1 too easy → replaced) |
-| 2.1 Algebraic Expressions | queued | |
+| 2.1 Algebraic Expressions | reviewing |
 | 2.2 Rules of Exponents | done | content: 8 fixed (non-integer exponents labeled, term links, Turkish, copied examples, drill scoring bug); questions: clean |
-| 2.3 Solving Linear Equations | queued | |
-| 2.4 Solving Quadratic Equations | queued | |
-| 2.5 Solving Linear Inequalities | queued | |
-| 2.6 Functions | queued | |
-| 2.7 Applications | queued | |
-| 2.8 Coordinate Geometry | queued | |
-| 2.9 Graphs of Functions | queued | |
+| 2.3 Solving Linear Equations | reviewing |
+| 2.4 Solving Quadratic Equations | reviewing |
+| 2.5 Solving Linear Inequalities | reviewing |
+| 2.6 Functions | writing |
+| 2.7 Applications | done | content: 8 fixed (copied MR stories/numbers, revenue note, work-rate bound); questions: 1 too-easy item made harder |
+| 2.8 Coordinate Geometry | writing |
+| 2.9 Graphs of Functions | writing |
 | 3.1 Lines and Angles | queued | |
 | 3.2 Polygons | queued | |
 | 3.3 Triangles | queued | |
