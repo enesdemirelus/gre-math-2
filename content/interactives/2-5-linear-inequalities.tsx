@@ -290,7 +290,7 @@ export function InequalityBuilder() {
         <div>
           {empty ? (
             <span>
-              <strong>Solution set: empty.</strong> No number is greater than the right end and less than the left end at the same time.
+              <strong>Solution set: empty.</strong> No value of ax + b can be greater than (or equal to) the left end and less than (or equal to) the right end at the same time, because the left end is not less than the right end.
             </span>
           ) : (
             <span>

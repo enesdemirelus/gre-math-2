@@ -92,7 +92,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`In the [[elimination]] method, multiply the equations by constants so that one variable has the same coefficient in both, then add or subtract the equations to make it disappear (MR p. 47). For the same system, multiply the first equation by 2 to get $6x - 4y = 32$. Now the $y$-terms of $6x - 4y = 32$ and $x + 4y = -4$ are $-4y$ and $+4y$, so adding the equations eliminates $y$: $7x = 28$, $x = 4$, and then $y = -2$ from either equation. (Multiplying the second equation by 3 and subtracting would eliminate $x$ instead; either way works.)`,
+      text: String.raw`In the [[elimination]] method, multiply the equations by constants so that one variable has the same coefficient in both equations (or coefficients that are opposites), then subtract (or add) the equations to make it disappear (MR p. 47). For the same system, multiply the first equation by 2 to get $6x - 4y = 32$. Now the $y$-terms of $6x - 4y = 32$ and $x + 4y = -4$ are $-4y$ and $+4y$, so adding the equations eliminates $y$: $7x = 28$, $x = 4$, and then $y = -2$ from either equation. (Multiplying the second equation by 3 and subtracting would eliminate $x$ instead; either way works.)`,
     },
     {
       kind: "aside",
@@ -117,7 +117,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The picture makes this obvious. The solution of a system is the point where the two graphs intersect (MR p. 67). Two lines with different slopes cross at exactly one point; two different lines with equal slopes are parallel (MR p. 65) and never meet; and two equations that describe the same line share all their points. (That parallel lines never meet and non-parallel lines meet once is a standard fact, though not stated in the ETS Math Review; the elimination argument above shows the same thing algebraically.)`,
+      text: String.raw`The picture makes this obvious. The solution of a system is the point where the two graphs intersect (MR p. 67). Two lines with different slopes cross at exactly one point; two different lines with equal slopes are parallel (MR p. 65) and never meet; and two equations that describe the same line share all their points. (Parallel lines are lines in the same plane that do not intersect, MR p. 94. That two lines with different slopes meet at exactly one point is a standard fact, though not stated in the ETS Math Review; the elimination argument above shows the same thing algebraically.)`,
     },
     {
       kind: "diagram",
@@ -265,7 +265,7 @@ const section: Section = {
       id: "elimination",
       term: "elimination method",
       turkish: "yok etme yöntemi",
-      definition: String.raw`A method for solving a system: make the coefficients of one variable the same in both equations, then add the equations or subtract one from the other so that this variable is eliminated.`,
+      definition: String.raw`A method for solving a system: make the coefficients of one variable the same in both equations (or opposites), then subtract one equation from the other (or add them) so that this variable is eliminated.`,
       source: "MR p. 47",
     },
   ],
@@ -470,22 +470,16 @@ const section: Section = {
       {
         id: "z7",
         type: "mcm",
-        difficulty: "easy",
-        stem: String.raw`Which of the following ordered pairs $(x, y)$ are solutions of the equation $3x - 4y = 10$? Indicate all such ordered pairs.`,
-        choices: [
-          String.raw`$(-2, -4)$`,
-          String.raw`$(0, 2.5)$`,
-          String.raw`$(2, -1)$`,
-          String.raw`$\left(\frac{10}{3}, 0\right)$`,
-          String.raw`$(4, 1)$`,
-          String.raw`$(6, 2)$`,
-        ],
-        answer: [0, 2, 3, 5],
+        difficulty: "medium",
+        stem: String.raw`The positive integers $x$ and $y$ satisfy $4x + 7y = 100$. Which of the following could be the value of $x$? Indicate all such values.`,
+        choices: [String.raw`$4$`, String.raw`$7$`, String.raw`$11$`, String.raw`$15$`, String.raw`$18$`, String.raw`$25$`],
+        answer: [0, 2, 4],
         explanation: [
-          String.raw`Substitute each pair, $x$ first: $3(-2) - 4(-4) = -6 + 16 = 10$ yes.`,
-          String.raw`$3(0) - 4(2.5) = -10$, no (the sign is wrong; $(0, -2.5)$ would work).`,
-          String.raw`$3(2) - 4(-1) = 10$ yes; $3\left(\frac{10}{3}\right) - 0 = 10$ yes; $12 - 4 = 8$ no; $18 - 8 = 10$ yes.`,
-          String.raw`A single linear equation in two variables has infinitely many solutions, so finding four among the choices is no surprise.`,
+          String.raw`One equation in two unknowns has infinitely many solutions, so the extra condition (both numbers are positive integers) does all the work. Solve for $y$: $y = \frac{100 - 4x}{7}$, which must be a positive integer.`,
+          String.raw`$x = 4$: $y = \frac{84}{7} = 12$. Yes. $x = 11$: $y = \frac{56}{7} = 8$. Yes. $x = 18$: $y = \frac{28}{7} = 4$. Yes.`,
+          String.raw`$x = 7$ and $x = 15$ give $100 - 4x = 72$ and $40$, which are not multiples of 7, so $y$ is not an integer.`,
+          String.raw`$x = 25$ is the trap: it gives $y = 0$, an integer but not a positive one.`,
+          String.raw`(Shortcut: $4x = 100 - 7y$ needs $7y$ to be a multiple of 4, so $y$ is a multiple of 4: $y = 4, 8, 12$ gives $x = 18, 11, 4$, and $y = 16$ already makes $x$ negative.)`,
         ],
       },
       {
@@ -506,12 +500,13 @@ const section: Section = {
         id: "z9",
         type: "ne",
         difficulty: "medium",
-        stem: String.raw`What value of $x$ satisfies the equation $5(x - 3) - 2(3x - 4) = 4 - 3x$?`,
-        answer: { kind: "decimal", value: "5.5" },
+        stem: String.raw`The constant $k$ is chosen so that $x = 2$ is a solution of the equation $5(x - 3) - 2(3x - 4) = k - 3x$. What value of $x$ satisfies the equation $k(x + 1) = 2x - 9$?`,
+        answer: { kind: "decimal", value: "1.2" },
         explanation: [
-          String.raw`Distribute: $5x - 15 - 6x + 8 = 4 - 3x$, so $-x - 7 = 4 - 3x$.`,
-          String.raw`Add $3x$ and $7$ to both sides: $2x = 11$, so $x = 5.5$.`,
-          String.raw`Check: left side $5(2.5) - 2(12.5) = 12.5 - 25 = -12.5$; right side $4 - 16.5 = -12.5$.`,
+          String.raw`First find $k$ by substituting $x = 2$ into the first equation: $5(-1) - 2(2) = k - 6$, so $-9 = k - 6$ and $k = -3$.`,
+          String.raw`Now the second equation reads $-3(x + 1) = 2x - 9$, that is, $-3x - 3 = 2x - 9$.`,
+          String.raw`Add $3x$ and $9$ to both sides: $6 = 5x$, so $x = \frac{6}{5} = 1.2$.`,
+          String.raw`Check: $-3(2.2) = -6.6$ and $2(1.2) - 9 = -6.6$. (A sign slip that gives $k = 3$ leads to $3x + 3 = 2x - 9$, so $x = -12$.)`,
         ],
       },
       {
