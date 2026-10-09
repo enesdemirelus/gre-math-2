@@ -70,7 +70,7 @@ The topic list is the MR's own table of contents: 28 sections. The sidebar also 
 
 ## 3. Content outline per section
 
-Every section page follows the same five parts in order: **Recall**, **Vocabulary**, **Worked examples**, **Quick questions**, **Chapter quiz**. The outline below lists what each section's Recall and Vocabulary cover, and what its quiz focuses on.
+Every section page follows the same five parts in order: **Lesson** (Recall), **Vocabulary**, **Worked examples**, **Quick questions**, **Chapter quiz**. The outline below lists what each section's lesson and Vocabulary cover, and what its quiz focuses on. "Recall" in the outline means the topics the lesson teaches, not a bullet list.
 
 ### Arithmetic
 - **1.1 Integers.** Recall: factors and multiples; the facts about 0 and 1; LCM and GCD; quotient and remainder with $0 \le r < d$, including negative dividends; even/odd sum and product rules; primes (> 1; 2 is the only even prime); prime factorization; composite numbers. Vocab: integer, factor/divisor, multiple, divisible, LCM, GCD/GCF, quotient, remainder, even, odd, prime, prime factorization, composite. Quiz: remainders, divisibility, counting factors, parity, consecutive integers.
@@ -116,8 +116,8 @@ Terms not used by the MR in Part 4 (z-score, least squares, conditional probabil
 
 | Part | Content | Size |
 |---|---|---|
-| 1. Recall | Short bullet groups of key facts and formulas in KaTeX, each cited to its MR/MC page (e.g. "MR p. 40"). Each section ends with a "Watch out" list of traps. | ~1 screen |
-| 2. Vocabulary | A term list (term, short definition, optional formula, and a diagram for geometry). Practice in two modes: **Flashcards** (flip, shuffle, mark known/unknown, term→definition or definition→term) and **Matching** (pair 6 terms with 6 definitions per round). | 6–20 terms |
+| 1. Lesson (Recall) | A friendly, textbook-style lesson in prose, not bullet points. It is structured into short subsections that build on each other. It assumes you already know the math and teaches it the way the GRE uses it: the key ideas, formulas in KaTeX (with display formulas for the important ones), small inline examples, diagrams, and "watch out" asides for traps. Facts are cited to the MR/MC page. Every vocabulary word in the text has a **blue outline**; hovering it (or tapping it on touch screens) shows the English definition and the proper Turkish math term. The Turkish is the term a Turkish textbook uses (e.g. *chord → kiriş*, *circle → çember*, with *daire* for the region it encloses), not a word-for-word translation. | ~2–4 screens |
+| 2. Vocabulary | A term list (term, Turkish term, short definition, optional formula, and a diagram for geometry). Practice in two modes: **Flashcards** (flip, shuffle, mark known/unknown, term→definition or definition→term; the back shows the Turkish term too) and **Matching** (pair 6 terms with 6 definitions per round). | 6–20 terms |
 | 3. Worked examples | GRE-format questions with step-by-step solutions that are hidden until you click "Show solution". The set covers at least 3 of the 4 question types. | 3–4 |
 | 4. Quick questions | Short recall checks (e.g. "Remainder when −17 is divided by 5?"), each with a reveal button. | 5–6 |
 | 5. Chapter quiz | 10 GRE-level questions (medium to hard). Mix per quiz: ~3 Quantitative Comparison, ~3 Multiple Choice (one answer, 5 choices), ~2 Multiple Choice (one or more answers, "Indicate all such…"), ~2 Numeric Entry (integer/decimal box, or fraction with two boxes). You answer all ten, then submit. The results page shows the score, your answer vs. the correct answer, and an explanation for every question. Answers are compared exactly; equivalent fractions are accepted as on the real test. | 10 |
@@ -150,7 +150,7 @@ All questions are original, modeled on the format in QRS and on the QR page, wit
 - **Style:** one sans-serif font, a neutral palette, light and dark modes, no decoration. Content width is ~760px. The quiz shows one question per card, with the Quantity A / Quantity B columns in the ETS layout.
 - **State:** quiz answers live in memory. Flashcard "known" marks and best quiz scores are kept in `localStorage`, which is optional; the site works without it.
 
-## 6. Decisions to confirm
+## 6. Decisions (confirmed)
 
 1. **Terms that are on the GRE but not in the MR.** The MR never names *supplementary/complementary angles, transversal, rhombus, inscribed angle, minor/major arc, discriminant, midpoint formula, distance formula*. ETS works the same ideas with other wording. **Proposal:** include a few of these in Vocabulary with the label *"not named in the ETS Math Review"*, because they appear in prep material and in question wording. Recall facts will stay strictly within the MR. The alternative is to leave them out entirely.
 2. **Calculator:** the real test has an on-screen calculator. Quiz explanations will note when a calculator helps, but the site will not include one.
@@ -170,7 +170,7 @@ All questions are original, modeled on the format in QRS and on the QR page, wit
 | 5 | Final build, browser check of every section with screenshots, short report | Sonnet (screens), main (report) |
 
 ### Verification for each section (fresh-context subagents, Opus)
-- **Content reviewer:** gets the section data file, the source notes, and the PDFs. Checks every definition, formula, convention, and notation against MR/MC. Reports each mismatch with the MR/MC page it conflicts with. Reports correctness and requirement gaps only, not style.
+- **Content reviewer:** gets the section data file, the source notes, and the PDFs. Checks every definition, formula, convention, and notation against MR/MC, and checks that each Turkish term is the standard Turkish mathematical term. Reports each mismatch with the MR/MC page it conflicts with. Reports correctness and requirement gaps only, not style.
 - **Question reviewer:** gets the *exported questions without keys*. Solves every worked example and quiz question independently, then compares with the key file. Flags wrong keys, ambiguous wording, more than one defensible answer, off-format questions, out-of-scope math, and questions too easy for GRE medium–hard.
 - **Automated checks:** `check-content` (structure, types, KaTeX parse) and `next build` must pass.
 - Fixes are made, then reviewed again by a new reviewer until it reports nothing.
