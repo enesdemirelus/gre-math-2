@@ -96,7 +96,7 @@ export function ParabolaFigure({ highlight = "all" }: { highlight?: Highlight })
   return (
     <svg viewBox="0 0 270 330" width={270} role="img" aria-label="Parabola y equals x squared minus 6x plus 5">
       <Axes w={w} tickLabels={[1, 3, 5]} yTickLabels={[5]} />
-      {on("axis") && <line x1={vx} y1={toY(w, w.ymax)} x2={vx} y2={toY(w, w.ymin)} className="dg-line dg-dashed dg-thin" />}
+      {on("axis") && <line x1={vx} y1={toY(w, w.ymax)} x2={vx} y2={toY(w, w.ymin)} className={highlight === "axis" ? "dg-accent dg-dashed" : "dg-line dg-dashed dg-thin"} />}
       <path d={parabolaPath(w, 1, -6, 5)} className={highlight === "parabola" || highlight === "all" ? "dg-accent" : "dg-line"} />
       {on("intercepts") && (
         <g>

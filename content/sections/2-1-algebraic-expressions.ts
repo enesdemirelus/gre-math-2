@@ -6,7 +6,7 @@ const section: Section = {
   title: "Algebraic Expressions",
   part: "algebra",
   mrPages: "36–40",
-  summary: String.raw`The vocabulary of algebra (terms, coefficients, degree), the routine moves (combine, factor, multiply out, cancel), and the seven identities that let you rewrite an expression into the form a GRE question is secretly asking about.`,
+  summary: String.raw`The vocabulary of algebra (terms, coefficients, degree), the routine moves (combine, factor, multiply out, cancel), and seven key identities that let you rewrite an expression into the form a GRE question is secretly asking about.`,
 
   lesson: [
     /* ---------------------------------------------------------------- */
@@ -54,7 +54,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Second, a number or variable that is a factor of every term can be [[factoring|factored out]]: $10x + 15 = 5(x + 3)$, and $6a^2b - 9ab^2 = 3ab(2a - 3b)$. This is the distributive identity $ca + cb = c(a + b)$ read from right to left (MR p. 38). On the GRE, factoring out is often the whole trick: $\frac{x^2 + 5x}{x}$ is just $x + 5$ once you see the common factor $x$ (for $x \ne 0$).`,
+      text: String.raw`Second, a number or variable that is a factor of every term can be [[factoring|factored out]]: $10x + 15 = 5(x + 3)$, and $6a^2b - 9ab^2 = 3ab(2a - 3b)$. This is the distributive identity $ca + cb = c(a + b)$ read from right to left (MR pp. 38–39). On the GRE, factoring out is often the whole trick: $\frac{x^2 + 5x}{x}$ is just $x + 5$ once you see the common factor $x$ (for $x \ne 0$).`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -85,7 +85,7 @@ const section: Section = {
       kind: "diagram",
       diagram: {
         key: "2-1-algebraic-expressions/product-grid",
-        caption: String.raw`$(2x - 3)(x + 4) = 2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12$. The two shaded cells are the like terms that combine.`,
+        caption: String.raw`$(2x - 3)(x + 4) = 2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12$. The two accent-colored cells are the like terms that combine.`,
       },
     },
     {
@@ -96,10 +96,10 @@ const section: Section = {
     },
 
     /* ---------------------------------------------------------------- */
-    { kind: "heading", text: "The seven identities" },
+    { kind: "heading", text: "Seven key identities" },
     {
       kind: "p",
-      text: String.raw`An [[identity]] is an equation between two expressions that is true for _all_ values of the variables (MR p. 39). The Math Review lists seven. The first two are factoring out a common factor; the rest are worth knowing in both directions, because the GRE uses them to expand and, even more often, to factor.`,
+      text: String.raw`An [[identity]] is an equation between two expressions that is true for _all_ values of the variables (MR p. 39). The Math Review gives seven examples of identities. The first two are factoring out a common factor; the rest are worth knowing in both directions, because the GRE uses them to expand and, even more often, to factor.`,
     },
     {
       kind: "math",
@@ -120,7 +120,7 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       diagram: {
         key: "2-1-algebraic-expressions/area-model",
         props: { mode: "sum" },
-        caption: String.raw`$(a + b)^2 = a^2 + 2ab + b^2$: the shaded rectangles are the $2ab$ that $a^2 + b^2$ leaves out.`,
+        caption: String.raw`$(a + b)^2 = a^2 + 2ab + b^2$: the two accent-colored rectangles are the $2ab$ that $a^2 + b^2$ leaves out.`,
       },
     },
     {
@@ -146,7 +146,7 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
     { kind: "heading", text: "How the GRE uses the identities" },
     {
       kind: "p",
-      text: String.raw`**Simplifying.** The Math Review's own use is in fractions: factor the numerator and the denominator with the identities, then cancel (MR p. 40). For instance, $\frac{x^2 - 16}{2x - 8} = \frac{(x+4)(x-4)}{2(x-4)} = \frac{x+4}{2}$ for all $x \ne 4$.`,
+      text: String.raw`**Simplifying.** The Math Review's own use is in fractions: factor the numerator and the denominator with the identities, then cancel (MR p. 40). For instance, $\frac{x^2 - 49}{2x + 14} = \frac{(x+7)(x-7)}{2(x+7)} = \frac{x-7}{2}$ for all $x \ne -7$.`,
     },
     {
       kind: "p",
@@ -198,7 +198,7 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       id: "algebraic-expression",
       term: "algebraic expression",
       turkish: "cebirsel ifade",
-      definition: String.raw`An expression that has one or more variables and can be written as a single term or as a sum of terms, e.g. $2x$, $y - \frac{1}{4}$, $\frac{8}{n + p}$.`,
+      definition: String.raw`An expression that has one or more variables and can be written as a single term or as a sum of terms, e.g. $5k$, $m + \frac{2}{3}$, $\frac{9}{r - s}$.`,
       source: "MR p. 36",
     },
     {
@@ -212,7 +212,7 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       id: "like-terms",
       term: "like terms",
       turkish: "benzer terimler",
-      definition: String.raw`Terms that have the same variables, with the corresponding variables raised to the same exponents, e.g. $5z^2$ and $-z^2$. Like terms are combined by adding their coefficients.`,
+      definition: String.raw`Terms that have the same variables, with the corresponding variables raised to the same exponents, e.g. $3t^4$ and $-8t^4$. Like terms are combined by adding their coefficients.`,
       source: "MR pp. 36, 38",
     },
     {
@@ -226,7 +226,7 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       id: "coefficient",
       term: "coefficient",
       turkish: "katsayı",
-      definition: String.raw`The number that is multiplied by the variables in a term; in $-7xy^3$ the coefficient is $-7$.`,
+      definition: String.raw`The number that is multiplied by the variables in a term; in $-4a^2b^5$ the coefficient is $-4$.`,
       source: "MR pp. 36–37",
     },
     {
@@ -241,7 +241,7 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       term: "degree (of a term)",
       turkish: "terimin derecesi",
       definition: String.raw`The sum of the exponents of the variables in the term. A variable written without an exponent has degree 1; a constant term has degree 0.`,
-      formula: String.raw`-7xy^3:\ \text{degree } 1 + 3 = 4`,
+      formula: String.raw`-4a^2b^5:\ \text{degree } 2 + 5 = 7`,
       source: "MR p. 37",
     },
     {
@@ -262,21 +262,21 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       id: "cubic-polynomial",
       term: "cubic polynomial",
       turkish: "üçüncü dereceden polinom",
-      definition: String.raw`A polynomial of degree 3, such as $4x^3 - 12x^2 - x + 36$.`,
+      definition: String.raw`A polynomial of degree 3, such as $2x^3 + x^2 - 9x + 5$.`,
       source: "MR pp. 37–38",
     },
     {
       id: "factoring",
       term: "factor out (factoring)",
       turkish: "ortak çarpan parantezine alma / çarpanlarına ayırma",
-      definition: String.raw`Rewriting an expression as a product. A number or variable that is a factor of each term can be factored out: $15y^2 - 9y = 3y(5y - 3)$.`,
+      definition: String.raw`Rewriting an expression as a product. A number or variable that is a factor of each term can be factored out: $14t^2 - 21t = 7t(2t - 3)$.`,
       source: "MR p. 38",
     },
     {
       id: "rational-expression",
       term: "rational expression",
       turkish: "rasyonel ifade",
-      definition: String.raw`A fraction whose numerator and denominator are polynomials, such as $\frac{7x^2 + 14x}{2x + 4}$. It is simplified by factoring and canceling common factors, for the values where it is defined.`,
+      definition: String.raw`A fraction whose numerator and denominator are polynomials, such as $\frac{5x^2 - 15x}{4x - 12}$. It is simplified by factoring and canceling common factors, for the values where it is defined.`,
       note: "Not named in the ETS Math Review",
       source: "MR pp. 38–40",
     },
@@ -284,14 +284,15 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
       id: "undefined",
       term: "undefined (not defined)",
       turkish: "tanımsız",
-      definition: String.raw`A fraction is not defined when its denominator is equal to 0. $\frac{7x^2 + 14x}{2(x + 2)}$ is defined for all $x \ne -2$.`,
+      definition: String.raw`A fraction is not defined when its denominator is equal to 0. $\frac{5x^2 - 15x}{4(x - 3)}$ is defined for all $x \ne 3$.`,
       source: "MR p. 39; MC p. 7",
     },
     {
       id: "equivalent-expressions",
       term: "equivalent (expressions)",
       turkish: "denk ifadeler / eşdeğer ifadeler",
-      definition: String.raw`Two expressions are equivalent if they are equal for every value of the variable for which both are defined; canceling a common factor gives an equivalent fraction for those values.`,
+      definition: String.raw`Said of a simplified form that equals the original expression for every value of the variable for which the original expression is defined (MR pp. 38–40).`,
+      note: "Not defined in the ETS Math Review",
       source: "MR pp. 38–40",
     },
     {
@@ -404,9 +405,9 @@ a^2 - b^2 &= (a+b)(a-b) & &\\[2pt]
     },
     {
       id: "q3",
-      prompt: String.raw`Simplify $3ab + 2a - ab - 5a$.`,
-      answer: String.raw`$2ab - 3a$`,
-      explanation: String.raw`Combine like terms: $3ab - ab = 2ab$ and $2a - 5a = -3a$.`,
+      prompt: String.raw`Simplify $5pq - 4q - 2pq + 7q$.`,
+      answer: String.raw`$3pq + 3q$`,
+      explanation: String.raw`Combine like terms: $5pq - 2pq = 3pq$ and $-4q + 7q = 3q$.`,
     },
     {
       id: "q4",

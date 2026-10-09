@@ -15,9 +15,9 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 1.7 Percent | done | content: 3 fixed (Turkish ×2, citation); questions: 1 fixed (z1 too easy → replaced) |
 | 2.1 Algebraic Expressions | reviewing |
 | 2.2 Rules of Exponents | done | content: 8 fixed (non-integer exponents labeled, term links, Turkish, copied examples, drill scoring bug); questions: clean |
-| 2.3 Solving Linear Equations | reviewing |
+| 2.3 Solving Linear Equations | done | content: 2 fixed (parallel-lines citation, elimination wording); questions: 2 too-easy items replaced |
 | 2.4 Solving Quadratic Equations | reviewing |
-| 2.5 Solving Linear Inequalities | reviewing |
+| 2.5 Solving Linear Inequalities | done | content: 3 fixed (copied MR numbers in terms, explorer message); questions: 1 too-easy item replaced |
 | 2.6 Functions | writing |
 | 2.7 Applications | done | content: 8 fixed (copied MR stories/numbers, revenue note, work-rate bound); questions: 1 too-easy item made harder |
 | 2.8 Coordinate Geometry | writing |

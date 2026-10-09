@@ -21,7 +21,7 @@ const exact2 = (v: number) => Math.abs(v * 100 - Math.round(v * 100)) < 1e-9;
 const eq = (v: number) => (exact2(v) ? "=" : "\\approx");
 
 const PRESETS: { label: string; a: number; b: number; c: number }[] = [
-  { label: "Two solutions", a: 1, b: -1, c: -6 },
+  { label: "Two solutions", a: 1, b: 1, c: -6 },
   { label: "One solution", a: 1, b: 6, c: 9 },
   { label: "No real solution", a: 1, b: 2, c: 3 },
   { label: "Opens downward", a: -0.5, b: 1, c: 4 },
@@ -29,7 +29,7 @@ const PRESETS: { label: string; a: number; b: number; c: number }[] = [
 
 export function QuadraticExplorer() {
   const [ai, setAi] = useState(A_VALUES.indexOf(1));
-  const [b, setB] = useState(-1);
+  const [b, setB] = useState(1);
   const [c, setC] = useState(-6);
   const a = A_VALUES[ai];
 
@@ -138,7 +138,7 @@ export function QuadraticExplorer() {
               : D === 0
                 ? "The parabola touches the x-axis only at its vertex."
                 : `The parabola stays entirely ${a > 0 ? "above" : "below"} the x-axis.`}{" "}
-            {a > 0 ? "a > 0, so it opens upward." : "a < 0, so it opens downward."} The dashed line of symmetry is x = {fmt(axisX).replace("-", "−")}.
+            {a > 0 ? "a > 0, so it opens upward." : "a < 0, so it opens downward."} The dashed line of symmetry is x {exact2(axisX) ? "=" : "≈"} {fmt(axisX).replace("-", "−")}.
             {offscreen ? " (A solution lies outside the window shown.)" : ""}
           </span>
         </div>

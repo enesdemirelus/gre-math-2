@@ -41,7 +41,8 @@ interface LineSpec {
   dashed?: boolean;
   thin?: boolean;
   label?: string; // upright text near the line
-  labelAt?: Pt; // plane coordinates of label center
+  labelAt?: Pt; // plane coordinates of label anchor
+  labelAnchor?: "start" | "middle" | "end";
 }
 
 interface SegSpec {
@@ -78,6 +79,8 @@ interface PlaneProps {
   quadrantLabels?: boolean;
   accentAxis?: "x" | "y" | "both";
   accentOrigin?: boolean;
+  skipX?: number[]; // x-axis numbers to omit (to avoid label collisions)
+  oSide?: "w" | "e"; // which side of the y-axis the origin label O goes
   label?: string;
 }
 
@@ -133,7 +136,7 @@ export function Plane(props: PlaneProps) {
     const hasYAxis = x[0] <= 0 && x[1] >= 0;
     if (hasXAxis)
       for (let i = Math.ceil(x[0]) + 1; i < x[1]; i++)
-        if (i !== 0 && i % every === 0)
+        if (i !== 0 && i % every === 0 && !(props.skipX ?? []).includes(i))
           nums.push(
             <text key={`nx${i}`} x={X(i)} y={Y(0) + 12} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 10 }}>
               {fmt(i)}
@@ -188,7 +191,7 @@ export function Plane(props: PlaneProps) {
       <g key={`l${i}`}>
         <line x1={X(a[0])} y1={Y(a[1])} x2={X(b[0])} y2={Y(b[1])} className={cls} />
         {l.label && l.labelAt && (
-          <text x={X(l.labelAt[0])} y={Y(l.labelAt[1])} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
+          <text x={X(l.labelAt[0])} y={Y(l.labelAt[1])} className={l.label.length === 1 ? "dg-label" : "dg-text"} textAnchor={l.labelAnchor ?? "middle"} dominantBaseline="central" style={{ fontSize: l.label.length === 1 ? 15 : 12 }}>
             {l.label}
           </text>
         )}
@@ -252,7 +255,7 @@ export function Plane(props: PlaneProps) {
       )}
       {nums}
       {showXAxis && showYAxis && (
-        <text x={ox - 8} y={oy + 11} className="dg-label" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
+        <text x={props.oSide === "e" ? ox + 8 : ox - 8} y={oy + 11} className="dg-label" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 13 }}>
           O
         </text>
       )}
@@ -435,7 +438,7 @@ export function Distance({ midpoint = false }: { midpoint?: boolean }) {
             ]
       }
       points={[
-        { at: A, name: "A", coords: true, dir: "w", off: 9 },
+        { at: A, name: "A", coords: true, dir: "sw", off: 8 },
         { at: B, name: "B", coords: true, dir: "w", off: 9 },
         { at: C, name: "C", coords: true, dir: "se", off: 7 },
         ...(midpoint ? [{ at: [1, 3] as Pt, name: "M", coords: true, dir: "se" as Dir, off: 8, accent: true }] : []),
@@ -467,7 +470,7 @@ export function SlopeFigure({ highlight = "all" }: { highlight?: SlopeHighlight 
     texts.push({ at: [1, -1.6], text: "run = 4" });
     texts.push({ at: [3.25, 2], text: "rise = 6", anchor: "start" });
   }
-  if (highlight === "y-intercept") texts.push({ at: [0.35, -0.5], text: "(0, 1/2)", anchor: "start" });
+  if (highlight === "y-intercept") texts.push({ at: [-0.35, 1.0], text: "(0, 1/2)", anchor: "end" });
   if (highlight === "x-intercept") texts.push({ at: [-0.6, 0.55], text: "(−1/3, 0)", anchor: "end" });
   return (
     <Plane
@@ -475,6 +478,7 @@ export function SlopeFigure({ highlight = "all" }: { highlight?: SlopeHighlight 
       y={[-3, 7]}
       u={22}
       every={2}
+      oSide="e"
       lines={[{ m: 1.5, k: 0.5, accent: highlight !== "y-intercept" && highlight !== "x-intercept" }]}
       segs={showTri ? [{ from: Pp, to: corner, dashed: true, thin: true }, { from: corner, to: Q, dashed: true, thin: true }] : []}
       rightAngles={showTri ? [{ v: corner, a: Pp, b: Q }] : []}
@@ -501,9 +505,9 @@ export function HorizVert({ highlight = "both" }: { highlight?: "both" | "horizo
 /* ------------------------------------------------------------------ */
 
 export function ParallelPerp({ highlight = "all" }: { highlight?: "all" | "parallel" | "perpendicular" }) {
-  const lines: LineSpec[] = [{ m: 2, k: -1, label: "y = 2x − 1", labelAt: [3.65, 4] }];
-  if (highlight !== "perpendicular") lines.push({ m: 2, k: 3, accent: highlight === "parallel", label: "y = 2x + 3", labelAt: [-3.55, -1.5] });
-  if (highlight !== "parallel") lines.push({ m: -0.5, k: 2, accent: highlight === "perpendicular", label: "y = −½x + 2", labelAt: [-2.3, 3.9] });
+  const lines: LineSpec[] = [{ m: 2, k: -1, label: "ℓ", labelAt: [3.25, 4.4] }];
+  if (highlight !== "perpendicular") lines.push({ m: 2, k: 3, accent: highlight === "parallel", label: "m", labelAt: [-3.35, -2.3] });
+  if (highlight !== "parallel") lines.push({ m: -0.5, k: 2, accent: highlight === "perpendicular", label: "n", labelAt: [-4.3, 3.6] });
   const I: Pt = [1.2, 1.4];
   return (
     <Plane
@@ -530,8 +534,8 @@ export function SystemFigure() {
       u={22}
       every={2}
       lines={[
-        { m: 2, k: -1, label: "y = 2x − 1", labelAt: [4.4, 6.3] },
-        { m: -1, k: 5, label: "y = −x + 5", labelAt: [-1.2, 5.3] },
+        { m: 2, k: -1, label: "y = 2x − 1", labelAt: [4.1, 6.2], labelAnchor: "start" },
+        { m: -1, k: 5, label: "y = −x + 5", labelAt: [5.9, -1.9], labelAnchor: "end" },
       ]}
       points={[{ at: [2, 3], coords: true, dir: "e", off: 10, accent: true }]}
       label="Two lines intersecting at (2, 3)"
@@ -571,7 +575,7 @@ export function InequalityFigure({ variant = "system" }: { variant?: "half-plane
         { m: -0.5, k: 3, label: "y = −½x + 3", labelAt: [-2.6, 5.4] },
         { m: 1, k: -3, label: "y = x − 3", labelAt: [5.1, 3.6] },
       ]}
-      points={[{ at: [4, 1], coords: true, dir: "e", off: 9 }]}
+      points={[{ at: [4, 1], coords: true, dir: "e", off: 20 }]}
       label="Solution region of y <= -x/2 + 3 and y >= x - 3"
     />
   );
@@ -588,15 +592,16 @@ export function SymmetryYX({ highlight = "all" }: { highlight?: "all" | "axis" }
       y={[-4, 7]}
       u={22}
       every={2}
+      skipX={[2]}
       lines={[
         { m: 1, k: 0, dashed: true, thin: true, accent: highlight === "axis", label: "y = x", labelAt: [6, 5.2] },
         { m: 3, k: -6, label: "y = 3x − 6", labelAt: [1.25, 5.4] },
-        { m: 1 / 3, k: 2, label: "y = ⅓x + 2", labelAt: [-2, 2.1] },
+        { m: 1 / 3, k: 2, label: "y = ⅓x + 2", labelAt: [6.9, 2.75], labelAnchor: "end" },
       ]}
       points={[
         { at: [2, 0], coords: true, dir: "se", off: 7 },
         { at: [0, 2], coords: true, dir: "nw", off: 7 },
-        { at: [3, 3], coords: true, dir: "e", off: 9, accent: highlight === "axis" },
+        { at: [3, 3], coords: true, dir: "se", off: 9, accent: highlight === "axis" },
       ]}
       label="y = 3x - 6 and its reflection about y = x"
     />
@@ -612,8 +617,8 @@ export function ParabolaFigure({ highlight = "all" }: { highlight?: "all" | "par
   const pts: PointSpec[] = [];
   if (highlight === "all" || highlight === "vertex") pts.push({ at: [3, -4], coords: true, dir: "se", off: 8, accent: highlight === "vertex" });
   if (highlight === "all" || highlight === "parabola") {
-    pts.push({ at: [1, 0], coords: true, dir: "nw", off: 6 });
-    pts.push({ at: [5, 0], coords: true, dir: "ne", off: 6 });
+    pts.push({ at: [1, 0], coords: true, dir: "ne", off: 6 });
+    pts.push({ at: [5, 0], coords: true, dir: "nw", off: 6 });
     pts.push({ at: [0, 5], coords: true, dir: "e", off: 8 });
   }
   return (
@@ -663,11 +668,11 @@ export function CircleFigure({ highlight = "all" }: { highlight?: "all" | "circl
       texts={
         tri
           ? [
-              { at: [-0.5, 2.5], text: "3" },
+              { at: [-0.5, 3.45], text: "3" },
               { at: [1.45, 5], text: "4", anchor: "start" },
               { at: [-1, 5.6], text: "5" },
             ]
-          : [{ at: [0.5, 3.45], text: "r = 5" }]
+          : [{ at: [1.6, 3.5], text: "r = 5" }]
       }
       points={[
         { at: C, name: "C", coords: true, dir: "sw", off: 8 },
@@ -685,13 +690,13 @@ export function CircleFigure({ highlight = "all" }: { highlight?: "all" | "circl
 export function ExampleRegion() {
   return (
     <Plane
-      x={[-3, 8]}
+      x={[-5, 8]}
       y={[-7, 6]}
       u={20}
       every={2}
       shade={[below(-0.5, 4), below(3, -3)]}
       lines={[
-        { m: -0.5, k: 4, label: "x + 2y = 8", labelAt: [-1.2, 5.6] },
+        { m: -0.5, k: 4, label: "x + 2y = 8", labelAt: [-3, 4.4] },
         { m: 3, k: -3, label: "3x − y = 3", labelAt: [4.4, 4.6] },
       ]}
       label="Shaded region bounded by x + 2y = 8 and 3x - y = 3"
@@ -712,7 +717,7 @@ export function QuizLineK() {
       every={2}
       lines={[{ m: -2 / 3, k: 4, label: "k", labelAt: [4.8, 1.55] }]}
       points={[
-        { at: [0, 4], coords: true, dir: "ne", off: 7 },
+        { at: [0, 4], coords: true, dir: "ne", off: 12 },
         { at: [6, 0], coords: true, dir: "ne", off: 7 },
       ]}
       label="Line k through (0, 4) and (6, 0)"

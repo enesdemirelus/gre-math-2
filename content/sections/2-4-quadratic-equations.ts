@@ -57,7 +57,7 @@ const section: Section = {
     { kind: "heading", text: "How many solutions? Look under the square root" },
     {
       kind: "p",
-      text: String.raw`Everything about the number of solutions is decided by the expression under the square root sign, $b^2 - 4ac$, which textbooks call the [[discriminant]] (the Math Review just calls it "the expression under the square root sign"). There are three cases (MR pp. 48–50).`,
+      text: String.raw`Everything about the number of solutions is decided by the expression under the square root sign, $b^2 - 4ac$, which textbooks call the [[discriminant]] (the Math Review just calls it "the expression under the square root sign"). There are three cases, which the Math Review illustrates with one example each (MR pp. 48–50).`,
     },
     {
       kind: "p",
@@ -153,7 +153,7 @@ const section: Section = {
     { kind: "heading", text: "Quadratics in disguise" },
     {
       kind: "p",
-      text: String.raw`Many GRE equations are quadratic only after one step. An equation with $x$ in a denominator, such as $x - \frac{12}{x} = 4$ (with $x \ne 0$), becomes $x^2 - 4x - 12 = 0$ after multiplying by $x$, so $(x - 6)(x + 2) = 0$. Check that neither solution makes the original denominator 0. Word problems about areas do the same thing: a rectangle whose length is 4 more than its width and whose area is 45 gives $w(w + 4) = 45$, that is $w^2 + 4w - 45 = (w + 9)(w - 5) = 0$. A width cannot be negative, so $w = 5$ and the rectangle is $5$ by $9$.`,
+      text: String.raw`Many GRE equations are quadratic only after one step. An equation with $x$ in a denominator, such as $x - \frac{24}{x} = 5$ (with $x \ne 0$), becomes $x^2 - 5x - 24 = 0$ after multiplying by $x$, so $(x - 8)(x + 3) = 0$. Check that neither solution makes the original denominator 0. Word problems about areas do the same thing: a rectangle whose length is 4 more than its width and whose area is 45 gives $w(w + 4) = 45$, that is $w^2 + 4w - 45 = (w + 9)(w - 5) = 0$. A width cannot be negative, so $w = 5$ and the rectangle is $5$ by $9$.`,
     },
     {
       kind: "aside",
@@ -323,14 +323,14 @@ const section: Section = {
       id: "ex4",
       type: "mc1",
       difficulty: "hard",
-      stem: String.raw`If $x \ne 0$ and $x - \dfrac{12}{x} = 4$, what is the sum of all possible values of $x$?`,
-      choices: [String.raw`$-8$`, String.raw`$-4$`, String.raw`$4$`, String.raw`$6$`, String.raw`$8$`],
-      answer: 2,
+      stem: String.raw`If $x \ne 0$ and $x - \dfrac{24}{x} = 5$, what is the sum of all possible values of $x$?`,
+      choices: [String.raw`$-8$`, String.raw`$-5$`, String.raw`$3$`, String.raw`$5$`, String.raw`$8$`],
+      answer: 3,
       explanation: [
-        String.raw`Multiply both sides by $x$ (allowed, since $x \ne 0$): $x^2 - 12 = 4x$, so $x^2 - 4x - 12 = 0$.`,
-        String.raw`Factor: $(x - 6)(x + 2) = 0$, so $x = 6$ or $x = -2$. Neither is 0, so both are allowed: $6 - 2 = 4$ and $-2 + 6 = 4$.`,
-        String.raw`The sum is $6 + (-2) = 4$. Shortcut: the solutions of $x^2 + bx + c = 0$ add to $-b = 4$.`,
-        String.raw`Trap: $6$ is only the positive solution, and $-4$ is $b$ itself rather than $-b$.`,
+        String.raw`Multiply both sides by $x$ (allowed, since $x \ne 0$): $x^2 - 24 = 5x$, so $x^2 - 5x - 24 = 0$.`,
+        String.raw`Factor: $(x - 8)(x + 3) = 0$, so $x = 8$ or $x = -3$. Neither is 0, so both are allowed: $8 - 3 = 5$ and $-3 + 8 = 5$.`,
+        String.raw`The sum is $8 + (-3) = 5$. Shortcut: the solutions of $x^2 + bx + c = 0$ add to $-b = 5$.`,
+        String.raw`Trap: $8$ is only the positive solution, and $-5$ is $b$ itself rather than $-b$.`,
       ],
     },
   ],
