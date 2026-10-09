@@ -27,7 +27,7 @@ export function isAnswered(v: AnswerValue): boolean {
     case "mcm":
       return v.choices.length > 0;
     case "ne":
-      return v.a.trim() !== "" && (v.b === "" ? true : true);
+      return v.a.trim() !== "";
   }
 }
 
