@@ -22,9 +22,9 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 2.7 Applications | done | content: 8 fixed (copied MR stories/numbers, revenue note, work-rate bound); questions: 1 too-easy item made harder |
 | 2.8 Coordinate Geometry | done | content: 5 fixed (MC page cites, non-MR fact labeled, copied MR numbers replaced, per-term diagrams); questions: clean |
 | 2.9 Graphs of Functions | done | content: 4 fixed (copied MR function replaced, attribution, citation, separate stretch/shrink diagrams); questions: clean |
-| 3.1 Lines and Angles | written (Sonnet); Opus reviews pending | |
-| 3.2 Polygons | written (Sonnet); Opus reviews pending | |
-| 3.3 Triangles | written (Sonnet); Opus reviews pending | |
+| 3.1 Lines and Angles | done | content: 6 fixed (copied MR/MC numbers and figure, explanation error, MC condition, explorer readout, right-angle mark); questions: 1 too-easy item replaced |
+| 3.2 Polygons | done | content: 5 fixed (copied MR examples, figure scale caption, unsupported claim, KaTeX escape bug); questions: 1 too-easy item replaced |
+| 3.3 Triangles | done | content: 11 fixed (to-scale statement contradicted MC, caption, copied MR labelings/numbers, citations, Turkish, KaTeX bug, mcm wording); questions: clean |
 | 3.4 Quadrilaterals | written (Sonnet); Opus reviews pending | |
 | 3.5 Circles | done | content review: 5 minor issues fixed; question review: clean |
 | 3.6 Three-Dimensional Figures | written (Sonnet); Opus reviews pending | |

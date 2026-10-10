@@ -20,7 +20,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Solids are drawn in an oblique view: the front face looks like its true shape, and depth recedes up and to the right. Edges you could not see from that viewpoint are drawn dashed. Learn to read such a picture as a box with a hidden back corner, because the GRE never draws a solid with shading or perspective.`,
+      text: String.raw`In the Math Review's figures, solids are drawn in an oblique view, and edges hidden from view are dashed (MR p. 112, Geometry Figure 29). Learn to read such a picture as a box with a hidden back corner.`,
     },
     {
       kind: "diagram",
@@ -74,7 +74,7 @@ const section: Section = {
     { kind: "heading", text: "The diagonal through the box" },
     {
       kind: "p",
-      text: String.raw`The longest segment that fits inside a rectangular solid joins two opposite vertices, a [[space-diagonal|space diagonal]]. The Math Review gives no formula for it (it only asks for one in an exercise), but you can always get it with the Pythagorean theorem used twice, which is exactly how the exercise is solved. First take the diagonal $f$ of the base, a right triangle with legs $\ell$ and $w$. Then $f$ and the vertical edge $h$ are the legs of a second right triangle whose hypotenuse is the space diagonal $d$.`,
+      text: String.raw`The longest segment that fits inside a rectangular solid joins two opposite vertices, a [[space-diagonal|space diagonal]]. The Math Review gives no formula for it (it only asks for one in an exercise, MR p. 122, Exercise 14), but you can always get it with the Pythagorean theorem used twice, which is exactly how the exercise is solved. First take the diagonal $f$ of the base, a right triangle with legs $\ell$ and $w$. Then $f$ and the vertical edge $h$ are the legs of a second right triangle whose hypotenuse is the space diagonal $d$.`,
     },
     {
       kind: "diagram",
@@ -206,9 +206,9 @@ const section: Section = {
       id: "surface-area",
       term: "surface area",
       turkish: String.raw`yüzey alanı (alan)`,
-      definition: String.raw`The sum of the areas of all the faces of a solid. For a rectangular solid, the six faces; for a right circular cylinder, the two bases plus the lateral surface.`,
+      definition: String.raw`For a rectangular solid, the sum of the areas of its six faces; for a right circular cylinder, the sum of the areas of the two bases and the lateral surface.`,
       formula: String.raw`A = 2(\ell w + \ell h + wh) \quad\text{and}\quad A = 2\pi r^2 + 2\pi r h`,
-      diagram: { key: `${D}/solid`, props: { highlight: "face" } },
+      diagram: { key: `${D}/solid`, props: { highlight: "surface" } },
       source: "MR pp. 113–114",
     },
     {
@@ -412,13 +412,13 @@ const section: Section = {
         type: "qc",
         difficulty: "medium",
         given: String.raw`A cube has surface area 150.`,
-        quantityA: String.raw`The volume of the cube`,
-        quantityB: String.raw`$120$`,
+        quantityA: String.raw`The length of a space diagonal of the cube`,
+        quantityB: String.raw`$8.6$`,
         answer: "A",
         explanation: [
           String.raw`$6s^2 = 150$ gives $s^2 = 25$ and $s = 5$.`,
-          String.raw`$V = s^3 = 125 > 120$, so Quantity A is greater.`,
-          String.raw`Trap: dividing 150 by 6 and stopping (25), or cubing 25.`,
+          String.raw`The space diagonal is $s\sqrt{3} = 5\sqrt{3} \approx 8.66$, since $\sqrt{3} \approx 1.732$ gives $8.66 > 8.6$ (check: $75 > 73.96 = 8.6^2$), so Quantity A is greater.`,
+          String.raw`Trap: dividing 150 by 6 and stopping at 25, or using the face diagonal $5\sqrt{2} \approx 7.07$.`,
         ],
       },
       {
@@ -453,7 +453,7 @@ const section: Section = {
         id: "z4",
         type: "mc1",
         difficulty: "medium",
-        stem: String.raw`A right circular cylinder with radius 3 and height 10 is full of water. All the water is poured into an empty rectangular tank with a horizontal base measuring 6 by 5. What is the depth of the water in the tank?`,
+        stem: String.raw`A right circular cylinder with radius 3 and height 10 is full of water. All the water is poured into an empty rectangular tank, large enough to hold all of the water, with a horizontal base measuring 6 by 5. What is the depth of the water in the tank?`,
         choices: [String.raw`$3$`, String.raw`$6$`, String.raw`$3\pi$`, String.raw`$6\pi$`, String.raw`$9\pi$`],
         answer: 2,
         explanation: [

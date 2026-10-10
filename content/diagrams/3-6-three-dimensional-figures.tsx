@@ -74,7 +74,7 @@ function rightMark(v: Pt, a: Pt, b: Pt, s = 7): string {
 /* 1. Rectangular solid (oblique view)                                  */
 /* ------------------------------------------------------------------ */
 
-export type SolidHighlight = "none" | "dimensions" | "face" | "edge" | "vertex" | "diagonals";
+export type SolidHighlight = "none" | "dimensions" | "face" | "surface" | "edge" | "vertex" | "diagonals";
 
 export interface SolidProps {
   highlight?: SolidHighlight;
@@ -114,6 +114,13 @@ export function RectangularSolid({ highlight = "dimensions", w, l, h, f, d, cube
   return (
     <svg viewBox="0 0 290 190" width={290} role="img" aria-label={cube ? "A cube" : "A rectangular solid"}>
       {highlight === "face" && <polygon points={poly([FTL, FTR, FBR, FBL])} className="dg-accent-fill" />}
+      {highlight === "surface" && (
+        <>
+          <polygon points={poly([FTL, FTR, FBR, FBL])} className="dg-accent-fill" />
+          <polygon points={poly([FTL, FTR, BTR, BTL])} className="dg-accent-fill" />
+          <polygon points={poly([FTR, BTR, BBR, FBR])} className="dg-accent-fill" />
+        </>
+      )}
       {/* hidden edges */}
       <Seg p={FBL} q={BBL} cls="dg-line dg-thin dg-dashed" />
       <Seg p={BBL} q={BTL} cls="dg-line dg-thin dg-dashed" />

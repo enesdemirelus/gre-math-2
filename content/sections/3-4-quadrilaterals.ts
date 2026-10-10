@@ -103,11 +103,11 @@ const section: Section = {
     },
     {
       kind: "diagram",
-      diagram: { key: "3-4-quadrilaterals/trapezoid", props: { highlight: "bases" }, caption: String.raw`Trapezoid $KLMN$ with $LM$ parallel to $KN$; the bases are $LM$ and $KN$.` },
+      diagram: { key: "3-4-quadrilaterals/trapezoid", props: { highlight: "bases" }, caption: String.raw`Trapezoid $PQRS$ with $QR$ parallel to $PS$; the bases are $QR$ and $PS$.` },
     },
     {
       kind: "p",
-      text: String.raw`The same angle fact applies along each slanted side: it cuts the two parallel bases, so the two angles at its ends add up to $180^\circ$. In the figure, the angles at $K$ and $L$ add up to $180^\circ$, and so do the angles at $N$ and $M$.`,
+      text: String.raw`The same angle fact applies along each slanted side: it cuts the two parallel bases, so the two angles at its ends add up to $180^\circ$. In the figure, the angles at $P$ and $Q$ add up to $180^\circ$, and so do the angles at $S$ and $R$.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -185,6 +185,7 @@ const section: Section = {
       turkish: "köşegen",
       definition: String.raw`A line segment joining two nonadjacent vertices of a polygon. A quadrilateral has two diagonals, and either one divides it into two triangles.`,
       diagram: { key: "3-4-quadrilaterals/quadrilateral", props: { highlight: "diagonal" } },
+      note: "Defined here; the ETS Math Review uses but does not define it",
       source: "MR pp. 95, 102",
     },
     {
@@ -388,14 +389,14 @@ const section: Section = {
         id: "z1",
         type: "qc",
         difficulty: "medium",
-        given: String.raw`In parallelogram $PQRS$, the measure of angle $P$ is $x^\circ$, the measure of angle $Q$ is $y^\circ$, and $x > y$.`,
-        quantityA: String.raw`$x$`,
+        given: String.raw`In parallelogram $PQRS$, the measure of angle $P$ is $(3k - 20)^\circ$ and the measure of angle $R$ is $(k + 40)^\circ$.`,
+        quantityA: String.raw`The measure of angle $Q$`,
         quantityB: String.raw`$90$`,
         answer: "A",
         explanation: [
-          String.raw`Angles $P$ and $Q$ share side $PQ$, so they are neighboring angles, not opposite ones: $x + y = 180$.`,
-          String.raw`Since $x > y$, $x$ is more than half of 180, so $x > 90$.`,
-          String.raw`Quantity A is greater. Trap: treating $P$ and $Q$ as opposite angles (which would force $x = y$ and contradict $x > y$).`,
+          String.raw`Angles $P$ and $R$ are opposite angles of a parallelogram, so they are equal: $3k - 20 = k + 40$, giving $k = 30$.`,
+          String.raw`Angle $P$ measures $3(30) - 20 = 70^\circ$. Angle $Q$ is a neighboring angle, so it measures $180^\circ - 70^\circ = 110^\circ$.`,
+          String.raw`$110 > 90$, so Quantity A is greater. Trap: reading $70$ as the answer to the question, or adding $P$ and $R$ to $180$.`,
         ],
       },
       {
@@ -417,14 +418,14 @@ const section: Section = {
         type: "qc",
         difficulty: "hard",
         diagram: { key: "3-4-quadrilaterals/trapezoid-diagonals", caption: NTS },
-        given: String.raw`In quadrilateral $KLMN$, side $LM$ is parallel to side $KN$.`,
-        quantityA: String.raw`The area of triangle $KLN$`,
-        quantityB: String.raw`The area of triangle $KMN$`,
+        given: String.raw`In quadrilateral $PQRS$, side $QR$ is parallel to side $PS$.`,
+        quantityA: String.raw`The area of triangle $PQS$`,
+        quantityB: String.raw`The area of triangle $PRS$`,
         answer: "C",
         explanation: [
-          String.raw`Both triangles have base $KN$.`,
-          String.raw`The third vertices $L$ and $M$ both lie on line $LM$, which is parallel to $KN$. So the perpendicular distance from $L$ to $KN$ equals the perpendicular distance from $M$ to $KN$: both are the height $h$ of the trapezoid.`,
-          String.raw`Each area is $\frac{1}{2}(KN)(h)$, so the quantities are equal.`,
+          String.raw`Both triangles have base $PS$.`,
+          String.raw`The third vertices $Q$ and $R$ both lie on line $QR$, which is parallel to $PS$. So the perpendicular distance from $Q$ to $PS$ equals the perpendicular distance from $R$ to $PS$: both are the height $h$ of the trapezoid.`,
+          String.raw`Each area is $\frac{1}{2}(PS)(h)$, so the quantities are equal.`,
           String.raw`The figure makes the triangles look different, but it is not drawn to scale, and the shapes really are different; only base and height matter for area.`,
         ],
       },

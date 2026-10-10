@@ -232,26 +232,26 @@ export function Parallelogram({
 }
 
 /* ------------------------------------------------------------------ */
-/* 5. Trapezoid KLMN                                                    */
+/* 5. Trapezoid PQRS                                                    */
 /* ------------------------------------------------------------------ */
 
 export function Trapezoid({ highlight = "bases" }: { highlight?: "bases" | "trapezoid" }) {
-  const K: Pt = [30, 150];
-  const L: Pt = [90, 45];
-  const M: Pt = [175, 45];
-  const N: Pt = [255, 150];
-  const pts = [K, L, M, N];
+  const P: Pt = [30, 150];
+  const Q: Pt = [90, 45];
+  const R: Pt = [175, 45];
+  const S: Pt = [255, 150];
+  const pts = [P, Q, R, S];
   const c = centroid(pts);
   return (
-    <svg viewBox="0 0 285 190" width={285} role="img" aria-label="Trapezoid KLMN with bases LM and KN">
+    <svg viewBox="0 0 285 190" width={285} role="img" aria-label="Trapezoid PQRS with bases QR and PS">
       <polygon points={poly(pts)} className={highlight === "trapezoid" ? "dg-accent" : "dg-line"} />
       {highlight === "bases" && (
         <>
-          <Seg p={L} q={M} cls="dg-accent" />
-          <Seg p={K} q={N} cls="dg-accent" />
+          <Seg p={Q} q={R} cls="dg-accent" />
+          <Seg p={P} q={S} cls="dg-accent" />
         </>
       )}
-      {(["K", "L", "M", "N"] as const).map((n, i) => (
+      {(["P", "Q", "R", "S"] as const).map((n, i) => (
         <Label key={n} at={away(pts[i], c, 14)}>
           {n}
         </Label>
@@ -399,22 +399,22 @@ export function TrapezoidLegs() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 10. Quiz z3: trapezoid KLMN with diagonals LN and KM                  */
+/* 10. Quiz z3: trapezoid PQRS with diagonals QS and PR                  */
 /* ------------------------------------------------------------------ */
 
 export function TrapezoidDiagonals() {
-  const K: Pt = [30, 150];
-  const L: Pt = [55, 50];
-  const M: Pt = [150, 50];
-  const N: Pt = [260, 150];
-  const pts = [K, L, M, N];
+  const P: Pt = [30, 150];
+  const Q: Pt = [55, 50];
+  const R: Pt = [150, 50];
+  const S: Pt = [260, 150];
+  const pts = [P, Q, R, S];
   const c = centroid(pts);
   return (
-    <svg viewBox="0 0 290 185" width={290} role="img" aria-label="Quadrilateral KLMN with LM parallel to KN and segments LN and KM">
+    <svg viewBox="0 0 290 185" width={290} role="img" aria-label="Quadrilateral PQRS with QR parallel to PS and segments QS and PR">
       <polygon points={poly(pts)} className="dg-line" />
-      <Seg p={L} q={N} cls="dg-line" />
-      <Seg p={K} q={M} cls="dg-line" />
-      {(["K", "L", "M", "N"] as const).map((n, i) => (
+      <Seg p={Q} q={S} cls="dg-line" />
+      <Seg p={P} q={R} cls="dg-line" />
+      {(["P", "Q", "R", "S"] as const).map((n, i) => (
         <Label key={n} at={away(pts[i], c, 14)}>
           {n}
         </Label>
