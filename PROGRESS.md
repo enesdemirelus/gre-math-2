@@ -5,7 +5,7 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | Section | Status | Notes |
 |---|---|---|
 | Shell: sidebar, KaTeX, vocab hover (EN + TR), flashcards, matching, quiz, glossary, formulas, practice, progress | done | lint/tsc/build pass; screenshots checked |
-| Conventions page | queued | |
+| Conventions page | written (Sonnet); Opus reviews pending | |
 | 1.1 Integers | done | content: 3 fixed ("multiple" for reals per MC p. 5, Turkish); questions: 2 too-easy items replaced |
 | 1.2 Fractions | done | content: 4 fixed (copied ETS examples, label for NE directions, lowest-terms citation); questions: 1 too-easy item replaced |
 | 1.3 Exponents and Roots | done | content: 4 fixed (non-MR identity labeled, root conditions, copied MR examples replaced); questions: 1 too-easy item replaced |
@@ -18,21 +18,21 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 2.3 Solving Linear Equations | done | content: 2 fixed (parallel-lines citation, elimination wording); questions: 2 too-easy items replaced |
 | 2.4 Solving Quadratic Equations | done | content: 4 fixed (copied MR polynomial, attribution wording, explorer readout, diagram accent); questions: clean |
 | 2.5 Solving Linear Inequalities | done | content: 3 fixed (copied MR numbers in terms, explorer message); questions: 1 too-easy item replaced |
-| 2.6 Functions | writing |
+| 2.6 Functions | written (Sonnet); Opus reviews pending | |
 | 2.7 Applications | done | content: 8 fixed (copied MR stories/numbers, revenue note, work-rate bound); questions: 1 too-easy item made harder |
-| 2.8 Coordinate Geometry | written; reviews pending (Opus, after usage reset) | |
-| 2.9 Graphs of Functions | writing |
-| 3.1 Lines and Angles | queued | |
-| 3.2 Polygons | queued | |
-| 3.3 Triangles | queued | |
-| 3.4 Quadrilaterals | queued | |
+| 2.8 Coordinate Geometry | written (Sonnet); Opus reviews pending | |
+| 2.9 Graphs of Functions | written (Sonnet); Opus reviews pending | |
+| 3.1 Lines and Angles | written (Sonnet); Opus reviews pending | |
+| 3.2 Polygons | written (Sonnet); Opus reviews pending | |
+| 3.3 Triangles | written (Sonnet); Opus reviews pending | |
+| 3.4 Quadrilaterals | written (Sonnet); Opus reviews pending | |
 | 3.5 Circles | done | content review: 5 minor issues fixed; question review: clean |
-| 3.6 Three-Dimensional Figures | queued | |
-| 4.1 Methods for Presenting Data | queued | |
-| 4.2 Numerical Methods for Describing Data | queued | |
-| 4.3 Counting Methods | queued | |
-| 4.4 Probability | queued | |
-| 4.5 Distributions | queued | |
-| 4.6 Data Interpretation Examples | queued | |
+| 3.6 Three-Dimensional Figures | written (Sonnet); Opus reviews pending | |
+| 4.1 Methods for Presenting Data | written (Sonnet); Opus reviews pending | |
+| 4.2 Numerical Methods for Describing Data | written (Sonnet); Opus reviews pending | |
+| 4.3 Counting Methods | written (Sonnet); Opus reviews pending | |
+| 4.4 Probability | written (Sonnet); Opus reviews pending | |
+| 4.5 Distributions | written (Sonnet); Opus reviews pending | |
+| 4.6 Data Interpretation Examples | written (Sonnet); Opus reviews pending | |
 
 Note: writers and fixers now run on Sonnet and reviewers on Opus, at most 2–3 agents at a time, to spread usage (requested by the user).
