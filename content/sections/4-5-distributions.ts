@@ -44,7 +44,7 @@ const section: Section = {
     { kind: "heading", text: "Random variables" },
     {
       kind: "p",
-      text: String.raw`A [[random-variable|random variable]] is a variable whose value is a numerical outcome of a random experiment: it depends on chance (MR pp. 164, 167). Pick one value at random from a data set and call it $X$; that $X$ is a random variable. More generally, any quantity that results from a random experiment qualifies: the number of heads in 5 tosses, the number shown by a spinner, the lifetime of one randomly chosen bulb. ETS says the possible values of the random variable are the same as the possible outcomes of the experiment, or are numbers related to them (MR p. 172; MC p. 15).`,
+      text: String.raw`A [[random-variable|random variable]] is a variable whose value is a numerical outcome of a random experiment: it depends on chance (MR pp. 164, 167). Pick one value at random from a data set and call it $X$; that $X$ is a random variable. More generally, any quantity that results from a random experiment qualifies: the number of heads in 5 tosses, the number shown by a spinner, the lifetime of one randomly chosen bulb. ETS says the possible values of the random variable are the same as the possible outcomes of the experiment, or are numbers related to them (MR p. 172 for the first case; MC p. 15 for the second).`,
     },
     {
       kind: "p",
@@ -92,7 +92,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`When every possible value is equally likely, the histogram is flat: all bars have the same height. ETS calls this a [[uniform-distribution|uniform distribution]], because the probability is spread uniformly over all possible outcomes (MR p. 174). For a number drawn at random from $1, 2, \dots, 8$, each value has probability $\frac18$ and the expected value is the middle of the range, $4.5$. Any distribution that is symmetric about a point has its mean at that point.`,
+      text: String.raw`When every possible value is equally likely, the histogram is flat: all bars have the same height. ETS calls this a [[uniform-distribution|uniform distribution]], because the probability is spread uniformly over all possible outcomes (MR p. 174). For a number drawn at random from $1, 2, \dots, 8$, each value has probability $\frac18$ and the expected value is the middle of the range, $4.5$. Any distribution that is symmetric about a point has its mean at that point (a standard fact, not stated in the ETS Math Review).`,
     },
     {
       kind: "diagram",
@@ -111,7 +111,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The most important continuous distribution is the [[normal-distribution|normal distribution]], whose curve is shaped like a bell. Real data are never exactly normal, so the MR speaks of data that are [[approximately-normal|approximately normal]]: their relative frequency histogram is shaped somewhat like a bell and has four properties (MR p. 175):`,
+      text: String.raw`The most important continuous distribution is the [[normal-distribution|normal distribution]], whose curve is shaped like a bell. Data from many natural processes are shaped somewhat like a bell, so the MR speaks of data that are [[approximately-normal|approximately normal]]: their relative frequency histogram is shaped somewhat like a bell and has four properties (MR p. 175):`,
     },
     {
       kind: "list",
@@ -136,7 +136,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The less the standard deviation, the less spread out the curve is: at the mean the curve is higher, and moving away from the mean it falls toward the axis faster (MR p. 176). Total area is still 1, so a narrower curve has to be taller. This is the only way the GRE asks you to compare the standard deviations of two normal curves.`,
+      text: String.raw`The less the standard deviation, the less spread out the curve is: at the mean the curve is higher, and moving away from the mean it falls toward the axis faster (MR p. 176). Total area is still 1, so a narrower curve has to be taller.`,
     },
     {
       kind: "diagram",
@@ -283,7 +283,7 @@ const section: Section = {
     {
       id: "standard-deviation-rv",
       term: "standard deviation of a random variable",
-      turkish: "standart sapma",
+      turkish: "rastgele değişkenin standart sapması",
       definition: String.raw`A measure of dispersion that indicates how spread out the probability distribution of $X$ is from its mean; the greater it is, the greater the spread. Also called the standard deviation of the probability distribution of $X$.`,
       source: "MC p. 16; MR p. 171",
     },

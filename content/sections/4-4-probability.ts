@@ -47,7 +47,7 @@ const section: Section = {
     { kind: "heading", text: "Combining events: \"or\" and \"and\"" },
     {
       kind: "p",
-      text: String.raw`ETS writes "$E$ and $F$" for the event that both occur (the outcomes in the intersection $E \cap F$) and "$E$ or $F$" for the event that at least one occurs (the union $E \cup F$, "or" including "both"). Because probabilities are sums over outcomes, the counting rule from 4.3 carries over directly (MR p. 160).`,
+      text: String.raw`ETS writes "$E$ and $F$" for the event that both occur (the outcomes in the intersection $E \cap F$) and "$E$ or $F$" for the event that at least one occurs (the union $E \cup F$, "or" including "both"). Because probabilities are sums over outcomes, the counting rule from 4.3 carries over directly (MR pp. 159–161).`,
     },
     { kind: "math", tex: String.raw`P(E \text{ or } F) = P(E) + P(F) - P(E \text{ and } F)`, key: true },
     {
@@ -60,7 +60,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Events that cannot occur at the same time are [[mutually-exclusive|mutually exclusive]]: odd and even on one roll, for example. For them $P(E \text{ and } F) = 0$, and the rule simplifies to $P(E \text{ or } F) = P(E) + P(F)$. Careful: "rolling a 4" and "rolling an even number" are _not_ mutually exclusive, since a 4 is even.`,
+      text: String.raw`Events that cannot occur at the same time are [[mutually-exclusive|mutually exclusive]]: rolling a 1 and rolling a 6 on one roll, for example. For them $P(E \text{ and } F) = 0$, and the rule simplifies to $P(E \text{ or } F) = P(E) + P(F)$. Careful: "rolling a prime" and "rolling an odd number" are _not_ mutually exclusive, since 3 and 5 are both.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -160,7 +160,7 @@ const section: Section = {
     { id: "mutually-exclusive", term: "mutually exclusive events", turkish: "ayrık (bağdaşmaz) olaylar", definition: String.raw`Events that cannot occur at the same time, so $P(E \text{ and } F) = 0$. For them, $P(E \text{ or } F) = P(E) + P(F)$.`, formula: String.raw`P(E \text{ or } F) = P(E) + P(F)`, diagram: { key: "4-4-probability/event-venn", props: { layout: "disjoint" } }, source: "MR p. 160; MC p. 15" },
     { id: "independent-events", term: "independent events", turkish: "bağımsız olaylar", definition: String.raw`Events $E$ and $F$ such that the occurrence of either does not affect the occurrence of the other. They are independent if and only if $P(E \text{ and } F) = P(E)\,P(F)$.`, formula: String.raw`P(E \text{ and } F) = P(E)\,P(F)`, source: "MR p. 160; MC p. 15" },
     { id: "dependent-events", term: "dependent events", turkish: "bağımlı olaylar", definition: String.raw`Events that happen sequentially where the first may affect the second. The probability that both happen is the probability of the first times the probability of the second given that the first has already happened.`, note: "ETS describes this idea (MR p. 164) without using the word \"dependent\" as a defined term", source: "MR p. 164" },
-    { id: "conditional-probability", term: "conditional probability", turkish: "koşullu olasılık", definition: String.raw`The probability that an event happens given that another event has already happened, such as the chance the second sock is white given that the first was black. Then $P(\text{both}) = P(\text{first}) \cdot P(\text{second, given the first})$.`, formula: String.raw`P(\text{both}) = P(\text{first}) \cdot P(\text{second, given first})`, note: "Not named in the ETS Math Review, which says \"given that the first event has already happened\"; the ETS Quantitative Reasoning overview lists conditional probability among the tested topics", source: "MR p. 164" },
+    { id: "conditional-probability", term: "conditional probability", turkish: "koşullu olasılık", definition: String.raw`The probability that an event happens given that another event has already happened, such as the chance the second sock is white given that the first was black. Then $P(\text{both}) = P(\text{first}) \cdot P(\text{second, given the first})$.`, formula: String.raw`P(\text{both}) = P(\text{first}) \cdot P(\text{second, given first})`, note: "Not named in the ETS Math Review, which says \"given that the first event has already happened\"; the term itself comes from the ETS Quantitative Reasoning web page, not the Math Review", source: "MR p. 164" },
     { id: "without-replacement", term: "without replacement", turkish: "yerine koymadan (iadesiz)", definition: String.raw`Drawing items one after another without putting earlier ones back, so each draw changes what remains. The draws are then not independent. (Putting each item back before the next draw is "with replacement," which keeps the draws independent.)`, note: "\"With replacement\" is not used in the ETS Math Review", source: "MR p. 164" },
   ],
 
@@ -376,12 +376,12 @@ const section: Section = {
         id: "z10",
         type: "ne",
         difficulty: "medium",
-        stem: String.raw`Events $B$ and $C$ are independent. $P(B) = 0.4$ and $P(B \text{ or } C) = 0.76$. What is $P(C)$? Enter your answer as a decimal.`,
-        answer: { kind: "decimal", value: "0.6" },
+        stem: String.raw`Events $G$ and $H$ are independent. $P(G) = 0.3$ and $P(G \text{ or } H) = 0.86$. What is $P(H)$? Enter your answer as a decimal.`,
+        answer: { kind: "decimal", value: "0.8" },
         explanation: [
-          String.raw`Independent: $P(B \text{ and } C) = 0.4\,x$ where $x = P(C)$.`,
-          String.raw`$0.76 = 0.4 + x - 0.4x = 0.4 + 0.6x$, so $0.6x = 0.36$ and $x = 0.6$.`,
-          String.raw`Shortcut: $P(\text{neither}) = 1 - 0.76 = 0.24 = (0.6)(1 - x)$, so $1 - x = 0.4$ and $x = 0.6$.`,
+          String.raw`Independent: $P(G \text{ and } H) = 0.3\,x$ where $x = P(H)$.`,
+          String.raw`$0.86 = 0.3 + x - 0.3x = 0.3 + 0.7x$, so $0.7x = 0.56$ and $x = 0.8$.`,
+          String.raw`Shortcut: $P(\text{neither}) = 1 - 0.86 = 0.14 = (0.7)(1 - x)$, so $1 - x = 0.2$ and $x = 0.8$.`,
         ],
       },
     ],

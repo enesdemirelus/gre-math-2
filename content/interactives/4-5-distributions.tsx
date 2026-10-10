@@ -44,10 +44,10 @@ const FIG7_BREAKS = [-Infinity, -2, -1, 0, 1, 2, Infinity];
 const FIG7_REGION = [0.02, 0.14, 0.34, 0.34, 0.14, 0.02];
 
 export function NormalExplorer() {
-  const [m, setM] = useState(5);
-  const [d, setD] = useState(2);
-  const [a, setA] = useState(3);
-  const [b, setB] = useState(7);
+  const [m, setM] = useState(2);
+  const [d, setD] = useState(3);
+  const [a, setA] = useState(-1);
+  const [b, setB] = useState(5);
   const [openL, setOpenL] = useState(false);
   const [openR, setOpenR] = useState(false);
 

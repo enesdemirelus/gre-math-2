@@ -142,7 +142,7 @@ const section: Section = {
       kind: "aside",
       tone: "watch",
       title: "Broken scales",
-      text: String.raw`If a vertical axis does not start at 0, the display is drawn with a [[broken-scale|broken scale]], usually shown by a zigzag. Then the bar heights are _not_ proportional to the values: a bar that looks three times as tall may be only 5% larger. Never compare bar heights by eye on such a graph. Read each value off the gridlines, then compute.`,
+      text: String.raw`If a vertical axis does not start at 0, the display is drawn with a [[broken-scale|broken scale]] (MC p. 16); in this site's graphs the break is drawn as a zigzag. Then the bar heights are _not_ proportional to the values: a bar that looks three times as tall may be only 5% larger. Never compare bar heights by eye on such a graph. Read each value off the gridlines, then compute.`,
     },
     { kind: "diagram", diagram: brokenDemo },
 
@@ -219,6 +219,11 @@ const section: Section = {
     },
 
     /* ---------------------------------------------------------------- */
+    { kind: "heading", text: "Venn diagrams as data displays" },
+    {
+      kind: "p",
+      text: String.raw`Some data sets are shown as Venn diagrams. A number printed next to a circle is the total for that whole set; a number inside a region counts only that region (MC p. 17). Read carefully which kind each number is. For example, if 52 students take Spanish, 38 take French and 15 take both, then $52 - 15 = 37$ take only Spanish, $38 - 15 = 23$ take only French, and $52 + 38 - 15 = 75$ take at least one. If the class has 90 students, $90 - 75 = 15$ take neither (MR pp. 183–184 work an example of this kind).`,
+    },
     { kind: "heading", text: "Putting it together" },
     {
       kind: "p",
@@ -252,7 +257,7 @@ const section: Section = {
       id: "broken-scale",
       term: "broken scale",
       turkish: String.raw`kırık ölçek`,
-      definition: String.raw`An axis that does not begin at 0, drawn with a break (zigzag). The visible heights then do not show the proportions of the values.`,
+      definition: String.raw`An axis that does not begin at 0, drawn with a break in the axis (MC p. 16). The visible heights then do not show the proportions of the values.`,
       note: "ETS shows such a break (MR p. 137) without naming a term",
       source: "MR p. 137",
     },
@@ -281,7 +286,7 @@ const section: Section = {
     {
       id: "base-of-percent",
       term: "base of a percent",
-      turkish: String.raw`yüzdenin tabanı (bütün)`,
+      turkish: String.raw`yüzdenin alındığı bütün (ana değer)`,
       definition: String.raw`The whole that a percent is a percent of. Percents with different bases (for example, from different totals) cannot be compared as if they described the same quantity.`,
       note: "ETS says the bases of the percents are different (MR p. 181) without a formal definition",
       source: "MR pp. 24–25, 181",
@@ -289,7 +294,7 @@ const section: Section = {
     {
       id: "percentage-point",
       term: "percentage point",
-      turkish: String.raw`yüzde puanı (puan)`,
+      turkish: String.raw`yüzde puan`,
       definition: String.raw`The unit used for the difference between two percents; a share going from 20% to 25% rises by 5 percentage points, which is a 25% increase of the share.`,
       note: "Used but not defined in the ETS Math Review",
       source: "MR p. 181",
@@ -380,6 +385,12 @@ const section: Section = {
   ],
 
   quick: [
+    {
+      id: "q-venn",
+      prompt: String.raw`A Venn diagram of 120 club members shows 64 next to circle $R$ (runners), 47 next to circle $S$ (swimmers), and 18 in the overlap. How many members are neither runners nor swimmers?`,
+      answer: String.raw`$120 - (64 + 47 - 18) = 120 - 93 = 27$.`,
+      explanation: String.raw`The numbers next to the circles are set totals, so the overlap is counted in both; subtract it once.`,
+    },
     {
       id: "q1",
       prompt: String.raw`A bar graph's vertical axis starts at 1000 and has a zigzag near the bottom. If one bar is twice as tall as another, is its value twice as large?`,
