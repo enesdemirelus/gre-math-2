@@ -43,7 +43,7 @@ const intersection: DiagramRef = {
     ],
     texts: [
       { x: -2.85, y: 5.4, text: "y = x²" },
-      { x: 2.75, y: 6.1, text: "y = x + 2", anchor: "end" },
+      { x: 3.9, y: 3.3, text: "y = x + 2", anchor: "end" },
     ],
   },
 };
@@ -79,9 +79,9 @@ const shiftAbs: DiagramRef = {
 const shiftSq: DiagramRef = {
   key: PLOT,
   props: {
-    xmin: -3, xmax: 5, ymin: -1, ymax: 6,
+    xmin: -3, xmax: 5, ymin: -1, ymax: 6, xLabels: [-2, -1, 1, 4],
     curves: [{ base: "sq", style: "dashed" }, { base: "sq", h: 2 }],
-    points: [{ x: 2, y: 0, label: "(2, 0)", dx: 6, dy: 15 }],
+    points: [{ x: 2, y: 0, label: "(2, 0)", dx: 0, dy: 15, anchor: "middle" }],
     texts: [
       { x: -1.1, y: 5.0, text: "y = x²", anchor: "end" },
       { x: 4.6, y: 3.3, text: "y = (x − 2)²", anchor: "end" },
@@ -134,7 +134,7 @@ const combined: DiagramRef = {
     ],
     texts: [
       { x: -2.0, y: 4.4, text: "y = x²", anchor: "end" },
-      { x: 2.55, y: -2.6, text: "y = −2(x − 1)² + 3" },
+      { x: 3.9, y: 4.4, text: "y = −2(x − 1)² + 3", anchor: "end" },
     ],
   },
 };

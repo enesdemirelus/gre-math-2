@@ -12,8 +12,10 @@ import s_2_2_rules_of_exponents from "./2-2-rules-of-exponents";
 import s_2_3_linear_equations from "./2-3-linear-equations";
 import s_2_4_quadratic_equations from "./2-4-quadratic-equations";
 import s_2_5_linear_inequalities from "./2-5-linear-inequalities";
+import s_2_6_functions from "./2-6-functions";
 import s_2_7_applications from "./2-7-applications";
 import s_2_8_coordinate_geometry from "./2-8-coordinate-geometry";
+import s_2_9_graphs_of_functions from "./2-9-graphs-of-functions";
 import s_3_5_circles from "./3-5-circles";
 
 export const SECTIONS: Record<string, Section> = {
@@ -29,7 +31,9 @@ export const SECTIONS: Record<string, Section> = {
   "2-3-linear-equations": s_2_3_linear_equations,
   "2-4-quadratic-equations": s_2_4_quadratic_equations,
   "2-5-linear-inequalities": s_2_5_linear_inequalities,
+  "2-6-functions": s_2_6_functions,
   "2-7-applications": s_2_7_applications,
   "2-8-coordinate-geometry": s_2_8_coordinate_geometry,
+  "2-9-graphs-of-functions": s_2_9_graphs_of_functions,
   "3-5-circles": s_3_5_circles,
 };
