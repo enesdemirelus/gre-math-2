@@ -61,8 +61,8 @@ export function NormalExplorer() {
 
   // --- drawing (fixed axis -25..25 so that a smaller SD visibly gives a taller, narrower curve)
   const W = 360;
-  const xmin = -25;
-  const xmax = 25;
+  const xmin = -20;
+  const xmax = 20;
   const L = 18;
   const R = 342;
   const base = 168;
@@ -87,7 +87,8 @@ export function NormalExplorer() {
     pts.push(`${r2(sx(sHi))} ${base}`);
     shade = "M " + pts.join(" L ") + " Z";
   }
-  const sdMarks = [-3, -2, -1, 0, 1, 2, 3];
+  const pxPerSd = ((R - L) / (xmax - xmin)) * d;
+  const sdMarks = (pxPerSd >= 24 ? [-3, -2, -1, 0, 1, 2, 3] : [-4, -2, 0, 2, 4]);
 
   // --- probability
   const zl = openL ? -Infinity : (left - m) / d;
@@ -133,9 +134,11 @@ export function NormalExplorer() {
               <text x={r2(sx(x))} y={base + 17} className="dg-text" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12 }}>
                 {minus(String(r2(x)))}
               </text>
-              <text x={r2(sx(x))} y={base + 31} className="dg-label" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12, opacity: 0.7 }}>
-                {k === 0 ? "m" : k === 1 ? "m+d" : k === -1 ? "m−d" : k > 0 ? `m+${k}d` : `m−${-k}d`}
-              </text>
+              {k === 0 && (
+                <text x={r2(sx(x))} y={base + 31} className="dg-label" textAnchor="middle" dominantBaseline="central" style={{ fontSize: 12, opacity: 0.7 }}>
+                  mean
+                </text>
+              )}
             </g>
           );
         })}

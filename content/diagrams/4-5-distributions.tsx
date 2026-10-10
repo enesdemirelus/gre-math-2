@@ -188,7 +188,7 @@ export function StdNormalFigure() {
         </g>
       ))}
       {mids.map(([x, t]) => (
-        <T key={x} x={sx(x)} y={BASE - 0.2 * H}>{t}</T>
+        <T key={x} x={sx(x)} y={BASE - 0.1 * H}>{t}</T>
       ))}
       <T x={sx(-3.05)} y={BASE - 0.3 * H}>0.02</T>
       <line x1={r2(sx(-3.05))} y1={BASE - 0.3 * H + 8} x2={r2(sx(-2.5))} y2={r2(sy(phi(2.5)) - 1)} className="dg-line dg-thin" />

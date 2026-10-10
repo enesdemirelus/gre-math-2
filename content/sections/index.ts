@@ -26,6 +26,7 @@ import s_4_1_presenting_data from "./4-1-presenting-data";
 import s_4_2_describing_data from "./4-2-describing-data";
 import s_4_3_counting_methods from "./4-3-counting-methods";
 import s_4_4_probability from "./4-4-probability";
+import s_4_5_distributions from "./4-5-distributions";
 
 export const SECTIONS: Record<string, Section> = {
   "1-1-integers": s_1_1_integers,
@@ -54,4 +55,5 @@ export const SECTIONS: Record<string, Section> = {
   "4-2-describing-data": s_4_2_describing_data,
   "4-3-counting-methods": s_4_3_counting_methods,
   "4-4-probability": s_4_4_probability,
+  "4-5-distributions": s_4_5_distributions,
 };

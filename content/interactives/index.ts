@@ -26,6 +26,7 @@ import { registry as s_4_1_presenting_data } from "./4-1-presenting-data";
 import { registry as s_4_2_describing_data } from "./4-2-describing-data";
 import { registry as s_4_3_counting_methods } from "./4-3-counting-methods";
 import { registry as s_4_4_probability } from "./4-4-probability";
+import { registry as s_4_5_distributions } from "./4-5-distributions";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const interactives: Record<string, ComponentType<any>> = {
@@ -55,4 +56,5 @@ export const interactives: Record<string, ComponentType<any>> = {
   ...s_4_2_describing_data,
   ...s_4_3_counting_methods,
   ...s_4_4_probability,
+  ...s_4_5_distributions,
 };
