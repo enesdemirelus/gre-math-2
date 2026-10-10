@@ -25,3 +25,4 @@
 4-3-counting-methods
 4-4-probability
 4-5-distributions
+4-6-data-interpretation
