@@ -309,7 +309,7 @@ export function ParallelogramArea({
       </svg>
     );
   return (
-    <svg viewBox="0 0 360 175" width={360} role="img" aria-label="Two parallelograms with base b and height h">
+    <svg viewBox="0 0 430 175" width={360} role="img" aria-label="Two parallelograms with base b and height h">
       <ParaWithHeight ox={10} lean={40} />
       <ParaWithHeight ox={168} lean={150 - 135 + 120} />
     </svg>

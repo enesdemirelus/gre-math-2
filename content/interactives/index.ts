@@ -19,7 +19,9 @@ import { registry as s_2_9_graphs_of_functions } from "./2-9-graphs-of-functions
 import { registry as s_3_1_lines_and_angles } from "./3-1-lines-and-angles";
 import { registry as s_3_2_polygons } from "./3-2-polygons";
 import { registry as s_3_3_triangles } from "./3-3-triangles";
+import { registry as s_3_4_quadrilaterals } from "./3-4-quadrilaterals";
 import { registry as s_3_5_circles } from "./3-5-circles";
+import { registry as s_3_6_three_dimensional_figures } from "./3-6-three-dimensional-figures";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const interactives: Record<string, ComponentType<any>> = {
@@ -42,5 +44,7 @@ export const interactives: Record<string, ComponentType<any>> = {
   ...s_3_1_lines_and_angles,
   ...s_3_2_polygons,
   ...s_3_3_triangles,
+  ...s_3_4_quadrilaterals,
   ...s_3_5_circles,
+  ...s_3_6_three_dimensional_figures,
 };

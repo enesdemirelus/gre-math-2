@@ -19,7 +19,9 @@ import s_2_9_graphs_of_functions from "./2-9-graphs-of-functions";
 import s_3_1_lines_and_angles from "./3-1-lines-and-angles";
 import s_3_2_polygons from "./3-2-polygons";
 import s_3_3_triangles from "./3-3-triangles";
+import s_3_4_quadrilaterals from "./3-4-quadrilaterals";
 import s_3_5_circles from "./3-5-circles";
+import s_3_6_three_dimensional_figures from "./3-6-three-dimensional-figures";
 
 export const SECTIONS: Record<string, Section> = {
   "1-1-integers": s_1_1_integers,
@@ -41,5 +43,7 @@ export const SECTIONS: Record<string, Section> = {
   "3-1-lines-and-angles": s_3_1_lines_and_angles,
   "3-2-polygons": s_3_2_polygons,
   "3-3-triangles": s_3_3_triangles,
+  "3-4-quadrilaterals": s_3_4_quadrilaterals,
   "3-5-circles": s_3_5_circles,
+  "3-6-three-dimensional-figures": s_3_6_three_dimensional_figures,
 };
