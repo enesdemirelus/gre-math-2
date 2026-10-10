@@ -79,7 +79,7 @@ export function DisplayExplorer() {
         )}
       </div>
       <p style={{ margin: 0, fontSize: "0.9rem", opacity: 0.85, textAlign: "center" }}>
-        The bar shapes in the two bar graphs are identical; only the labels on the vertical axis change. Tap a row to highlight a category.
+        The bars keep the same proportions to one another; only the scale on the vertical axis changes. Tap a row to highlight a category.
       </p>
       <div style={{ overflowX: "auto", maxWidth: "100%" }}>
         <table style={{ borderCollapse: "collapse", fontSize: "0.92rem" }}>

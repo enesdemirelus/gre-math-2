@@ -13,13 +13,13 @@ const section: Section = {
     { kind: "heading", text: "Three families of statistics" },
     {
       kind: "p",
-      text: String.raw`A list of numbers is hard to compare with another list, so we boil it down to a few numbers called statistics. ETS sorts them into three families (MR p. 139; MC p. 13). The [[central-tendency|measures of central tendency]] (mean, median, mode) say where the "center" of the data sits on the number line. The [[position-measures|measures of position]] (quartiles, percentiles) say where a given value sits relative to the rest. The [[dispersion|measures of dispersion]] (range, interquartile range, standard deviation) say how spread out the data are.`,
+      text: String.raw`A list of numbers is hard to compare with another list, so we boil it down to a few numbers called [[statistic|statistics]]. ETS sorts them into three families (MR p. 139; MC p. 13). The [[central-tendency|measures of central tendency]] (mean, median, mode) say where the "center" of the data sits on the number line. The [[position-measures|measures of position]] (quartiles, percentiles) say where a given value sits relative to the rest. The [[dispersion|measures of dispersion]] (range, interquartile range, standard deviation) say how spread out the data are.`,
     },
     {
       kind: "aside",
       tone: "gre",
       title: "\"Average\" means the arithmetic mean",
-      text: String.raw`On the GRE, "average (arithmetic mean)" is the mean, and the word "average" never means median or mode (MC p. 13). Only when a question gives a rate ("average speed") does it mean something else. Also, a "data set" is a _list_: repeated values count, and order is irrelevant (MC p. 13).`,
+      text: String.raw`On the GRE, "average (arithmetic mean)" is the mean, and the word "average" never means median or mode (MC p. 13). Only when a question gives a rate ("average speed") does it mean something else. Also, a "data set" is a _list_: repeated values count (MC p. 13).`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -46,7 +46,7 @@ const section: Section = {
       kind: "aside",
       tone: "tip",
       title: "Balance-point shortcut",
-      text: String.raw`The combined mean lies between the two group means, closer to the bigger group. If the groups have sizes in the ratio $p:q$, then the distances from the combined mean to $m_P$ and $m_Q$ are in the ratio $q:p$ (reversed). Take a class of 20 with mean 60 and a class of 30 with mean 80. The gap between the means is $20$, and the combined mean sits $\frac{30}{50}$ of the way from the smaller class's mean toward the larger class's: $60 + 20\cdot\frac{30}{50} = 72$.`,
+      text: String.raw`The combined mean lies between the two group means, closer to the bigger group. If the groups have sizes in the ratio $p:q$, then the distances from the combined mean to $m_P$ and $m_Q$ are in the ratio $q:p$ (reversed). Take a class of 15 with mean 60 and a class of 35 with mean 80. The gap between the means is $20$, and the combined mean sits $\frac{35}{50}$ of the way from the smaller class's mean toward the larger class's: $60 + 20\cdot\frac{35}{50} = 74$.`,
     },
     {
       kind: "p",
@@ -106,7 +106,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`[[percentile|Percentiles]] do the same job with 99 cut points $P_1, \dots, P_{99}$ that divide the data into 100 roughly equal groups, mostly for very large lists. They agree with the quartiles: $Q_1 = P_{25}$, $Q_2 = P_{50}$ (the median), $Q_3 = P_{75}$ (MR p. 143; MC p. 14). The MR gives no single rule for computing other percentiles, so a GRE question will not make you apply one; it will ask what a percentile _means_ ("about 90% of the data lie below $P_{90}$").`,
+      text: String.raw`[[percentile|Percentiles]] do the same job with 99 cut points $P_1, \dots, P_{99}$ that divide the data into 100 roughly equal groups, mostly for very large lists. They agree with the quartiles: $Q_1 = P_{25}$, $Q_2 = P_{50}$ (the median), $Q_3 = P_{75}$ (MR p. 143; MC p. 14). The MR gives no single rule for computing other percentiles (MR p. 143). Expect questions that ask what a percentile _means_ ("about 90% of the data lie below $P_{90}$").`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -199,7 +199,7 @@ const section: Section = {
       kind: "aside",
       tone: "gre",
       title: "Divide by n, not n − 1",
-      text: String.raw`In the step "average the squared differences," ETS divides by $n$. This is also called the population standard deviation. A _sample_ standard deviation divides by $n-1$, but it is always qualified with the word "sample," and the GRE's plain "standard deviation" never means it (MR p. 146; MC p. 14). For the list above the sample version would be $\sqrt{66/4} \approx 4.06$, a wrong answer on the GRE.`,
+      text: String.raw`In the step "average the squared differences," ETS divides by $n$. This is also called the population standard deviation. A [[sample-standard-deviation|sample standard deviation]] divides by $n-1$, but it is always qualified with the word "sample," and the GRE's plain "standard deviation" never means it (MR p. 146; MC p. 14). For the list above the sample version would be $\sqrt{66/4} \approx 4.06$, a wrong answer on the GRE.`,
     },
     {
       kind: "p",
@@ -280,6 +280,13 @@ const section: Section = {
 
   terms: [
     {
+      id: "statistic",
+      term: "statistic (statistical measure)",
+      turkish: "istatistik / istatistiksel ölçü",
+      definition: String.raw`A number, such as a mean, median or standard deviation, that summarizes a list of data; also called a statistical measure.`,
+      source: "MR p. 139",
+    },
+    {
       id: "central-tendency",
       term: "measures of central tendency",
       turkish: "merkezi eğilim ölçüleri",
@@ -340,7 +347,7 @@ const section: Section = {
     {
       id: "quartile",
       term: "quartile",
-      turkish: "çeyrek (çeyreklik)",
+      turkish: "çeyrek (alt çeyrek Q₁, üst çeyrek Q₃)",
       definition: String.raw`Three numbers $Q_1, Q_2, Q_3$ that divide the ordered data into four roughly equal groups; $Q_2$ is the median. In ETS's rule, $Q_1$ is the median of the first half of the ordered data and $Q_3$ is the median of the second half.`,
       source: "MR pp. 142–143; MC p. 14",
     },
@@ -393,7 +400,7 @@ const section: Section = {
     {
       id: "sample-standard-deviation",
       term: "sample standard deviation",
-      turkish: "örnek standart sapması",
+      turkish: "örneklem standart sapması",
       definition: String.raw`A different measure that divides the sum of the squared differences by $n - 1$ instead of $n$. It is always qualified with "sample"; plain "standard deviation" on the GRE divides by $n$.`,
       formula: String.raw`\sqrt{\frac{\sum (x_i - m)^2}{n-1}}`,
       source: "MR p. 146; MC p. 14",
@@ -557,13 +564,14 @@ const section: Section = {
         id: "z-3",
         type: "qc",
         difficulty: "medium",
-        given: String.raw`Group $P$ has mean 40 and group $Q$ has mean 60. Each group has at least one member. The two groups are combined into one list.`,
+        given: String.raw`Group $P$ has mean 40 and group $Q$ has mean 60. Group $P$ has more members than group $Q$. The two groups are combined into one list.`,
         quantityA: String.raw`The mean of the combined list`,
         quantityB: String.raw`50`,
-        answer: "D",
+        answer: "B",
         explanation: [
-          String.raw`The combined mean is a weighted mean of $40$ and $60$, with the group sizes as weights. It is $50$ only if the groups have equal size.`,
-          String.raw`If $P$ is larger, the mean is below $50$ (for instance, sizes $3$ and $1$ give $\frac{120+60}{4} = 45$). If $Q$ is larger, it is above $50$. The relationship cannot be determined.`,
+          String.raw`The combined mean is a weighted mean of $40$ and $60$, with the group sizes as weights. It would be exactly $50$ only if the groups had equal size.`,
+          String.raw`Group $P$ is larger, so the weight on $40$ is bigger and the combined mean is pulled below $50$ (for instance, sizes $3$ and $1$ give $\frac{120+60}{4} = 45$; sizes $11$ and $10$ give $\frac{440+600}{21} \approx 49.5$). Quantity B is greater.`,
+          String.raw`Trap: without the size condition the answer would be (D); the condition is what decides it.`,
         ],
       },
       {
@@ -614,30 +622,30 @@ const section: Section = {
         difficulty: "medium",
         diagram: {
           key: "4-2-describing-data/box-plot",
-          props: { plots: [{ L: 12, Q1: 20, M: 26, Q3: 44, G: 90 }], min: 0, max: 100, step: 10, letters: true },
+          props: { plots: [{ L: 10, Q1: 20, M: 30, Q3: 50, G: 90 }], min: 0, max: 100, step: 10, letters: true },
           caption: String.raw`Boxplot of a list of 20 numbers.`,
         },
         stem: String.raw`The boxplot above summarizes a list of 20 numbers. Indicate all of the following statements that must be true.`,
         choices: [
-          String.raw`The range of the numbers is 78.`,
-          String.raw`The interquartile range is 24.`,
-          String.raw`The mean of the numbers is greater than 26.`,
-          String.raw`At least 10 of the numbers are greater than or equal to 26.`,
-          String.raw`The number 44 is in the list.`,
+          String.raw`The range of the numbers is 80.`,
+          String.raw`The interquartile range is 30.`,
+          String.raw`The mean of the numbers is greater than 30.`,
+          String.raw`At least 10 of the numbers are greater than or equal to 30.`,
+          String.raw`The number 50 is in the list.`,
           String.raw`Exactly 5 of the numbers are less than 20.`,
         ],
         answer: [0, 1, 3],
         explanation: [
-          String.raw`Range $= 90 - 12 = 78$ and IQR $= 44 - 20 = 24$: the first two are true.`,
-          String.raw`The median of 20 numbers is the average of the 10th and 11th, so the 11th through 20th (ten numbers) are at least $26$: the fourth is true.`,
-          String.raw`The boxplot does not show the mean, so the third is not determined. For $n = 20$ each quartile is the average of two data values ($Q_3$ is the average of the 15th and 16th), so $44$ need not be in the list. And since $Q_1 = 20$ is the average of the 5th and 6th numbers, the 6th is at least $20$, so at most 5 numbers are less than $20$, but possibly fewer: "exactly 5" is not forced.`,
+          String.raw`Range $= 90 - 10 = 80$ and IQR $= 50 - 20 = 30$: the first two are true.`,
+          String.raw`The median of 20 numbers is the average of the 10th and 11th, so the 11th is at least $30$, and so are the 12th through 20th (ten numbers in all): the fourth is true.`,
+          String.raw`The boxplot does not show the mean, so the third is not determined. For $n = 20$ each quartile is the average of two data values ($Q_3$ is the average of the 15th and 16th), so $50$ need not be in the list. And since $Q_1 = 20$ is the average of the 5th and 6th numbers, the 6th is at least $20$, so at most 5 numbers are less than $20$, but possibly fewer: "exactly 5" is not forced.`,
         ],
       },
       {
         id: "z-8",
         type: "mcm",
         difficulty: "hard",
-        stem: String.raw`A list $x$ consists of the numbers $1, 3, 4, 5, 7, 8, 9, 11$. A new list is formed by replacing each number $x$ by $10 - 2x$. Indicate all of the following statements that are true.`,
+        stem: String.raw`A list consists of the numbers $1, 3, 4, 5, 7, 8, 9, 11$. A new list is formed by replacing each number $x$ in the list by $10 - 2x$. Indicate all of the following statements that are true.`,
         choices: [
           String.raw`The mean of the new list is $-2$.`,
           String.raw`The first quartile of the new list is $3$.`,

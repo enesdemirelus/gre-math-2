@@ -382,8 +382,8 @@ const section: Section = {
   quick: [
     {
       id: "q1",
-      prompt: String.raw`A bar graph's vertical axis starts at 1000 and has a zigzag near the bottom. Can you compare two bars by their heights?`,
-      answer: String.raw`No. The scale is broken, so heights are not proportional to the values. Read the values and compute.`,
+      prompt: String.raw`A bar graph's vertical axis starts at 1000 and has a zigzag near the bottom. If one bar is twice as tall as another, is its value twice as large?`,
+      answer: String.raw`No. The scale is broken, so heights are not proportional to the values (only their order is preserved). Read the values and compute.`,
     },
     {
       id: "q2",

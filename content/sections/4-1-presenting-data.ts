@@ -192,7 +192,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The Math Conventions warn that graphs use "scales that do not begin at 0" and "broken scales" (MC p. 15). A zigzag on the axis tells you part of the scale was skipped. Heights then stop being proportional to values, so compare the labeled numbers, not the looks of the bars.`,
+      text: String.raw`The Math Conventions warn that graphs use "scales that do not begin at 0" and "[[broken-scale|broken scales]]" (MC p. 16). A zigzag on the axis tells you part of the scale was skipped. Heights then stop being proportional to values, so compare the labeled numbers, not the looks of the bars.`,
     },
     { kind: "diagram", diagram: ref("bar-graph", brokenBars, String.raw`A broken scale: the axis jumps from $0$ to $40$, so the bars exaggerate the differences between values that are actually close.`) },
     {
@@ -233,7 +233,7 @@ const section: Section = {
     { kind: "heading", text: "Circle graphs" },
     {
       kind: "p",
-      text: String.raw`A [[circle-graph|circle graph]] (often called a pie chart) shows how a whole is separated into a few parts. Each part is a [[sector|sector]], and its area (and its central angle) is proportional to the part of the whole that it represents (MR pp. 135–136). By convention, the whole circle is $100\%$ of whatever the title says it is (MC p. 15).`,
+      text: String.raw`A [[circle-graph|circle graph]] (often called a pie chart) shows how a whole is separated into a few parts. Each part is a [[sector|sector]], and its area (and its central angle) is proportional to the part of the whole that it represents (MR pp. 135–136). By convention, the whole circle is $100\%$ of whatever the title says it is (MC p. 16).`,
     },
     { kind: "diagram", diagram: ref("circle-graph", budgetCircle, String.raw`The Housing sector is $40\%$ of the circle: its central angle is $0.40 \times 360^\circ = 144^\circ$ and it stands for $0.40 \times \$2{,}400 = \$960$.`) },
     {
@@ -309,7 +309,7 @@ const section: Section = {
     { kind: "heading", text: "Putting it together" },
     {
       kind: "p",
-      text: String.raw`Almost every question in this area is solved the same way: identify what the display is (bar graph, histogram, circle graph, and so on), read the axes and the title before anything else, pull out the exact numbers from the gridlines, and only then do the arithmetic. The Math Conventions promise that graphs are drawn to scale (MC p. 15), so when a question says "approximately", you may read between gridlines.`,
+      text: String.raw`Almost every question in this area is solved the same way: identify what the display is (bar graph, histogram, circle graph, and so on), read the axes and the title before anything else, pull out the exact numbers from the gridlines, and only then do the arithmetic. The Math Conventions promise that graphs are drawn to scale (MC p. 16), so when a question says "approximately", you may read between gridlines.`,
     },
     {
       kind: "aside",
@@ -396,7 +396,7 @@ const section: Section = {
     {
       id: "segmented-bar-graph",
       term: "segmented (stacked) bar graph",
-      turkish: "yığmalı (bölmeli) sütun grafiği",
+      turkish: "yığılmış sütun grafiği / bölmeli sütun grafiği",
       definition: String.raw`A bar graph in which each bar is divided into smaller rectangles that show how the variable is separated into related parts.`,
       diagram: ref("bar-graph", ticketsStacked, String.raw`Each bar is split into child and adult tickets.`),
       source: "MR p. 132",
@@ -415,7 +415,7 @@ const section: Section = {
       turkish: "daire grafiği (pasta grafiği)",
       definition: String.raw`A graph that shows how a whole is separated into a small number of parts. The area of each sector is proportional to the part of the whole it represents.`,
       diagram: ref("circle-graph", budgetCircle, String.raw`The whole circle is $100\%$ of the total shown.`),
-      source: "MR p. 135; MC p. 15",
+      source: "MR p. 135; MC p. 16",
     },
     {
       id: "sector",
@@ -463,7 +463,7 @@ const section: Section = {
       definition: String.raw`An axis that skips part of its range, usually marked with a zigzag. Heights no longer stay proportional to values, so read the labeled numbers.`,
       diagram: ref("bar-graph", brokenBars),
       note: "Not named in the ETS Math Review; the Math Conventions mention broken scales",
-      source: "MC p. 15",
+      source: "MC p. 16",
     },
   ],
 
@@ -732,7 +732,7 @@ const section: Section = {
         type: "qc",
         setId: "budget",
         difficulty: "hard",
-        quantityA: String.raw`The measure of the central angle of the Drama sector and the Supplies sector combined (these two sectors are adjacent)`,
+        quantityA: String.raw`The measure of the central angle of the Drama sector and the Supplies sector combined`,
         quantityB: String.raw`$80^\circ$`,
         answer: "B",
         explanation: [

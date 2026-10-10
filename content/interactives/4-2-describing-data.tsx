@@ -242,9 +242,9 @@ export function DotPlotLab() {
 /* ------------------------------------------------------------------ */
 
 const BASES: { name: string; data: number[] }[] = [
-  { name: "Evenly spread", data: [4, 6, 7, 9, 10, 12, 13, 15] },
-  { name: "One far-out value", data: [5, 6, 6, 7, 8, 8, 9, 21] },
-  { name: "Clustered", data: [8, 9, 9, 10, 10, 10, 11, 12, 12] },
+  { name: "Evenly spread", data: [4, 6, 7, 9, 11, 12, 13, 18] },
+  { name: "One far-out value", data: [5, 6, 6, 7, 8, 9, 10, 29] },
+  { name: "Clustered", data: [8, 9, 9, 10, 10, 10, 11, 11, 12] },
 ];
 
 function niceStep(span: number): number {

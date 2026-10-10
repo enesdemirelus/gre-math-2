@@ -47,7 +47,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`|A \cup B| = |A| + |B| - |A \cap B|`, key: true },
     {
       kind: "p",
-      text: String.raw`Here $|A \cup B| = 35 + 28 - 12 = 51$ people own at least one of the two, so $60 - 51 = 9$ own neither. When two sets are disjoint the intersection term is $0$, and the count is just $|B| + |C|$. Rearranged, the same formula finds a missing overlap: $|A \cap B| = |A| + |B| - |A \cup B|$. On the GRE the "neither" group is usually what makes the problem work, because the total, the union and the overlap are tied together by $\text{total} = |A \cup B| + \text{neither}$.`,
+      text: String.raw`Here $|A \cup B| = 35 + 28 - 12 = 51$ people own at least one of the two, so $60 - 51 = 9$ own neither. When two sets are disjoint the intersection term is $0$, and the count is just $|A| + |B|$. Rearranged, the same formula finds a missing overlap: $|A \cap B| = |A| + |B| - |A \cup B|$. On the GRE the "neither" group is usually what makes the problem work, because the total, the union and the overlap are tied together by $\text{total} = |A \cup B| + \text{neither}$.`,
     },
     {
       kind: "interactive",
@@ -79,7 +79,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`\underbrace{n_1 \cdot n_2 \cdots n_r}_{\text{number of options at each step}}`, key: true },
     {
       kind: "p",
-      text: String.raw`A [[tree-diagram|tree]] shows why. Choose one of 2 shirts and then one of 3 pairs of pants: the tree has 2 branches, each splitting into 3, so $2 \cdot 3 = 6$ outfits. The same thinking counts three-letter codes drawn from the letters $A$ through $E$. If letters may repeat, each of the three positions has 5 options, giving $5 \cdot 5 \cdot 5 = 125$. If repeats are not allowed, the options shrink as letters are used up: $5 \cdot 4 \cdot 3 = 60$. The choices are no longer independent in the strict sense, but a modified multiplication principle still works because the _number_ of options at each step is the same whatever you chose before (MR p. 152).`,
+      text: String.raw`A [[tree-diagram|tree]] shows why. Choose one of 2 shirts and then one of 3 pairs of pants: the tree has 2 branches, each splitting into 3, so $2 \cdot 3 = 6$ outfits. The same thinking counts three-letter codes drawn from the letters $A$ through $F$. If letters may repeat, each of the three positions has 6 options, giving $6 \cdot 6 \cdot 6 = 216$. If repeats are not allowed, the options shrink as letters are used up: $6 \cdot 5 \cdot 4 = 120$. The choices are no longer independent in the strict sense, but a modified multiplication principle still works because the _number_ of options at each step is the same whatever you chose before (MR p. 152).`,
     },
     {
       kind: "diagram",
@@ -91,7 +91,7 @@ const section: Section = {
     },
     {
       kind: "diagram",
-      diagram: { key: "4-3-counting-methods/slots", props: { items: [5, 4, 3], result: 60, names: ["1st letter", "2nd letter", "3rd letter"] }, caption: String.raw`Three-letter codes from $A, \dots, E$ with no repeated letter.` },
+      diagram: { key: "4-3-counting-methods/slots", props: { items: [6, 5, 4], result: 120, names: ["1st letter", "2nd letter", "3rd letter"] }, caption: String.raw`Three-letter codes from $A, \dots, F$ with no repeated letter.` },
     },
 
     /* ---------------------------------------------------------------- */
@@ -107,19 +107,19 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Often you do not order everything, only some of the objects. If 8 runners finish a race and the first three places receive gold, silver and bronze, you are selecting **and ordering** 3 of the 8. That is the number of [[permutations-n-k|permutations of $n$ objects taken $k$ at a time]], written $\,{}_nP_k$ (with $k \le n$). The count is the first $k$ factors of $n!$, and multiplying and dividing by $(n-k)!$ turns it into a ratio of factorials (MR p. 154):`,
+      text: String.raw`Often you do not order everything, only some of the objects. If 9 runners finish a race and the first three places receive gold, silver and bronze, you are selecting **and ordering** 3 of the 9. That is the number of [[permutations-n-k|permutations of $n$ objects taken $k$ at a time]], written $\,{}_nP_k$ (with $k \le n$). The count is the first $k$ factors of $n!$, and multiplying and dividing by $(n-k)!$ turns it into a ratio of factorials (MR p. 154):`,
     },
     { kind: "math", tex: String.raw`{}_nP_k = n(n-1)(n-2)\cdots(n-k+1) = \frac{n!}{(n-k)!}`, key: true },
     {
       kind: "p",
-      text: String.raw`For the medals, $\,{}_8P_3 = 8 \cdot 7 \cdot 6 = 336 = \frac{8!}{5!}$. Use the product form when $k$ is small: write exactly $k$ factors, starting at $n$ and going down.`,
+      text: String.raw`For the medals, $\,{}_9P_3 = 9 \cdot 8 \cdot 7 = 504 = \frac{9!}{6!}$. Use the product form when $k$ is small: write exactly $k$ factors, starting at $n$ and going down.`,
     },
 
     /* ---------------------------------------------------------------- */
     { kind: "heading", text: "Combinations" },
     {
       kind: "p",
-      text: String.raw`Now suppose the three runners are not ranked: you simply need to choose a 3-person team out of the 8. The selection $\{A, B, C\}$ is one team no matter how the names are listed. A selection of $k$ objects from $n$ in which order does **not** matter is a [[combination]]. The number is read "$n$ choose $k$" and written $\,{}_nC_k$ or $\binom{n}{k}$ (MR p. 156).`,
+      text: String.raw`Now suppose the three runners are not ranked: you simply need to choose a 3-person team out of the 9. The selection $\{A, B, C\}$ is one team no matter how the names are listed. A selection of $k$ objects from $n$ in which order does **not** matter is a [[combination]]. The number is read "$n$ choose $k$" and written $\,{}_nC_k$ or $\binom{n}{k}$ (MR p. 156).`,
     },
     {
       kind: "p",
@@ -128,7 +128,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`{}_nC_k = \binom{n}{k} = \frac{{}_nP_k}{k!} = \frac{n!}{k!\,(n-k)!}`, key: true },
     {
       kind: "p",
-      text: String.raw`Teams of 3 from 8: $\dfrac{336}{6} = 56$. Put another way, $\binom{n}{k}$ is the number of subsets with $k$ elements of an $n$-element set. That viewpoint explains two edge cases that the formula handles correctly: $\binom{n}{0} = 1$ (the only subset with no elements is $\varnothing$) and $\binom{n}{n} = 1$ (the only subset with all $n$ elements is the set itself). It also explains the symmetry $\binom{n}{k} = \binom{n}{n-k}$: choosing which $k$ objects to take is the same as choosing which $n-k$ to leave behind. So $\binom{8}{5} = \binom{8}{3} = 56$ (MR pp. 156–157).`,
+      text: String.raw`Teams of 3 from 9: $\dfrac{504}{6} = 84$. Put another way, $\binom{n}{k}$ is the number of subsets with $k$ elements of an $n$-element set. That viewpoint explains two edge cases that the formula handles correctly: $\binom{n}{0} = 1$ (the only subset with no elements is $\varnothing$) and $\binom{n}{n} = 1$ (the only subset with all $n$ elements is the set itself). It also explains the symmetry $\binom{n}{k} = \binom{n}{n-k}$: choosing which $k$ objects to take is the same as choosing which $n-k$ to leave behind. So $\binom{9}{6} = \binom{9}{3} = 84$ (MR pp. 156–157).`,
     },
     {
       kind: "interactive",
@@ -173,12 +173,12 @@ const section: Section = {
     { id: "disjoint", term: "disjoint (mutually exclusive) sets", turkish: "ayrık kümeler", definition: String.raw`Sets that have no elements in common, so their intersection is the empty set.`, formula: String.raw`S \cap T = \varnothing`, diagram: { key: "4-3-counting-methods/venn2", props: { layout: "disjoint" } }, source: "MR p. 150; MC p. 13" },
     { id: "venn-diagram", term: "Venn diagram", turkish: "Venn şeması", definition: String.raw`A picture in which sets are circular regions that overlap if they have elements in common and do not overlap if they are disjoint.`, diagram: { key: "4-3-counting-methods/venn2", props: { counts: { a: 23, ab: 12, b: 16, none: 9 } } }, source: "MR p. 150" },
     { id: "universal-set", term: "universal set", turkish: "evrensel küme", definition: String.raw`The set, drawn as a rectangle around the circles of a Venn diagram, of which all the other sets involved are subsets. The part outside every circle represents elements in none of those sets.`, diagram: { key: "4-3-counting-methods/venn2", props: { highlight: ["none"] } }, source: "MR p. 150" },
-    { id: "inclusion-exclusion", term: "inclusion-exclusion principle", turkish: "dahil etme–hariç tutma (kapsama–dışlama) ilkesi", definition: String.raw`The number of elements in the union of two finite sets equals the sum of their individual numbers of elements minus the number of elements in their intersection. The subtraction avoids counting the intersection twice.`, formula: String.raw`|A\cup B| = |A| + |B| - |A\cap B|`, source: "MR pp. 150–151" },
+    { id: "inclusion-exclusion", term: "inclusion-exclusion principle", turkish: "içerme–dışlama ilkesi", definition: String.raw`The number of elements in the union of two finite sets equals the sum of their individual numbers of elements minus the number of elements in their intersection. The subtraction avoids counting the intersection twice.`, formula: String.raw`|A\cup B| = |A| + |B| - |A\cap B|`, source: "MR pp. 150–151" },
     { id: "multiplication-principle", term: "multiplication principle", turkish: "çarpma kuralı (çarpma yoluyla sayma)", definition: String.raw`If two choices are made in sequence, the second independent of the first, with $k$ possibilities for the first and $m$ for the second, there are $km$ possibilities for the pair. For more independent choices, multiply the numbers of possibilities.`, formula: String.raw`k \cdot m`, diagram: { key: "4-3-counting-methods/choice-tree", props: { first: ["S1", "S2"], second: ["P1", "P2", "P3"] } }, source: "MR p. 151" },
     { id: "tree-diagram", term: "tree diagram", turkish: "ağaç şeması", definition: String.raw`A diagram whose branches show the choices made in order; each path from the root to an end is one possible outcome.`, note: "Not named in the ETS Math Review", source: "MR p. 151 (the idea of sequential choices)", diagram: { key: "4-3-counting-methods/choice-tree", props: { first: ["A", "B"], second: ["x", "y"] } } },
     { id: "permutation", term: "permutation", turkish: "permütasyon (sıralama)", definition: String.raw`Each order in which $n$ objects can be arranged. The number of permutations of $n$ objects is $n!$.`, formula: String.raw`n!`, diagram: { key: "4-3-counting-methods/slots", props: { items: [4, 3, 2, 1], result: 24 } }, source: "MR p. 153" },
     { id: "factorial", term: "$n$-factorial", turkish: "faktöriyel", definition: String.raw`The product $n! = n(n-1)(n-2)\cdots(3)(2)(1)$ of the positive integers up to $n$. By special definition, $0! = 1$.`, formula: String.raw`n! = n(n-1)\cdots 2\cdot 1`, source: "MR p. 153" },
-    { id: "permutations-n-k", term: "permutations of $n$ objects taken $k$ at a time", turkish: "n elemanlı kümenin r'li permütasyonları, P(n, r)", definition: String.raw`The number of ways to select and order $k$ of $n$ objects ($k \le n$), denoted $\,{}_nP_k$.`, formula: String.raw`{}_nP_k = \frac{n!}{(n-k)!}`, diagram: { key: "4-3-counting-methods/slots", props: { items: [8, 7, 6], result: 336 } }, source: "MR p. 154" },
+    { id: "permutations-n-k", term: "permutations of $n$ objects taken $k$ at a time", turkish: "n elemanlı kümenin r'li permütasyonları, P(n, r)", definition: String.raw`The number of ways to select and order $k$ of $n$ objects ($k \le n$), denoted $\,{}_nP_k$.`, formula: String.raw`{}_nP_k = \frac{n!}{(n-k)!}`, diagram: { key: "4-3-counting-methods/slots", props: { items: [9, 8, 7], result: 504 } }, source: "MR p. 154" },
     { id: "combination", term: "combination ($n$ choose $k$)", turkish: "kombinasyon, C(n, r)", definition: String.raw`The number of ways to choose $k$ of $n$ objects ($k \le n$) when the chosen objects are not put in order; equal to the number of $k$-element subsets of an $n$-element set. Written $\,{}_nC_k$ or $\binom{n}{k}$.`, formula: String.raw`\binom{n}{k} = \frac{n!}{k!\,(n-k)!}`, source: "MR p. 156" },
   ],
 
@@ -258,11 +258,12 @@ const section: Section = {
         difficulty: "medium",
         given: String.raw`$S$ is a set with 8 elements.`,
         quantityA: String.raw`The number of subsets of $S$ that have exactly 3 elements`,
-        quantityB: String.raw`The number of subsets of $S$ that have exactly 5 elements`,
-        answer: "C",
+        quantityB: String.raw`The number of subsets of $S$ that have at most 2 elements`,
+        answer: "A",
         explanation: [
-          String.raw`$\binom{8}{3} = \frac{8 \cdot 7 \cdot 6}{6} = 56$ and $\binom{8}{5} = \binom{8}{3} = 56$.`,
-          String.raw`The symmetry $\binom{n}{k} = \binom{n}{n-k}$ is the quick route: picking 3 elements to include is the same as picking the 5 to leave out. The quantities are equal.`,
+          String.raw`Quantity A: $\binom{8}{3} = \frac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56$.`,
+          String.raw`Quantity B counts subsets with 0, 1 or 2 elements: $\binom{8}{0} + \binom{8}{1} + \binom{8}{2} = 1 + 8 + 28 = 37$. Don't forget the empty set.`,
+          String.raw`$56 > 37$, so Quantity A is greater.`,
         ],
       },
       {
@@ -372,12 +373,13 @@ const section: Section = {
       {
         id: "z10",
         type: "ne",
-        difficulty: "medium",
-        stem: String.raw`A project group is to have 4 members: exactly 2 chosen from 6 mathematics students and exactly 2 chosen from 5 computer science students. How many different groups are possible?`,
-        answer: { kind: "decimal", value: "150" },
+        difficulty: "hard",
+        stem: String.raw`A project group of 4 members is to be chosen from 6 mathematics students and 5 computer science students, and it must include at least 1 student from each subject. How many different groups are possible?`,
+        answer: { kind: "decimal", value: "310" },
         explanation: [
-          String.raw`The two choices are independent, so multiply: $\binom{6}{2} \cdot \binom{5}{2}$.`,
-          String.raw`$\binom{6}{2} = 15$ and $\binom{5}{2} = 10$, so $15 \cdot 10 = 150$. Do not use $\binom{11}{4}$, which ignores the "exactly 2 from each" condition.`,
+          String.raw`Count all groups and subtract the ones that break the rule. Any 4 of the 11 students: $\binom{11}{4} = 330$.`,
+          String.raw`Groups with no computer science student: $\binom{6}{4} = 15$. Groups with no mathematics student: $\binom{5}{4} = 5$. These two cases cannot overlap.`,
+          String.raw`$330 - 15 - 5 = 310$. Trap: $\binom{6}{1}\binom{5}{1}\binom{9}{2} = 1{,}080$ counts the same group several times.`,
         ],
       },
     ],

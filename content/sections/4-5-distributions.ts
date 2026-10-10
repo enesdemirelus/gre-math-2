@@ -473,13 +473,14 @@ const section: Section = {
       {
         id: "z4",
         type: "mc1",
-        difficulty: "medium",
-        stem: String.raw`In a game, a player wins $\$10$ with probability $0.2$, wins $\$2$ with probability $0.3$, and loses $\$4$ with probability $0.5$. What is the expected value of the player's net winnings, in dollars?`,
-        choices: [String.raw`$0.2$`, String.raw`$0.6$`, String.raw`$1.2$`, String.raw`$2.6$`, String.raw`$4.0$`],
-        answer: 1,
+        difficulty: "hard",
+        stem: String.raw`In a game, a player wins $\$10$ with probability $p$, wins $\$2$ with probability $0.3$, and otherwise loses $\$4$. If the expected value of the player's net winnings is $\$0.60$, what is the value of $p$?`,
+        choices: [String.raw`$0.1$`, String.raw`$0.15$`, String.raw`$0.2$`, String.raw`$0.25$`, String.raw`$0.3$`],
+        answer: 2,
         explanation: [
-          String.raw`Treat a loss as a negative value: $10(0.2) + 2(0.3) + (-4)(0.5) = 2 + 0.6 - 2 = 0.6$.`,
-          String.raw`The probabilities $0.2 + 0.3 + 0.5 = 1$ check. Trap: $2.6$ is what you get by ignoring the loss; $4.0$ ignores the sign and the probability of the loss entirely.`,
+          String.raw`The probabilities must add to 1, so the player loses $\$4$ with probability $1 - p - 0.3 = 0.7 - p$.`,
+          String.raw`Expected value: $10p + 2(0.3) + (-4)(0.7 - p) = 10p + 0.6 - 2.8 + 4p = 14p - 2.2$.`,
+          String.raw`Set $14p - 2.2 = 0.6$: $14p = 2.8$, so $p = 0.2$. Trap: using $0.7$ for the loss probability (forgetting to subtract $p$) gives $10p - 2.2 = 0.6$, so $p = 0.28$, which is not a choice; subtracting the wins from 1 is the key step.`,
         ],
       },
       {

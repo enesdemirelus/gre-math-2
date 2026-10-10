@@ -213,8 +213,8 @@ function combos(n: number, k: number, cap: number): number[][] {
 }
 
 export function PermCombExplorer() {
-  const [n, setN] = useState(5);
-  const [k, setK] = useState(3);
+  const [n, setN] = useState(6);
+  const [k, setK] = useState(2);
   const [order, setOrder] = useState(true);
   const kk = Math.min(k, n);
 
@@ -224,12 +224,12 @@ export function PermCombExplorer() {
 
   const items = order ? perms(n, kk, LIST_CAP) : combos(n, kk, LIST_CAP);
   const total = order ? nPk : nCk;
+  // color chips by the index of their underlying set among all combinations (no collisions between different sets)
+  const comboIndex = new Map(combos(n, kk, LIST_CAP).map((c, i) => [c.join(","), i]));
   const hueOf = (arr: number[]) => {
-    // group by the underlying set: color chips of the same combination alike
-    const key = [...arr].sort((p, q) => p - q);
-    let h = 0;
-    for (const d of key) h = (h * 9 + d + 1) % 360;
-    return (h * 47) % 360;
+    const key = [...arr].sort((p, q) => p - q).join(",");
+    const idx = comboIndex.get(key) ?? 0;
+    return (idx * 137.508) % 360;
   };
   const chipStyle = (arr: number[]) => {
     const h = hueOf(arr);

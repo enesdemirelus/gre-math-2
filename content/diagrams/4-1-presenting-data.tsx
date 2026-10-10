@@ -55,6 +55,8 @@ interface FrameOpts {
   H: number;
   title?: string;
   legend?: string[];
+  /** line-graph legend: swatches are line segments matching each series */
+  legendLines?: { cls: string; dashed?: boolean }[];
   yMin: number;
   yMax: number;
   yStep: number;
@@ -159,7 +161,11 @@ function Titles({ o, f }: { o: FrameOpts; f: Frame }) {
             const ly = o.title ? 30 : 14;
             return (
               <g key={name}>
-                <rect x={lx} y={ly - 8} width={10} height={10} style={SERIES_STYLE[i % 4]} />
+                {o.legendLines ? (
+                  <line x1={lx} x2={lx + 12} y1={ly - 3} y2={ly - 3} className={o.legendLines[i].cls + (o.legendLines[i].dashed ? " dg-dashed" : "")} />
+                ) : (
+                  <rect x={lx} y={ly - 8} width={10} height={10} style={SERIES_STYLE[i % 4]} />
+                )}
                 <text x={lx + 14} y={ly + 1} className="dg-text" style={T11}>
                   {name}
                 </text>
@@ -551,7 +557,8 @@ export function LineGraph(p: LineGraphProps) {
   const yMin = p.yMin ?? 0;
   const broken = yMin > 0;
   const legend = p.series.length > 1 ? p.series.map((s) => s.name) : [];
-  const o: FrameOpts = { W, H, title: p.title, legend, yMin, yMax: p.yMax, yStep: p.yStep, yMinor: p.yMinor, yLabel: p.yLabel, xLabel: p.xLabel, fmt: p.fmt, broken, rightMargin: 16 };
+  const legendLines = p.series.map((s, si) => ({ cls: si === 0 ? "dg-accent" : "dg-line", dashed: s.dashed }));
+  const o: FrameOpts = { W, H, title: p.title, legend, legendLines, yMin, yMax: p.yMax, yStep: p.yStep, yMinor: p.yMinor, yLabel: p.yLabel, xLabel: p.xLabel, fmt: p.fmt, broken, rightMargin: 16 };
   const f = makeFrame(o);
   const n = p.xs.length;
   const pad = 14;
