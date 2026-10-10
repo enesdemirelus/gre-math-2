@@ -23,7 +23,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The two axes cut the plane into four [[quadrant|quadrants]], numbered I, II, III, IV counterclockwise starting from the upper right. The signs of the coordinates tell you the quadrant at once: I is $(+, +)$, II is $(-, +)$, III is $(-, -)$ and IV is $(+, -)$. The axes are the boundaries between quadrants, so a point on an axis is not in any quadrant.`,
+      text: String.raw`The two axes cut the plane into four [[quadrant|quadrants]], numbered I, II, III, IV counterclockwise starting from the upper right. The signs of the coordinates tell you the quadrant at once: I is $(+, +)$, II is $(-, +)$, III is $(-, -)$ and IV is $(+, -)$. The axes are the boundaries between quadrants, so a point on an axis is not in any quadrant (a standard fact, though not stated in the ETS Math Review).`,
     },
     {
       kind: "diagram",
@@ -33,7 +33,7 @@ const section: Section = {
       kind: "aside",
       tone: "gre",
       title: "Coordinate planes are drawn to scale",
-      text: String.raw`Ordinary geometry figures on the GRE are not necessarily drawn to scale, but coordinate systems are. Grid lines and tick marks are evenly spaced unless noted, and you may read, estimate or compare quantities from the picture (MC pp. 10–11). Reading gives an estimate, though. When an answer must be exact, compute it from the coordinates or the equation.`,
+      text: String.raw`Ordinary geometry figures on the GRE are not necessarily drawn to scale, but coordinate systems are. Grid lines and tick marks are evenly spaced unless noted, and you may read, estimate or compare quantities from the picture (MC pp. 11–12). Reading gives an estimate, though. When an answer must be exact, compute it from the coordinates or the equation.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -72,12 +72,12 @@ const section: Section = {
     { kind: "heading", text: "Distance: draw the right triangle" },
     {
       kind: "p",
-      text: String.raw`The Math Review finds the [[distance]] between two points with the Pythagorean theorem, not with a special formula (MR pp. 63–64). To find $AB$ for $A(-2, -1)$ and $B(4, 7)$, draw a horizontal segment from $A$ and a vertical segment from $B$; they meet at $C(4, -1)$ with a right angle. The horizontal leg has length $4 - (-2) = 6$ (the difference of the $x$-coordinates) and the vertical leg has length $7 - (-1) = 8$ (the difference of the $y$-coordinates). $AB$ is the hypotenuse.`,
+      text: String.raw`The Math Review finds the [[distance]] between two points with the Pythagorean theorem, not with a special formula (MR pp. 63–64). To find $AB$ for $A(-1, -3)$ and $B(7, 3)$, draw a horizontal segment from $A$ and a vertical segment from $B$; they meet at $C(7, -3)$ with a right angle. The horizontal leg has length $7 - (-1) = 8$ (the difference of the $x$-coordinates) and the vertical leg has length $3 - (-3) = 6$ (the difference of the $y$-coordinates). $AB$ is the hypotenuse.`,
     },
-    { kind: "math", tex: String.raw`AB = \sqrt{6^2 + 8^2} = \sqrt{100} = 10` },
+    { kind: "math", tex: String.raw`AB = \sqrt{8^2 + 6^2} = \sqrt{100} = 10` },
     {
       kind: "diagram",
-      diagram: { key: `${D}/distance`, caption: String.raw`The legs are the differences of the coordinates: $AC = 6$ and $CB = 8$, so $AB = 10$.` },
+      diagram: { key: `${D}/distance`, caption: String.raw`The legs are the differences of the coordinates: $AC = 8$ and $CB = 6$, so $AB = 10$.` },
     },
     {
       kind: "p",
@@ -88,7 +88,7 @@ const section: Section = {
       kind: "aside",
       tone: "tip",
       title: "Midpoint (not in the Math Review)",
-      text: String.raw`The [[midpoint]] of the segment joining $(x_1, y_1)$ and $(x_2, y_2)$ is $\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$, the average of the coordinates. This is a standard fact, though not stated in the ETS Math Review. For $A(-2, -1)$ and $B(4, 7)$ the midpoint is $(1, 3)$. It is handy when a question gives the endpoints of a diameter and asks for the center of the circle.`,
+      text: String.raw`The [[midpoint]] of the segment joining $(x_1, y_1)$ and $(x_2, y_2)$ is $\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$, the average of the coordinates. This is a standard fact, though not stated in the ETS Math Review. For $A(-1, -3)$ and $B(7, 3)$ the midpoint is $(3, 0)$. It is handy when a question gives the endpoints of a diameter and asks for the center of the circle.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -133,7 +133,7 @@ const section: Section = {
     { kind: "heading", text: "Intercepts" },
     {
       kind: "p",
-      text: String.raw`The [[x-intercept|x-intercepts]] of a graph are the $x$-coordinates of the points where it meets the $x$-axis, and the $y$-intercepts are the $y$-coordinates of the points where it meets the $y$-axis. Sometimes the same words name the intersection points themselves (MR p. 64; MC p. 11). Points on the $x$-axis have $y = 0$ and points on the $y$-axis have $x = 0$, which gives the working rule (MR p. 67):`,
+      text: String.raw`The [[x-intercept|x-intercepts]] of a graph are the $x$-coordinates of the points where it meets the $x$-axis, and the $y$-intercepts are the $y$-coordinates of the points where it meets the $y$-axis. Sometimes the same words name the intersection points themselves (MR p. 64; MC p. 12). Points on the $x$-axis have $y = 0$ and points on the $y$-axis have $x = 0$, which gives the working rule (MR pp. 67, 71):`,
     },
     {
       kind: "math",
@@ -160,11 +160,11 @@ const section: Section = {
     { kind: "math", tex: String.raw`\text{parallel: } m_1 = m_2 \qquad\quad \text{perpendicular: } m_2 = -\frac{1}{m_1}\ \ (m_1 m_2 = -1)`, key: true },
     {
       kind: "p",
-      text: String.raw`So $y = 2x + 3$ is parallel to $y = 2x - 1$, and $y = -\frac{1}{2}x + 2$ is perpendicular to both. Two lines with the same slope and the same $y$-intercept are not two parallel lines but one line, so on the GRE "parallel" lines with equal slopes have different intercepts and never meet.`,
+      text: String.raw`So $y = 3x + 2$ is parallel to $y = 3x - 4$, and $y = -\frac{1}{3}x + 1$ is perpendicular to both. Two lines with the same slope and the same $y$-intercept are not two parallel lines but one line, so on the GRE "parallel" lines with equal slopes have different intercepts and never meet.`,
     },
     {
       kind: "diagram",
-      diagram: { key: `${D}/parallel-perp`, caption: String.raw`$\ell$: $y = 2x - 1$ and $m$: $y = 2x + 3$ are parallel (slope 2). $n$: $y = -\frac{1}{2}x + 2$ is perpendicular to both (slope $-\frac{1}{2}$).` },
+      diagram: { key: `${D}/parallel-perp`, caption: String.raw`$\ell$: $y = 3x + 2$ and $m$: $y = 3x - 4$ are parallel (slope 3). $n$: $y = -\frac{1}{3}x + 1$ is perpendicular to both (slope $-\frac{1}{3}$).` },
     },
     {
       kind: "aside",
@@ -276,7 +276,7 @@ const section: Section = {
     {
       kind: "aside",
       tone: "watch",
-      text: String.raw`Read the center with the opposite signs: $(x - 4)^2 + (y + 1)^2 = 9$ has center $(4, -1)$, not $(-4, 1)$. And the right side is $r^2$: radius 3 here, not 9. Once you have the center and radius, everything from Section 3.5 (circumference $2\pi r$, area $\pi r^2$) applies.`,
+      text: String.raw`Read the center with the opposite signs: $(x - 4)^2 + (y + 1)^2 = 16$ has center $(4, -1)$, not $(-4, 1)$. And the right side is $r^2$: radius 4 here, not 16. Once you have the center and radius, everything from Section 3.5 (circumference $2\pi r$, area $\pi r^2$) applies.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -301,7 +301,7 @@ const section: Section = {
       turkish: "dik koordinat sistemi / analitik düzlem",
       definition: String.raw`Two real number lines that are perpendicular to each other and intersect at their zero points. Also called the $xy$-coordinate system or the $xy$-plane.`,
       diagram: { key: `${D}/quadrants`, props: { highlight: "system" } },
-      source: "MR p. 61; MC p. 10",
+      source: "MR p. 61; MC p. 11",
     },
     {
       id: "x-axis",
@@ -333,7 +333,7 @@ const section: Section = {
       turkish: "bölge (koordinat düzleminin I., II., III., IV. bölgesi)",
       definition: String.raw`One of the four regions into which the axes divide the plane, labeled I, II, III and IV counterclockwise from the upper right.`,
       diagram: { key: `${D}/quadrants`, props: { highlight: "quadrants" } },
-      source: "MR pp. 61–62; MC p. 10",
+      source: "MR pp. 61–62; MC p. 11",
     },
     {
       id: "ordered-pair",
@@ -348,7 +348,7 @@ const section: Section = {
       term: "x-coordinate",
       turkish: "apsis",
       definition: String.raw`The first number of the ordered pair $(x, y)$: the point is $|x|$ units to the right of the $y$-axis if $x > 0$, or to the left if $x < 0$.`,
-      diagram: { key: `${D}/quadrants`, props: { highlight: "coords" } },
+      diagram: { key: `${D}/quadrants`, props: { highlight: "x-coord" } },
       source: "MR p. 62",
     },
     {
@@ -356,7 +356,7 @@ const section: Section = {
       term: "y-coordinate",
       turkish: "ordinat",
       definition: String.raw`The second number of the ordered pair $(x, y)$: the point is $|y|$ units above the $x$-axis if $y > 0$, or below if $y < 0$.`,
-      diagram: { key: `${D}/quadrants`, props: { highlight: "coords" } },
+      diagram: { key: `${D}/quadrants`, props: { highlight: "y-coord" } },
       source: "MR p. 62",
     },
     {
@@ -425,7 +425,7 @@ const section: Section = {
       turkish: "y eksenini kestiği nokta (ordinatı)",
       definition: String.raw`The $y$-coordinate of a point where a graph intersects the $y$-axis (sometimes the point itself). In $y = mx + b$ it is $b$.`,
       diagram: { key: `${D}/slope`, props: { highlight: "y-intercept" } },
-      source: "MR p. 64; MC p. 11",
+      source: "MR p. 64; MC p. 12",
     },
     {
       id: "x-intercept",
@@ -433,7 +433,7 @@ const section: Section = {
       turkish: "x eksenini kestiği nokta (apsisi)",
       definition: String.raw`The $x$-coordinate of a point where a graph intersects the $x$-axis (sometimes the point itself). Find it by setting $y = 0$.`,
       diagram: { key: `${D}/slope`, props: { highlight: "x-intercept" } },
-      source: "MR pp. 64, 67; MC p. 11",
+      source: "MR pp. 64, 67; MC p. 12",
     },
     {
       id: "horizontal-line",

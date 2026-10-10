@@ -183,7 +183,7 @@ export function FunctionMachine() {
         <input type="range" style={{ width: "100%" }} min={-6} max={12} step={1} value={x} onChange={(e) => setX(Number(e.target.value))} />
       </label>
       <div style={{ justifySelf: "center" }}>
-        <MachineBox name="f" input={xs} output={fxT ? fxT.tex : null} bad={fx === null} />
+        <MachineBox name="f" input={xs} output={fxT ? (fxT.exact ? fxT.tex : "\\approx " + fxT.tex) : null} bad={fx === null} />
       </div>
       <div>
         {fIssue ? (
@@ -202,7 +202,7 @@ export function FunctionMachine() {
         <>
           <RulePicker name="g" value={gi} onChange={setGi} />
           <div style={{ justifySelf: "center" }}>
-            <MachineBox name="g" input={fxT ? fxT.tex : "\\text{—}"} output={gfxT ? gfxT.tex : null} bad={gfx === null} />
+            <MachineBox name="g" input={fxT ? fxT.tex : "\\text{—}"} output={gfxT ? (gfxT.exact ? gfxT.tex : "\\approx " + gfxT.tex) : null} bad={gfx === null} />
           </div>
           <div>
             {fx === null ? (

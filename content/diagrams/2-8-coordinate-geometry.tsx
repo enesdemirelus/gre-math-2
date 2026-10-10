@@ -1,5 +1,5 @@
 // Original diagrams for section 2.8 Coordinate Geometry.
-// Every figure is an xy-plane drawn to scale (MC p. 10): equal units on both axes,
+// Every figure is an xy-plane drawn to scale (MC pp. 11–12): equal units on both axes,
 // grid lines at every integer. All positions are computed from plane coordinates.
 
 import type React from "react";
@@ -346,10 +346,10 @@ export function Plane(props: PlaneProps) {
 /* 1. Axes, origin, quadrants, coordinates                              */
 /* ------------------------------------------------------------------ */
 
-export type QuadHighlight = "all" | "x-axis" | "y-axis" | "origin" | "quadrants" | "coords" | "system";
+export type QuadHighlight = "all" | "x-axis" | "y-axis" | "origin" | "quadrants" | "coords" | "x-coord" | "y-coord" | "system";
 
 export function Quadrants({ highlight = "all" }: { highlight?: QuadHighlight }) {
-  const showPoint = highlight === "all" || highlight === "coords";
+  const showPoint = highlight === "all" || highlight === "coords" || highlight === "x-coord" || highlight === "y-coord";
   const A: Pt = [-3, 2];
   return (
     <Plane
@@ -363,8 +363,8 @@ export function Quadrants({ highlight = "all" }: { highlight?: QuadHighlight }) 
       segs={
         showPoint
           ? [
-              { from: A, to: [-3, 0], dashed: true, thin: true, accent: highlight === "coords" },
-              { from: A, to: [0, 2], dashed: true, thin: true, accent: highlight === "coords" },
+              { from: A, to: [-3, 0], dashed: true, thin: true, accent: highlight === "coords" || highlight === "y-coord" },
+              { from: A, to: [0, 2], dashed: true, thin: true, accent: highlight === "coords" || highlight === "x-coord" },
             ]
           : []
       }
@@ -413,13 +413,13 @@ export function Reflections({ highlight = "all" }: { highlight?: ReflHighlight }
 /* ------------------------------------------------------------------ */
 
 export function Distance({ midpoint = false }: { midpoint?: boolean }) {
-  const A: Pt = [-2, -1];
-  const B: Pt = [4, 7];
-  const C: Pt = [4, -1];
+  const A: Pt = [-1, -3];
+  const B: Pt = [7, 3];
+  const C: Pt = [7, -3];
   return (
     <Plane
-      x={[-5, 6]}
-      y={[-3, 8]}
+      x={[-3, 9]}
+      y={[-5, 5]}
       u={22}
       every={2}
       segs={[
@@ -432,18 +432,18 @@ export function Distance({ midpoint = false }: { midpoint?: boolean }) {
         midpoint
           ? []
           : [
-              { at: [1, -1.6], text: "6" },
-              { at: [4.5, 3], text: "8" },
-              { at: [1.7, 2.45], text: "10" },
+              { at: [3, -3.6], text: "8" },
+              { at: [7.5, 0], text: "6" },
+              { at: [1.9, 0.9], text: "10" },
             ]
       }
       points={[
         { at: A, name: "A", coords: true, dir: "sw", off: 8 },
-        { at: B, name: "B", coords: true, dir: "w", off: 9 },
+        { at: B, name: "B", coords: true, dir: "ne", off: 8 },
         { at: C, name: "C", coords: true, dir: "se", off: 7 },
-        ...(midpoint ? [{ at: [1, 3] as Pt, name: "M", coords: true, dir: "se" as Dir, off: 8, accent: true }] : []),
+        ...(midpoint ? [{ at: [3, 0] as Pt, name: "M", coords: true, dir: "nw" as Dir, off: 9, accent: true }] : []),
       ]}
-      label={midpoint ? "Midpoint M(1, 3) of segment AB" : "Distance from A to B via a right triangle"}
+      label={midpoint ? "Midpoint M(3, 0) of segment AB" : "Distance from A to B via a right triangle"}
     />
   );
 }
@@ -505,10 +505,10 @@ export function HorizVert({ highlight = "both" }: { highlight?: "both" | "horizo
 /* ------------------------------------------------------------------ */
 
 export function ParallelPerp({ highlight = "all" }: { highlight?: "all" | "parallel" | "perpendicular" }) {
-  const lines: LineSpec[] = [{ m: 2, k: -1, label: "ℓ", labelAt: [3.25, 4.4] }];
-  if (highlight !== "perpendicular") lines.push({ m: 2, k: 3, accent: highlight === "parallel", label: "m", labelAt: [-3.35, -2.3] });
-  if (highlight !== "parallel") lines.push({ m: -0.5, k: 2, accent: highlight === "perpendicular", label: "n", labelAt: [-4.3, 3.6] });
-  const I: Pt = [1.2, 1.4];
+  const lines: LineSpec[] = [{ m: 3, k: 2, label: "ℓ", labelAt: [1.35, 4.6] }];
+  if (highlight !== "perpendicular") lines.push({ m: 3, k: -4, accent: highlight === "parallel", label: "m", labelAt: [3.05, 3] });
+  if (highlight !== "parallel") lines.push({ m: -1 / 3, k: 1, accent: highlight === "perpendicular", label: "n", labelAt: [-4.2, 3.0] });
+  const I: Pt = [-0.3, 1.1];
   return (
     <Plane
       x={[-5, 5]}
@@ -516,7 +516,7 @@ export function ParallelPerp({ highlight = "all" }: { highlight?: "all" | "paral
       u={24}
       every={2}
       lines={lines}
-      rightAngles={highlight !== "parallel" ? [{ v: I, a: [2.2, 3.4], b: [3.2, 0.4] }] : []}
+      rightAngles={highlight !== "parallel" ? [{ v: I, a: [0.3, 2.9], b: [2.7, 0.1] }] : []}
       label="Parallel lines have equal slopes; perpendicular lines have negative reciprocal slopes"
     />
   );

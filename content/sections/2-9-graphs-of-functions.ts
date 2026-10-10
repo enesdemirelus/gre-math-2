@@ -4,20 +4,20 @@ const PLOT = "2-9-graphs-of-functions/plot";
 
 /* Reusable to-scale graphs (props for the Plot component). */
 
-/** f(x) = x^2 - 2x - 3 = (x - 1)^2 - 4, with the point (4, 5) read off the graph. */
+/** f(x) = x^2 - 4x + 3 = (x - 1)(x - 3) = (x - 2)^2 - 1, with the point (4, 3) read off the graph. */
 const graphPoint = (extra: Record<string, unknown> = {}): DiagramRef => ({
   key: PLOT,
   props: {
-    xmin: -3, xmax: 5, ymin: -5, ymax: 6,
-    curves: [{ base: "sq", h: 1, k: -4 }],
-    segs: [{ x1: 4, y1: 0, x2: 4, y2: 5 }],
+    xmin: -2, xmax: 6, ymin: -2, ymax: 6,
+    curves: [{ base: "sq", h: 2, k: -1 }],
+    segs: [{ x1: 4, y1: 0, x2: 4, y2: 3 }],
     points: [
-      { x: 4, y: 5, label: "(4, 5)", dx: 8, dy: 12 },
-      { x: -1, y: 0, label: "−1", dx: -6, dy: -7, anchor: "end" },
+      { x: 4, y: 3, label: "(4, 3)", dx: 8, dy: 12 },
+      { x: 1, y: 0, label: "1", dx: -6, dy: -7, anchor: "end" },
       { x: 3, y: 0, label: "3", dx: 6, dy: -7 },
-      { x: 0, y: -3, label: "(0, −3)", dx: -6, dy: 14, anchor: "end" },
+      { x: 0, y: 3, label: "(0, 3)", dx: 8, dy: -6 },
     ],
-    texts: [{ x: -2.9, y: 2.4, text: "y = f(x)" }],
+    texts: [{ x: -1.9, y: 1.5, text: "y = f(x)" }],
     ...extra,
   },
 });
@@ -25,10 +25,10 @@ const graphPoint = (extra: Record<string, unknown> = {}): DiagramRef => ({
 const verticalLine: DiagramRef = {
   key: PLOT,
   props: {
-    xmin: -3, xmax: 5, ymin: -5, ymax: 6,
-    curves: [{ base: "sq", h: 1, k: -4 }],
-    segs: [{ x1: 2.5, y1: -5, x2: 2.5, y2: 6, style: "dashed" }],
-    points: [{ x: 2.5, y: -1.75, label: "one point", dx: 7, dy: 4 }],
+    xmin: -2, xmax: 6, ymin: -2, ymax: 6,
+    curves: [{ base: "sq", h: 2, k: -1 }],
+    segs: [{ x1: 3.5, y1: -2, x2: 3.5, y2: 6, style: "dashed" }],
+    points: [{ x: 3.5, y: 1.25, label: "one point", dx: 7, dy: 4 }],
   },
 };
 
@@ -102,6 +102,32 @@ const stretch: DiagramRef = {
     texts: [
       { x: -1.8, y: 5.3, text: "y = 2x²", anchor: "end" },
       { x: 2.6, y: 5.5, text: "y = x²" },
+      { x: 3.95, y: 1.4, text: "y = ½x²", anchor: "end" },
+    ],
+  },
+};
+
+const stretchOnly: DiagramRef = {
+  key: PLOT,
+  props: {
+    xmin: -4, xmax: 4, ymin: -1, ymax: 6,
+    curves: [{ base: "sq", style: "dashed" }, { base: "sq", a: 2 }],
+    points: [{ x: 1, y: 2, label: "(1, 2)", dx: 8, dy: -4 }],
+    texts: [
+      { x: -1.8, y: 5.3, text: "y = 2x²", anchor: "end" },
+      { x: 2.6, y: 5.5, text: "y = x²" },
+    ],
+  },
+};
+
+const shrinkOnly: DiagramRef = {
+  key: PLOT,
+  props: {
+    xmin: -4, xmax: 4, ymin: -1, ymax: 6,
+    curves: [{ base: "sq", style: "dashed" }, { base: "sq", a: 0.5 }],
+    points: [{ x: 1, y: 0.5, label: "(1, ½)", dx: 8, dy: 12 }],
+    texts: [
+      { x: -2.6, y: 5.3, text: "y = x²", anchor: "end" },
       { x: 3.95, y: 1.4, text: "y = ½x²", anchor: "end" },
     ],
   },
@@ -203,11 +229,11 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`That one sentence gives you a dictionary between algebra and pictures. "$f(4) = 5$" and "the point $(4, 5)$ is on the graph of $f$" say the same thing. The $y$-intercept of the graph is the point $(0, f(0))$. The $x$-intercepts are the points where the output is 0, so finding them means solving $f(x) = 0$. Below, $f(x) = x^2 - 2x - 3 = (x + 1)(x - 3)$: the graph crosses the $x$-axis at $-1$ and $3$, crosses the $y$-axis at $f(0) = -3$, and passes through $(4, 5)$ because $f(4) = 16 - 8 - 3 = 5$.`,
+      text: String.raw`That one sentence gives you a dictionary between algebra and pictures. "$f(4) = 3$" and "the point $(4, 3)$ is on the graph of $f$" say the same thing. The $y$-intercept of the graph is the point $(0, f(0))$. The $x$-intercepts are the points where the output is 0, so finding them means solving $f(x) = 0$. Below, $f(x) = x^2 - 4x + 3 = (x - 1)(x - 3)$: the graph crosses the $x$-axis at $1$ and $3$, crosses the $y$-axis at $f(0) = 3$, has its lowest point at $(2, -1)$, and passes through $(4, 3)$ because $f(4) = 16 - 16 + 3 = 3$.`,
     },
     {
       kind: "diagram",
-      diagram: { ...graphPoint(), caption: String.raw`The graph of $f(x) = x^2 - 2x - 3$. The dashed segment shows how to read $f(4) = 5$: go to $x = 4$, then up to the graph.` },
+      diagram: { ...graphPoint(), caption: String.raw`The graph of $f(x) = x^2 - 4x + 3$. The dashed segment shows how to read $f(4) = 3$: go to $x = 4$, then up to the graph.` },
     },
     {
       kind: "p",
@@ -365,7 +391,7 @@ const section: Section = {
     { kind: "math", tex: String.raw`y = \pm\, c\, f(x - h) + k`, key: true },
     {
       kind: "p",
-      text: String.raw`Read it from the inside out, in the same order the Math Review describes its own examples ("shifted ... and then stretched", "contracted ... and then reflected", MR p. 78): shift horizontally by $h$ (right if $h > 0$, left if $h < 0$), stretch or shrink vertically by $c$, reflect in the $x$-axis if there is a minus sign, and finally shift vertically by $k$. The vertex of the parabola, the corner of the V, or the endpoint of the square root curve moves from $(0, 0)$ to $(h, k)$.`,
+      text: String.raw`This general form is not stated in the ETS Math Review; it extends the order used in the MR's examples ("shifted ... and then stretched", "contracted ... and then reflected", MR p. 78). Read it from the inside out: shift horizontally by $h$ (right if $h > 0$, left if $h < 0$), stretch or shrink vertically by $c$, reflect in the $x$-axis if there is a minus sign, and finally shift vertically by $k$. The vertex of the parabola, the corner of the V, or the endpoint of the square root curve moves from $(0, 0)$ to $(h, k)$.`,
     },
     {
       kind: "p",
@@ -446,7 +472,7 @@ const section: Section = {
       turkish: "parabol",
       definition: String.raw`The graph of a quadratic equation such as $y = x^2$: a U-shaped curve, symmetric about a vertical line through its vertex.`,
       diagram: small([{ base: "sq", h: 1, k: -2 }]),
-      source: "MR p. 73",
+      source: "MR pp. 70–71, 73",
     },
     {
       id: "absolute-value-function",
@@ -510,7 +536,7 @@ const section: Section = {
       term: "stretched vertically (dilated)",
       turkish: "düşey doğrultuda genişleme / uzama",
       definition: String.raw`For $c > 1$, the graph of $c\,h(x)$ is the graph of $h(x)$ stretched vertically, away from the $x$-axis, by a factor of $c$.`,
-      diagram: stretch,
+      diagram: stretchOnly,
       source: "MR pp. 78–79",
     },
     {
@@ -518,7 +544,7 @@ const section: Section = {
       term: "shrunk vertically (contracted)",
       turkish: "düşey doğrultuda daralma / büzülme",
       definition: String.raw`For $0 < c < 1$, the graph of $c\,h(x)$ is the graph of $h(x)$ shrunk vertically, toward the $x$-axis, by a factor of $c$.`,
-      diagram: stretch,
+      diagram: shrinkOnly,
       source: "MR pp. 78–79",
     },
   ],
