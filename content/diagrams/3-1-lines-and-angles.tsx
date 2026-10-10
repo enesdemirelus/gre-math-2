@@ -445,6 +445,7 @@ export function AnglePair({ kind = "supplementary" }: { kind?: "supplementary" |
       <Seg a={B} b={along(B, 0, 130)} />
       <Seg a={B} b={along(B, 90, 92)} />
       <Seg a={B} b={along(B, d, 120)} cls="dg-accent" />
+      <path d={rightMarkDir(B, 0, 90, 9)} className="dg-line dg-thin" />
       <path d={angleArc(B, 22, 0, d)} className="dg-line dg-thin" />
       <path d={angleArc(B, 18, d, 90)} className="dg-line dg-thin" />
       <AngleText v={B} d1={0} d2={d} text="34°" extra={26} />
@@ -605,27 +606,27 @@ export function TwoCrossingLines() {
   );
 }
 
-/** Segment BD perpendicular to line l at D, with A and C on l. Used for a "what may be assumed" question. */
+/** Segment SR perpendicular to line l at R, with P and Q on l. Used for a "what may be assumed" question. */
 export function ConventionsFigure() {
   const y = 150;
-  const A: Pt = [40, y];
-  const D: Pt = [120, y];
-  const C: Pt = [290, y];
-  const B: Pt = [120, 40];
+  const P: Pt = [40, y];
+  const R: Pt = [120, y];
+  const Q: Pt = [290, y];
+  const S: Pt = [120, 40];
   return (
-    <svg viewBox="0 0 330 185" width={330} role="img" aria-label="Triangle ABC with segment BD perpendicular to AC">
+    <svg viewBox="0 0 330 185" width={330} role="img" aria-label="Triangle PSQ with segment SR perpendicular to PQ">
       <line x1={15} y1={y} x2={315} y2={y} className="dg-line" />
-      <Seg a={A} b={B} />
-      <Seg a={B} b={C} />
-      <Seg a={B} b={D} />
-      <path d={rightMarkDir(D, 0, 90, 10)} className="dg-line dg-thin" />
-      {[A, B, C, D].map((p, i) => (
+      <Seg a={P} b={S} />
+      <Seg a={S} b={Q} />
+      <Seg a={S} b={R} />
+      <path d={rightMarkDir(R, 0, 90, 10)} className="dg-line dg-thin" />
+      {[P, S, Q, R].map((p, i) => (
         <Dot key={i} at={p} />
       ))}
-      <Label at={[A[0], A[1] + 17]}>A</Label>
-      <Label at={[D[0], D[1] + 17]}>D</Label>
-      <Label at={[C[0], C[1] + 17]}>C</Label>
-      <Label at={[B[0], B[1] - 15]}>B</Label>
+      <Label at={[P[0], P[1] + 17]}>P</Label>
+      <Label at={[R[0], R[1] + 17]}>R</Label>
+      <Label at={[Q[0], Q[1] + 17]}>Q</Label>
+      <Label at={[S[0], S[1] - 15]}>S</Label>
       <Label at={[322, y]}>ℓ</Label>
     </svg>
   );

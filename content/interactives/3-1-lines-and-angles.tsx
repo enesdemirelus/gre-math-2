@@ -94,7 +94,7 @@ export function ParallelExplorer() {
   const num = (v: number) => (Math.abs(v - Math.round(v)) < 0.01 ? String(Math.round(v)) : v.toFixed(1));
 
   const nSame = sel === null ? 0 : vals.filter((_, j) => same(sel, j)).length;
-  const nSupp = sel === null ? 0 : vals.filter((_, j) => supp(sel, j)).length;
+  const nSupp = sel === null ? 0 : vals.filter((_, j) => j !== sel && supp(sel, j)).length;
 
   return (
     <div className="explorer" style={{ display: "grid", gap: "0.6rem", justifyItems: "center" }}>
@@ -180,9 +180,15 @@ export function ParallelExplorer() {
       </div>
       <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         {parallel ? (
+          theta === 90 ? (
+            <div>
+              <Tex tex="k \\parallel m:" /> all eight angles are <Tex tex="90^\\circ" />.
+            </div>
+          ) : (
           <div>
             <Tex tex={`k \\parallel m:\\ \\text{acute angles } ${num(Math.min(theta, 180 - theta))}^\\circ,\\ \\text{obtuse angles } ${num(Math.max(theta, 180 - theta))}^\\circ,\\ ${num(Math.min(theta, 180 - theta))} + ${num(Math.max(theta, 180 - theta))} = 180`} />
           </div>
+          )
         ) : (
           <div>
             <Tex tex={`\\text{At } k: ${num(theta)}^\\circ,\\ ${num(180 - theta)}^\\circ.\\quad \\text{At } m: ${num(theta - tau)}^\\circ,\\ ${num(180 - theta + tau)}^\\circ.\\quad \\text{Not parallel, so the two crossings do not match.}`} />
