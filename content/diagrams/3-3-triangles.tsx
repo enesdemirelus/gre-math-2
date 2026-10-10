@@ -182,24 +182,24 @@ export function InequalityFigure({ variant = "ok" }: { variant?: "ok" | "fail" }
       </svg>
     );
   }
-  // fail: base 12, arms 4 and 5 cannot meet. Dashed arcs show every position each arm can reach.
-  const u = 20;
+  // fail: base 10, arms 3 and 5 cannot meet. Dashed arcs show every position each arm can reach.
+  const u = 24;
   const A: Pt = [40, 160];
-  const B: Pt = [40 + 12 * u, 160];
-  const ra = 4 * u;
+  const B: Pt = [40 + 10 * u, 160];
+  const ra = 3 * u;
   const rb = 5 * u;
   const armA = add(A, [ra * Math.cos(rad(60)), -ra * Math.sin(rad(60))]);
   const armB = add(B, [-rb * Math.cos(rad(55)), -rb * Math.sin(rad(55))]);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width={W} role="img" aria-label="Sides 4 and 5 cannot meet over a base of 12">
+    <svg viewBox={`0 0 ${W} ${H}`} width={W} role="img" aria-label="Sides 3 and 5 cannot meet over a base of 10">
       <path d={`M ${A[0] + ra} ${A[1]} A ${ra} ${ra} 0 0 0 ${A[0] - ra} ${A[1]}`} className="dg-line dg-thin dg-dashed" />
       <path d={`M ${B[0] + rb} ${B[1]} A ${rb} ${rb} 0 0 0 ${B[0] - rb} ${B[1]}`} className="dg-line dg-thin dg-dashed" />
       <Seg a={A} b={B} cls="dg-accent" />
       <Seg a={A} b={armA} />
       <Seg a={B} b={armB} />
-      <T at={add(lerp(A, armA, 0.5), [-12, -2])} cls="dg-text">4</T>
+      <T at={add(lerp(A, armA, 0.5), [-12, -2])} cls="dg-text">3</T>
       <T at={add(lerp(B, armB, 0.5), [12, -2])} cls="dg-text">5</T>
-      <T at={[(A[0] + B[0]) / 2, A[1] + 16]} cls="dg-text">12</T>
+      <T at={[(A[0] + B[0]) / 2, A[1] + 16]} cls="dg-text">10</T>
       {[A, B, armA, armB].map((p, i) => (
         <Dot key={i} at={p} />
       ))}
@@ -290,9 +290,9 @@ export function TypesFigure({ kind = "isosceles" }: { kind?: "equilateral" | "is
       {[A, B, C].map((p, i) => (
         <Dot key={i} at={p} />
       ))}
-      <T at={vertexPos(A, G, 14)}>A</T>
-      <T at={vertexPos(B, G, 14)}>C</T>
-      <T at={vertexPos(C, G, 14)}>B</T>
+      <T at={vertexPos(A, G, 14)}>{iso ? "P" : "A"}</T>
+      <T at={vertexPos(B, G, 14)}>{iso ? "R" : "C"}</T>
+      <T at={vertexPos(C, G, 14)}>{iso ? "Q" : "B"}</T>
     </svg>
   );
 }
@@ -562,7 +562,7 @@ export function AnyBaseFigure() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 9. Congruent triangles PQR and STU (STU is a mirror image)           */
+/* 9. Congruent triangles JKL and XYZ (XYZ is a mirror image)           */
 /* ------------------------------------------------------------------ */
 
 export type CongHighlight = "corr" | "sss" | "sas" | "asa" | "aas";
@@ -587,7 +587,7 @@ export function CongruentFigure({ highlight = "corr" }: { highlight?: CongHighli
   const h = highlight;
   const side = (on: boolean) => (on ? "dg-accent" : "dg-line");
   const showSides = { a: h !== "aas", b: h !== "asa", c: h === "sss" || h === "corr" };
-  // a = PQ/ST, b = QR/TU, c = PR/SU
+  // a = JK/XY, b = KL/YZ, c = JL/XZ
   const acc = {
     a: h === "sss" || h === "sas" || h === "asa",
     b: h === "sss" || h === "sas" || h === "aas",
@@ -625,15 +625,15 @@ export function CongruentFigure({ highlight = "corr" }: { highlight?: CongHighli
     </>
   );
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width={W} role="img" aria-label="Congruent triangles PQR and STU">
-      {tri(P, Q, R, g1, ["P", "Q", "R"])}
-      {tri(S, Tt, U, g2, ["S", "T", "U"])}
+    <svg viewBox={`0 0 ${W} ${H}`} width={W} role="img" aria-label="Congruent triangles JKL and XYZ">
+      {tri(P, Q, R, g1, ["J", "K", "L"])}
+      {tri(S, Tt, U, g2, ["X", "Y", "Z"])}
     </svg>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/* 10. Similar triangles ABC and DEF (scale factor 3 : 2)               */
+/* 10. Similar triangles GHI and MNO (scale factor 3 : 2)               */
 /* ------------------------------------------------------------------ */
 
 export function SimilarFigure({ labels = true }: { labels?: boolean }) {
@@ -652,7 +652,7 @@ export function SimilarFigure({ labels = true }: { labels?: boolean }) {
   const g1 = centroid(A, B, C);
   const g2 = centroid(D, E, F);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width={W} role="img" aria-label="Similar triangles ABC and DEF">
+    <svg viewBox={`0 0 ${W} ${H}`} width={W} role="img" aria-label="Similar triangles GHI and MNO">
       <path d={poly(A, B, C)} className="dg-line" />
       <path d={poly(D, E, F)} className="dg-accent" />
       {labels && (
@@ -668,12 +668,12 @@ export function SimilarFigure({ labels = true }: { labels?: boolean }) {
       {[A, B, C, D, E, F].map((p, i) => (
         <Dot key={i} at={p} />
       ))}
-      <T at={vertexPos(A, g1, 13)}>A</T>
-      <T at={vertexPos(B, g1, 13)}>B</T>
-      <T at={vertexPos(C, g1, 13)}>C</T>
-      <T at={vertexPos(D, g2, 13)}>D</T>
-      <T at={vertexPos(E, g2, 13)}>E</T>
-      <T at={vertexPos(F, g2, 13)}>F</T>
+      <T at={vertexPos(A, g1, 13)}>G</T>
+      <T at={vertexPos(B, g1, 13)}>H</T>
+      <T at={vertexPos(C, g1, 13)}>I</T>
+      <T at={vertexPos(D, g2, 13)}>M</T>
+      <T at={vertexPos(E, g2, 13)}>N</T>
+      <T at={vertexPos(F, g2, 13)}>O</T>
     </svg>
   );
 }
