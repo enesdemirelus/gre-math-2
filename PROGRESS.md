@@ -18,10 +18,10 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 2.3 Solving Linear Equations | done | content: 2 fixed (parallel-lines citation, elimination wording); questions: 2 too-easy items replaced |
 | 2.4 Solving Quadratic Equations | done | content: 4 fixed (copied MR polynomial, attribution wording, explorer readout, diagram accent); questions: clean |
 | 2.5 Solving Linear Inequalities | done | content: 3 fixed (copied MR numbers in terms, explorer message); questions: 1 too-easy item replaced |
-| 2.6 Functions | written (Sonnet); Opus reviews pending | |
+| 2.6 Functions | done | content: 1 fixed (explorer ≈ marking); questions: clean |
 | 2.7 Applications | done | content: 8 fixed (copied MR stories/numbers, revenue note, work-rate bound); questions: 1 too-easy item made harder |
-| 2.8 Coordinate Geometry | written (Sonnet); Opus reviews pending | |
-| 2.9 Graphs of Functions | written (Sonnet); Opus reviews pending | |
+| 2.8 Coordinate Geometry | done | content: 5 fixed (MC page cites, non-MR fact labeled, copied MR numbers replaced, per-term diagrams); questions: clean |
+| 2.9 Graphs of Functions | done | content: 4 fixed (copied MR function replaced, attribution, citation, separate stretch/shrink diagrams); questions: clean |
 | 3.1 Lines and Angles | written (Sonnet); Opus reviews pending | |
 | 3.2 Polygons | written (Sonnet); Opus reviews pending | |
 | 3.3 Triangles | written (Sonnet); Opus reviews pending | |
