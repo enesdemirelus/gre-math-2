@@ -62,7 +62,7 @@ export function Glossary({ sections }: { sections: SectionData[] }) {
           {filtered.map(({ s, t }) => (
             <div key={s.id + t.id} className="card" style={{ display: "flex", gap: 16, margin: "8px 0" }}>
               <div style={{ flex: 1 }}>
-                <strong>{t.term}</strong> <span className="muted">{t.turkish}</span>
+                <strong><RichText text={t.term} plainTerms /></strong> <span className="muted">{t.turkish}</span>
                 {t.note && (
                   <>
                     {" "}

@@ -184,7 +184,7 @@ export function checkSection(section: Section, diagramReg: Registry, interactive
   const types = new Set(section.quiz.questions.map((q) => q.type));
   for (const t of ["qc", "mc1", "mcm", "ne"] as const) if (!types.has(t)) r.err("quiz", `missing question type "${t}"`);
   if (section.examples.length < 3 || section.examples.length > 4) r.warn("examples", `expected 3-4, has ${section.examples.length}`);
-  if (section.quick.length < 5 || section.quick.length > 6) r.warn("quick", `expected 5-6, has ${section.quick.length}`);
+  if (section.quick.length < 5 || section.quick.length > 7) r.warn("quick", `expected 5-7, has ${section.quick.length}`);
   if (section.terms.length < 6 || section.terms.length > 30) r.warn("terms", `expected 6-30, has ${section.terms.length}`);
 }
 

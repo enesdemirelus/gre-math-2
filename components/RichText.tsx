@@ -105,7 +105,7 @@ function parse(s: string, o: Opts, kp: string): ReactNode[] {
         if (!term && process.env.NODE_ENV !== "production") {
           console.warn(`RichText: unknown term id "${id}"`);
         }
-        const shown = custom !== undefined ? parse(custom, o, `${kp}${n}c`) : term ? term.term : id;
+        const shown = custom !== undefined ? parse(custom, o, `${kp}${n}c`) : term ? parse(term.term, o, `${kp}${n}t`) : id;
         if (term && !o.plainTerms) push(<TermRef term={term}>{shown}</TermRef>);
         else push(shown);
         i = e + 2;

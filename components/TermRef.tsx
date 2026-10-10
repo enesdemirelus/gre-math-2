@@ -82,7 +82,7 @@ export function TermRef({ term, children }: { term: Term; children: ReactNode })
             style={{ left: pos?.left ?? 0, top: pos?.top ?? 0, visibility: pos ? "visible" : "hidden" }}
           >
             <span className="term-tip-head">
-              <strong>{term.term}</strong>
+              <strong><RichText text={term.term} plainTerms /></strong>
               <span className="term-tip-tr">
                 <span className="tr-label">TR</span> {term.turkish}
               </span>

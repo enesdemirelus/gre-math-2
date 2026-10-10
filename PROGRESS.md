@@ -28,11 +28,11 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 3.4 Quadrilaterals | done | content: 2 fixed (diagonal note, relettered MR figure); questions: 1 too-easy item replaced |
 | 3.5 Circles | done | content review: 5 minor issues fixed; question review: clean |
 | 3.6 Three-Dimensional Figures | done | content: 3 fixed (unsupported drawing claim, surface-area definition/diagram, citation); questions: 2 fixed (missing condition, too-easy item) |
-| 4.1 Methods for Presenting Data | written (Sonnet); Opus reviews pending | |
-| 4.2 Numerical Methods for Describing Data | written (Sonnet); Opus reviews pending | |
-| 4.3 Counting Methods | written (Sonnet); Opus reviews pending | |
-| 4.4 Probability | written (Sonnet); Opus reviews pending | |
-| 4.5 Distributions | written (Sonnet); Opus reviews pending | |
-| 4.6 Data Interpretation Examples | written (Sonnet); Opus reviews pending | |
+| 4.1 Methods for Presenting Data | done | content: 6 fixed (MC page cites, term link, explorer note, legend style, Turkish); questions: 1 fixed (false "adjacent" claim) |
+| 4.2 Numerical Methods for Describing Data | done | content: 7 fixed (list/order wording, missing term, copied MR sizes, explorer bases, unsupported claim, Turkish); questions: 3 fixed (unreadable boxplot values, notation, too-easy item) |
+| 4.3 Counting Methods | done | content: 5 fixed (copied MR examples/exercise numbers, letter typo, explorer colors, Turkish); questions: 2 too-easy items replaced |
+| 4.4 Probability | done | content: 4 fixed (citation, copied MR examples and data, note source); questions: 1 too-easy item replaced |
+| 4.5 Distributions | done | content: 6 fixed (copied MR defaults, unsupported claims labeled/removed, citation, Turkish); questions: 1 too-easy item replaced |
+| 4.6 Data Interpretation Examples | done | content: 4 fixed (Venn-diagram coverage added, broken-scale wording, Turkish ×2); questions: 1 ambiguous quick question fixed |
 
 Note: writers and fixers now run on Sonnet and reviewers on Opus, at most 2–3 agents at a time, to spread usage (requested by the user).

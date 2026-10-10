@@ -45,7 +45,7 @@ export function TermList({ terms }: { terms: Term[] }) {
         {terms.map((t) => (
           <tr key={t.id} id={`term-${t.id}`}>
             <td className="tname">
-              {t.term}
+              <RichText text={t.term} plainTerms />
               <div className="tr">{t.turkish}</div>
               {t.note && <span className="badge note">{t.note}</span>}
             </td>
@@ -202,7 +202,7 @@ export function Flashcards({ items }: { items: VocabItem[] }) {
         {!flipped ? (
           <>
             {frontIsTerm ? (
-              <div className="big">{t.term}</div>
+              <div className="big"><RichText text={t.term} plainTerms /></div>
             ) : (
               <div>
                 <RichText text={t.definition} plainTerms />
@@ -212,7 +212,7 @@ export function Flashcards({ items }: { items: VocabItem[] }) {
           </>
         ) : (
           <div className="back">
-            <div className="big">{t.term}</div>
+            <div className="big"><RichText text={t.term} plainTerms /></div>
             <div className="tr">{t.turkish}</div>
             <RichText text={t.definition} plainTerms />
             {t.formula && <Tex tex={t.formula} display />}
@@ -301,7 +301,7 @@ export function Matching({ items }: { items: VocabItem[] }) {
               disabled={matched.has(keyOf(r))}
               onClick={() => setSel(keyOf(r))}
             >
-              {r.term.term}
+              <RichText text={r.term.term} plainTerms />
             </button>
           ))}
         </div>

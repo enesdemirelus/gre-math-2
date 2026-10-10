@@ -187,13 +187,14 @@ input[type="text"], input[type="search"], select {
 .seg button { background: var(--bg); color: var(--fg); border: 0; padding: 6px 16px; cursor: pointer; border-right: 1px solid var(--border); }
 .seg button:last-child { border-right: 0; }
 .seg button.on { background: var(--accent); color: #fff; }
-.vocab-list { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+.vocab-list { width: 100%; border-collapse: collapse; font-size: 15.5px; table-layout: fixed; }
 .vocab-list td { border-top: 1px solid var(--border); padding: 10px 8px; vertical-align: top; }
-.vocab-list .tname { font-weight: 600; width: 30%; }
+.vocab-list .tname { font-weight: 600; width: 28%; }
 .vocab-list .tr { color: var(--muted); font-size: 14px; }
-.vocab-list .thumbcell { width: 120px; }
+.vocab-list .thumbcell { width: 130px; min-width: 130px; }
+.vocab-list .thumbcell .diagram.thumb svg { width: 120px; }
 .vocab-list .tdef p { margin: .2em 0; }
-@media (max-width: 640px) { .vocab-list, .vocab-list tbody, .vocab-list tr, .vocab-list td { display: block; } .vocab-list td.thumbcell { width: auto; } .vocab-list td { border: 0; padding: 2px 4px; } .vocab-list tr { border-top: 1px solid var(--border); padding: 8px 0; } }
+@media (max-width: 640px) { .vocab-list { table-layout: auto; } .vocab-list, .vocab-list tbody, .vocab-list tr, .vocab-list td { display: block; } .vocab-list td.thumbcell { width: auto; } .vocab-list td { border: 0; padding: 2px 4px; } .vocab-list tr { border-top: 1px solid var(--border); padding: 8px 0; } }
 .flash {
   min-height: 240px; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 12px 0; cursor: pointer;
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--bg-soft); user-select: none;
