@@ -20,7 +20,7 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 2.5 Solving Linear Inequalities | done | content: 3 fixed (copied MR numbers in terms, explorer message); questions: 1 too-easy item replaced |
 | 2.6 Functions | writing |
 | 2.7 Applications | done | content: 8 fixed (copied MR stories/numbers, revenue note, work-rate bound); questions: 1 too-easy item made harder |
-| 2.8 Coordinate Geometry | writing |
+| 2.8 Coordinate Geometry | written; reviews pending (Opus, after usage reset) | |
 | 2.9 Graphs of Functions | writing |
 | 3.1 Lines and Angles | queued | |
 | 3.2 Polygons | queued | |
@@ -35,4 +35,4 @@ Status legend: **written** → **reviewed** (content + question reviewers) → *
 | 4.5 Distributions | queued | |
 | 4.6 Data Interpretation Examples | queued | |
 
-Note: the first parallel wave of writers was cut off by an account rate limit before writing any files; writers now run in waves of 5.
+Note: writers and fixers now run on Sonnet and reviewers on Opus, at most 2–3 agents at a time, to spread usage (requested by the user).
