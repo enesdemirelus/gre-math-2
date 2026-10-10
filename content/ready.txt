@@ -17,3 +17,4 @@
 2-9-graphs-of-functions
 3-1-lines-and-angles
 3-2-polygons
+3-3-triangles

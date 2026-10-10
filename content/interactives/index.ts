@@ -18,6 +18,7 @@ import { registry as s_2_8_coordinate_geometry } from "./2-8-coordinate-geometry
 import { registry as s_2_9_graphs_of_functions } from "./2-9-graphs-of-functions";
 import { registry as s_3_1_lines_and_angles } from "./3-1-lines-and-angles";
 import { registry as s_3_2_polygons } from "./3-2-polygons";
+import { registry as s_3_3_triangles } from "./3-3-triangles";
 import { registry as s_3_5_circles } from "./3-5-circles";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,5 +41,6 @@ export const interactives: Record<string, ComponentType<any>> = {
   ...s_2_9_graphs_of_functions,
   ...s_3_1_lines_and_angles,
   ...s_3_2_polygons,
+  ...s_3_3_triangles,
   ...s_3_5_circles,
 };
