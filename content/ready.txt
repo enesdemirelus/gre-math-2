@@ -15,3 +15,5 @@
 2-8-coordinate-geometry
 2-6-functions
 2-9-graphs-of-functions
+3-1-lines-and-angles
+3-2-polygons

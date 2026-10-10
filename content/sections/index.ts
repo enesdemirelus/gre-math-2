@@ -16,6 +16,8 @@ import s_2_6_functions from "./2-6-functions";
 import s_2_7_applications from "./2-7-applications";
 import s_2_8_coordinate_geometry from "./2-8-coordinate-geometry";
 import s_2_9_graphs_of_functions from "./2-9-graphs-of-functions";
+import s_3_1_lines_and_angles from "./3-1-lines-and-angles";
+import s_3_2_polygons from "./3-2-polygons";
 import s_3_5_circles from "./3-5-circles";
 
 export const SECTIONS: Record<string, Section> = {
@@ -35,5 +37,7 @@ export const SECTIONS: Record<string, Section> = {
   "2-7-applications": s_2_7_applications,
   "2-8-coordinate-geometry": s_2_8_coordinate_geometry,
   "2-9-graphs-of-functions": s_2_9_graphs_of_functions,
+  "3-1-lines-and-angles": s_3_1_lines_and_angles,
+  "3-2-polygons": s_3_2_polygons,
   "3-5-circles": s_3_5_circles,
 };

@@ -124,13 +124,15 @@ export function ParallelExplorer() {
         }}
       >
         {geo.map((g, i) => {
-          const cls = sel === null ? "" : i === sel || same(sel, i) ? "dg-accent-fill" : supp(sel, i) ? "dg-fill" : "";
+          const isEq = sel !== null && (i === sel || same(sel, i));
+          const isSupp = sel !== null && !isEq && supp(sel, i);
+          const cls = isEq ? "dg-accent-fill" : isSupp ? "dg-fill" : "";
           return (
             <path
               key={`s${i}`}
               d={sectorPath(g.v, R, g.d1, g.d2)}
               className={cls}
-              style={{ fill: cls ? undefined : "transparent", cursor: "pointer" }}
+              style={{ fill: cls ? undefined : "transparent", fillOpacity: isEq ? 0.5 : isSupp ? 0.25 : undefined, cursor: "pointer" }}
               onClick={() => setSel(i)}
             />
           );
