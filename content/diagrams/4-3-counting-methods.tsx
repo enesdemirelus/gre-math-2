@@ -65,7 +65,7 @@ const LAYOUT2: Record<Venn2Layout, { circles: Circle[]; pos: Record<Region2, Pt>
       { cx: 105, cy: 100, r: 62 },
       { cx: 175, cy: 100, r: 62 },
     ],
-    pos: { a: [74, 100], ab: [140, 100], b: [206, 100], none: [250, 172] },
+    pos: { a: [74, 100], ab: [140, 100], b: [206, 100], none: [234, 174] },
     names: [
       [56, 30],
       [224, 30],
@@ -76,7 +76,7 @@ const LAYOUT2: Record<Venn2Layout, { circles: Circle[]; pos: Record<Region2, Pt>
       { cx: 85, cy: 100, r: 50 },
       { cx: 195, cy: 100, r: 50 },
     ],
-    pos: { a: [85, 100], ab: [140, 100], b: [195, 100], none: [250, 172] },
+    pos: { a: [85, 100], ab: [140, 100], b: [195, 100], none: [234, 174] },
     names: [
       [85, 34],
       [195, 34],
@@ -87,7 +87,7 @@ const LAYOUT2: Record<Venn2Layout, { circles: Circle[]; pos: Record<Region2, Pt>
       { cx: 150, cy: 100, r: 38 },
       { cx: 140, cy: 100, r: 75 },
     ],
-    pos: { a: [150, 100], ab: [150, 112], b: [88, 100], none: [250, 172] },
+    pos: { a: [150, 100], ab: [150, 112], b: [88, 100], none: [234, 174] },
     names: [
       [150, 84],
       [218, 26],
@@ -238,7 +238,7 @@ export function Venn3({
  * first: names of the first choice's options; second: names of the second choice's options.
  */
 export function ChoiceTree({ first = ["S1", "S2"], second = ["P1", "P2", "P3"], firstTitle, secondTitle }: { first?: string[]; second?: string[]; firstTitle?: string; secondTitle?: string }) {
-  const rowH = 26;
+  const rowH = 34;
   const leaves = first.length * second.length;
   const top = firstTitle || secondTitle ? 30 : 12;
   const H = leaves * rowH + top + 10;

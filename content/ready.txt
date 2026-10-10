@@ -22,3 +22,5 @@
 3-6-three-dimensional-figures
 4-1-presenting-data
 4-2-describing-data
+4-3-counting-methods
+4-4-probability

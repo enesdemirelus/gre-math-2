@@ -24,6 +24,8 @@ import s_3_5_circles from "./3-5-circles";
 import s_3_6_three_dimensional_figures from "./3-6-three-dimensional-figures";
 import s_4_1_presenting_data from "./4-1-presenting-data";
 import s_4_2_describing_data from "./4-2-describing-data";
+import s_4_3_counting_methods from "./4-3-counting-methods";
+import s_4_4_probability from "./4-4-probability";
 
 export const SECTIONS: Record<string, Section> = {
   "1-1-integers": s_1_1_integers,
@@ -50,4 +52,6 @@ export const SECTIONS: Record<string, Section> = {
   "3-6-three-dimensional-figures": s_3_6_three_dimensional_figures,
   "4-1-presenting-data": s_4_1_presenting_data,
   "4-2-describing-data": s_4_2_describing_data,
+  "4-3-counting-methods": s_4_3_counting_methods,
+  "4-4-probability": s_4_4_probability,
 };

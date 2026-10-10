@@ -22,6 +22,8 @@ import { registry as s_3_5_circles } from "./3-5-circles";
 import { registry as s_3_6_three_dimensional_figures } from "./3-6-three-dimensional-figures";
 import { registry as s_4_1_presenting_data } from "./4-1-presenting-data";
 import { registry as s_4_2_describing_data } from "./4-2-describing-data";
+import { registry as s_4_3_counting_methods } from "./4-3-counting-methods";
+import { registry as s_4_4_probability } from "./4-4-probability";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const diagrams: Record<string, ComponentType<any>> = {
@@ -47,4 +49,6 @@ export const diagrams: Record<string, ComponentType<any>> = {
   ...s_3_6_three_dimensional_figures,
   ...s_4_1_presenting_data,
   ...s_4_2_describing_data,
+  ...s_4_3_counting_methods,
+  ...s_4_4_probability,
 };
