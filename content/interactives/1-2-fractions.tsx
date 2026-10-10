@@ -65,7 +65,7 @@ export function FractionCompare({ initial = [5, 8, 7, 11] }: { initial?: [number
   const rel = ad < bc ? "<" : ad > bc ? ">" : "=";
 
   // number line range: integers covering 0, both values, at least width 1
-  let lo = Math.floor(Math.min(x, y, 0));
+  const lo = Math.floor(Math.min(x, y, 0));
   let hi = Math.ceil(Math.max(x, y, 0));
   if (hi - lo < 1) hi = lo + 1;
   const span = hi - lo;

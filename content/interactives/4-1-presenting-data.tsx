@@ -132,7 +132,7 @@ export function HistogramExplorer() {
   const [w, setW] = useState(10);
   const k = 60 / w;
   const edges = Array.from({ length: k + 1 }, (_, i) => START + i * w);
-  const counts = edges.slice(0, -1).map((lo, i) => SCORES.filter((x) => x > lo && x <= lo + w).length);
+  const counts = edges.slice(0, -1).map((lo) => SCORES.filter((x) => x > lo && x <= lo + w).length);
   const n = SCORES.length;
   const maxC = Math.max(...counts);
   const step = maxC <= 8 ? 2 : maxC <= 20 ? 4 : maxC <= 40 ? 10 : 10;

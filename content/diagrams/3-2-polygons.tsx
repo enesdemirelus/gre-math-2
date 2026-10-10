@@ -298,7 +298,7 @@ export function LabeledPentagon() {
 export function PentagonDiagonal() {
   const pts = regularPts(5, [170, 122], 92, 90 + 36);
   // vertex order: start at lower-left going counterclockwise visually
-  const [A, B, C, D, E] = pts;
+  const [A, , C, , E] = pts;
   const u1 = unit(A, E);
   const u2 = unit(A, C);
   const rr = 22;
