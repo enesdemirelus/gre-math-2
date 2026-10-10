@@ -32,7 +32,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`If you extend side $AC$ past $C$, the angle between side $BC$ and the extension is an [[exterior-angle|exterior angle]]. Because it and $z$ together form a straight angle, $w = 180 - z$, and since $x + y = 180 - z$ too, the exterior angle equals the sum of the two interior angles at the _other_ vertices: $w = x + y$ (a standard fact, though not stated in the ETS Math Review; it follows from the two facts above and the $180^\circ$ straight angle). It saves a step whenever a figure shows an extended side.`,
+      text: String.raw`If you extend side $AC$ past $C$, the angle between side $BC$ and the extension is an [[exterior-angle|exterior angle]]. Because it and $z$ together form a straight angle, $w = 180 - z$, and since $x + y = 180 - z$ too, the exterior angle equals the sum of the two interior angles at the _other_ vertices: $w = x + y$ (not stated in the Math Review text, but it is the answer to MR Exercise 3; it follows from the two facts above and the $180^\circ$ straight angle). It saves a step whenever a figure shows an extended side.`,
     },
     {
       kind: "diagram",
@@ -43,7 +43,7 @@ const section: Section = {
     { kind: "heading", text: "Sides: what lengths can a triangle have?" },
     {
       kind: "p",
-      text: String.raw`Three positive numbers are the side lengths of a triangle only if each is less than the sum of the other two (MR p. 96). Another way to say it: the longest side must be shorter than the sum of the two shorter ones, because that is the only inequality that can fail. ETS states this fact without naming it; prep books call it the [[triangle-inequality|triangle inequality]]. Sides $5$, $6$ and $9$ work, since $9 < 5 + 6$. Sides $4$, $5$ and $12$ do not: $12 > 4 + 5$, so the two short sides cannot even reach across the long one, as the second figure shows.`,
+      text: String.raw`Three positive numbers are the side lengths of a triangle only if each is less than the sum of the other two (MR p. 96). Another way to say it: the longest side must be shorter than the sum of the two shorter ones, because that is the only inequality that can fail. ETS states this fact without naming it; prep books call it the [[triangle-inequality|triangle inequality]]. Sides $5$, $6$ and $9$ work, since $9 < 5 + 6$. Sides $3$, $5$ and $10$ do not: $10 > 3 + 5$, so the two short sides cannot even reach across the long one, as the second figure shows.`,
     },
     {
       kind: "diagram",
@@ -51,7 +51,7 @@ const section: Section = {
     },
     {
       kind: "diagram",
-      diagram: { key: "3-3-triangles/inequality", props: { variant: "fail" }, caption: String.raw`Sides $4$, $5$, $12$: the dashed arcs show where the ends of the short sides can reach. They never meet.` },
+      diagram: { key: "3-3-triangles/inequality", props: { variant: "fail" }, caption: String.raw`Sides $3$, $5$, $10$: the dashed arcs show where the ends of the short sides can reach. They never meet.` },
     },
     {
       kind: "p",
@@ -83,11 +83,11 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`Equal sides come with equal angles: if two sides are congruent, the angles opposite them are congruent, and the converse is also true (MR p. 97). That is how you decode isosceles questions in both directions. In the isosceles figure the sides $AB$ and $BC$ are both $9$, so the angles at $A$ and $C$ (opposite $BC$ and $AB$) are equal. If each of them is $x^\circ$, the apex angle $B$ is $180 - 2x$. In an equilateral triangle all three angles are equal, so each is $60^\circ$.`,
+      text: String.raw`Equal sides come with equal angles: if two sides are congruent, the angles opposite them are congruent, and the converse is also true (MR p. 97). That is how you decode isosceles questions in both directions. In the isosceles figure the sides $PQ$ and $QR$ are both $9$, so the angles at $P$ and $R$ (opposite $QR$ and $PQ$) are equal. If each of them is $x^\circ$, the apex angle $Q$ is $180 - 2x$. In an equilateral triangle all three angles are equal, so each is $60^\circ$.`,
     },
     {
       kind: "diagram",
-      diagram: { key: "3-3-triangles/types", props: { kind: "isosceles" }, caption: String.raw`Isosceles: $AB = BC = 9$, so the angles at $A$ and $C$ are equal.` },
+      diagram: { key: "3-3-triangles/types", props: { kind: "isosceles" }, caption: String.raw`Isosceles: $PQ = QR = 9$, so the angles at $P$ and $R$ are equal.` },
     },
     {
       kind: "diagram",
@@ -127,7 +127,7 @@ const section: Section = {
       kind: "aside",
       tone: "tip",
       title: "Pythagorean triples: memorize these",
-      text: String.raw`Some right triangles have all three sides integers, and the GRE loves them because the arithmetic disappears. The common ones are $3$-$4$-$5$, $5$-$12$-$13$, $8$-$15$-$17$ and $7$-$24$-$25$, and every multiple of a triple is again a triple (such as $6$-$8$-$10$ and $9$-$12$-$15$). This is a test-taking shortcut, not something the ETS Math Review lists. See a leg of $15$ and a hypotenuse of $17$ in a figure? The other leg is $8$ with no computation.`,
+      text: String.raw`Some right triangles have all three sides integers ([[pythagorean-triple|Pythagorean triples]]), and the GRE loves them because the arithmetic disappears. The common ones are $3$-$4$-$5$, $5$-$12$-$13$, $8$-$15$-$17$ and $7$-$24$-$25$, and every multiple of a triple is again a triple (such as $6$-$8$-$10$ and $9$-$12$-$15$). This is a test-taking shortcut, not something the ETS Math Review lists. See a leg of $15$ and a hypotenuse of $17$ in a figure? The other leg is $8$ with no computation.`,
     },
     {
       kind: "p",
@@ -200,7 +200,7 @@ const section: Section = {
     },
     {
       kind: "diagram",
-      diagram: { key: "3-3-triangles/any-base", caption: String.raw`The same triangle $KLM$ with two choices of base: $KL$ with height $h$ (outside), and $ML$ with height $k$ (outside).` },
+      diagram: { key: "3-3-triangles/any-base", caption: String.raw`The same triangle $KLM$ with two choices of base: $KL$ with height $h$ (outside), and $ML$ with height $k$ (inside).` },
     },
     {
       kind: "aside",
@@ -213,11 +213,11 @@ const section: Section = {
     { kind: "heading", text: "Congruent triangles" },
     {
       kind: "p",
-      text: String.raw`Two triangles with the same shape and size are [[congruent-triangles|congruent triangles]]. Precisely, they are congruent if their vertices can be matched up so that the [[corresponding-parts|corresponding]] angles and corresponding sides are congruent (MR p. 101). The _order of the letters_ carries the matching: "triangles $PQR$ and $STU$ are congruent" means $P \leftrightarrow S$, $Q \leftrightarrow T$, $R \leftrightarrow U$, so $PQ$ matches $ST$, $QR$ matches $TU$, and $PR$ matches $SU$. Always read the matching from the letters, not from how the figure looks.`,
+      text: String.raw`Two triangles with the same shape and size are [[congruent-triangles|congruent triangles]]. Precisely, they are congruent if their vertices can be matched up so that the [[corresponding-parts|corresponding]] angles and corresponding sides are congruent (MR p. 101). The _order of the letters_ carries the matching: "triangles $JKL$ and $XYZ$ are congruent" means $J \leftrightarrow X$, $K \leftrightarrow Y$, $L \leftrightarrow Z$, so $JK$ matches $XY$, $KL$ matches $YZ$, and $JL$ matches $XZ$. Always read the matching from the letters, not from how the figure looks.`,
     },
     {
       kind: "diagram",
-      diagram: { key: "3-3-triangles/congruent", props: { highlight: "corr" }, caption: String.raw`Triangles $PQR$ and $STU$ are congruent: $a$ matches $a$, $b$ matches $b$, $c$ matches $c$. $T$ is the apex of $STU$, which sits "backwards" compared with $Q$.` },
+      diagram: { key: "3-3-triangles/congruent", props: { highlight: "corr" }, caption: String.raw`Triangles $JKL$ and $XYZ$ are congruent: $a$ matches $a$, $b$ matches $b$, $c$ matches $c$. $Y$ is the apex of $XYZ$, which sits "backwards" compared with $K$.` },
     },
     {
       kind: "p",
@@ -250,27 +250,27 @@ const section: Section = {
     { kind: "heading", text: "Similar triangles" },
     {
       kind: "p",
-      text: String.raw`Two triangles with the same shape but not necessarily the same size are [[similar-triangles|similar triangles]]. Precisely, the vertices can be matched up so that corresponding angles are congruent or, equivalently, the lengths of corresponding sides have the same ratio, called the [[scale-factor|scale factor]] of the similarity (MR p. 102). In the figure, triangles $ABC$ and $DEF$ are similar with $A \leftrightarrow D$, $B \leftrightarrow E$, $C \leftrightarrow F$:`,
+      text: String.raw`Two triangles with the same shape but not necessarily the same size are [[similar-triangles|similar triangles]]. Precisely, the vertices can be matched up so that corresponding angles are congruent or, equivalently, the lengths of corresponding sides have the same ratio, called the [[scale-factor|scale factor]] of the similarity (MR p. 102). In the figure, triangles $GHI$ and $MNO$ are similar with $G \leftrightarrow M$, $H \leftrightarrow N$, $I \leftrightarrow O$:`,
     },
     {
       kind: "math",
-      tex: String.raw`\frac{DE}{AB} = \frac{EF}{BC} = \frac{DF}{AC} = \frac{4}{6} = \frac{6}{9} = \frac{8}{12} = \frac{2}{3}`,
+      tex: String.raw`\frac{MN}{GH} = \frac{NO}{HI} = \frac{MO}{GI} = \frac{4}{6} = \frac{6}{9} = \frac{8}{12} = \frac{2}{3}`,
     },
     {
       kind: "diagram",
-      diagram: { key: "3-3-triangles/similar", caption: String.raw`The scale factor from $ABC$ to $DEF$ is $\frac{2}{3}$ (and from $DEF$ to $ABC$ it is $\frac{3}{2}$).` },
+      diagram: { key: "3-3-triangles/similar", caption: String.raw`The scale factor from $GHI$ to $MNO$ is $\frac{2}{3}$ (and from $MNO$ to $GHI$ it is $\frac{3}{2}$).` },
     },
     {
       kind: "p",
-      text: String.raw`Notice that the angles do the work: you can prove similarity by showing two matching angles (the third must then match too), or by showing equal ratios of all three pairs of sides. Cross-multiplying gives other useful proportions, for example $\frac{AB}{BC} = \frac{DE}{EF}$. And any two $30^\circ$-$60^\circ$-$90^\circ$ triangles are similar, as are any two $45^\circ$-$45^\circ$-$90^\circ$ triangles. Congruent triangles are the special case with scale factor $1$.`,
+      text: String.raw`Notice that the angles do the work: you can prove similarity by showing two matching angles (the third must then match too), or by showing equal ratios of all three pairs of sides. Cross-multiplying gives other useful proportions, for example $\frac{GH}{HI} = \frac{MN}{NO}$. And any two $30^\circ$-$60^\circ$-$90^\circ$ triangles are similar, as are any two $45^\circ$-$45^\circ$-$90^\circ$ triangles. Congruent triangles are the special case with scale factor $1$.`,
     },
     {
       kind: "p",
-      text: String.raw`One fact beyond the ETS Math Review, but standard and heavily used: if the scale factor is $k$, then _all_ lengths scale by $k$ (including heights and perimeters), while the _area_ scales by $k^2$. With $k = \frac{2}{3}$ above, the perimeter of $DEF$ is $\frac{2}{3}$ of the perimeter of $ABC$, and the area of $DEF$ is $\frac{4}{9}$ of the area of $ABC$.`,
+      text: String.raw`One fact beyond the ETS Math Review, but standard and heavily used: if the scale factor is $k$, then _all_ lengths scale by $k$ (including heights and perimeters), while the _area_ scales by $k^2$. With $k = \frac{2}{3}$ above, the perimeter of $MNO$ is $\frac{2}{3}$ of the perimeter of $GHI$, and the area of $MNO$ is $\frac{4}{9}$ of the area of $GHI$.`,
     },
     {
       kind: "p",
-      text: String.raw`The most common source of similar triangles on the GRE is a segment drawn parallel to one side. In the figure, $DE$ is parallel to $BC$, so the angles at $D$ and $B$ are corresponding angles of parallel lines, as are the angles at $E$ and $C$ (MR p. 94), and the angle at $A$ is shared. Triangles $ADE$ and $ABC$ are therefore similar, with $\frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}$. Right triangles that share an acute angle work the same way.`,
+      text: String.raw`The most common source of similar triangles on the GRE is a segment drawn parallel to one side. In the figure, $DE$ is parallel to $BC$, so the angle at $D$ equals the angle at $B$ and the angle at $E$ equals the angle at $C$ (parallel-line fact, MR p. 95), and the angle at $A$ is shared. Triangles $ADE$ and $ABC$ are therefore similar, with $\frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}$. Right triangles that share an acute angle work the same way.`,
     },
     {
       kind: "diagram",
@@ -293,7 +293,7 @@ const section: Section = {
       kind: "aside",
       tone: "watch",
       title: "Classic traps",
-      text: String.raw`Using $\frac{ab}{2}$ for a triangle that is not right-angled; forgetting that an obtuse triangle's height falls outside; applying the Pythagorean theorem with the wrong side as hypotenuse; mixing up $\sqrt{2}$ and $\sqrt{3}$ in the special triangles; letting the picture decide which vertices correspond instead of the letter order; forgetting that areas of similar triangles scale by the _square_ of the scale factor; and accepting side lengths that violate the triangle inequality. Figures are drawn to scale unless the question says otherwise, but only the stated measures are guaranteed.`,
+      text: String.raw`Using $\frac{ab}{2}$ for a triangle that is not right-angled; forgetting that an obtuse triangle's height falls outside; applying the Pythagorean theorem with the wrong side as hypotenuse; mixing up $\sqrt{2}$ and $\sqrt{3}$ in the special triangles; letting the picture decide which vertices correspond instead of the letter order; forgetting that areas of similar triangles scale by the _square_ of the scale factor; and accepting side lengths that violate the triangle inequality. Figures are not necessarily drawn to scale; use only stated measures, marked right angles and the relative positions shown.`,
     },
   ],
 
@@ -470,8 +470,8 @@ const section: Section = {
     {
       id: "corresponding-parts",
       term: "corresponding parts",
-      turkish: "karşılıklı elemanlar / eş elemanlar",
-      definition: String.raw`The angles and sides that are matched when two triangles are congruent or similar. The order of the letters in "triangles $PQR$ and $STU$" tells you the match: $P$ with $S$, $Q$ with $T$, $R$ with $U$.`,
+      turkish: "karşılık gelen elemanlar",
+      definition: String.raw`The angles and sides that are matched when two triangles are congruent or similar. The order of the letters in "triangles $JKL$ and $XYZ$" tells you the match: $J$ with $X$, $K$ with $Y$, $L$ with $Z$.`,
       diagram: { key: "3-3-triangles/congruent", props: { highlight: "corr" } },
       source: "MR p. 101",
     },
@@ -538,7 +538,7 @@ const section: Section = {
       term: "scale factor (of similarity)",
       turkish: "benzerlik oranı",
       definition: String.raw`The common ratio of the lengths of corresponding sides of two similar triangles. Areas then have ratio equal to the square of the scale factor (a standard fact, not stated in the Math Review).`,
-      formula: String.raw`\frac{DE}{AB} = \frac{EF}{BC} = \frac{DF}{AC}`,
+      formula: String.raw`\frac{MN}{GH} = \frac{NO}{HI} = \frac{MO}{GI}`,
       diagram: { key: "3-3-triangles/similar" },
       source: "MR p. 102",
     },
@@ -599,7 +599,7 @@ const section: Section = {
       id: "ex-third-side",
       type: "mcm",
       difficulty: "medium",
-      stem: String.raw`The lengths of two sides of a triangle are $6$ and $11$. The length of the third side is an integer. Indicate all of the following that could be the length of the third side.`,
+      stem: String.raw`The lengths of two sides of a triangle are $6$ and $11$. The length of the third side is an integer. Indicate all such lengths.`,
       choices: [String.raw`$4$`, String.raw`$5$`, String.raw`$6$`, String.raw`$11$`, String.raw`$16$`, String.raw`$17$`],
       answer: [2, 3, 4],
       explanation: [
@@ -738,7 +738,7 @@ const section: Section = {
         id: "z-isosceles-40",
         type: "mcm",
         difficulty: "medium",
-        stem: String.raw`An isosceles triangle has an angle that measures $40^\circ$. Indicate all of the following that could be the measure of another angle of the triangle.`,
+        stem: String.raw`An isosceles triangle has an angle that measures $40^\circ$. Indicate all such measures.`,
         choices: [String.raw`$40^\circ$`, String.raw`$50^\circ$`, String.raw`$70^\circ$`, String.raw`$90^\circ$`, String.raw`$100^\circ$`, String.raw`$140^\circ$`],
         answer: [0, 2, 4],
         explanation: [
@@ -752,7 +752,7 @@ const section: Section = {
         id: "z-congruence",
         type: "mcm",
         difficulty: "hard",
-        stem: String.raw`In triangles $ABC$ and $DEF$, $AB = DE$ and the measure of angle $A$ equals the measure of angle $D$. Indicate all of the following additional conditions that, together with these, guarantee that triangles $ABC$ and $DEF$ are congruent.`,
+        stem: String.raw`In triangles $ABC$ and $DEF$, $AB = DE$ and the measure of angle $A$ equals the measure of angle $D$. Indicate all such conditions.`,
         choices: [
           String.raw`$AC = DF$`,
           String.raw`$BC = EF$`,

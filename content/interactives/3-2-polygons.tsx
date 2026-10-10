@@ -156,7 +156,7 @@ export function PolygonExplorer() {
       </div>
       <div className="explorer-readout" style={{ display: "grid", gap: "0.35rem", width: "100%", maxWidth: 520 }}>
         <div>
-          <Tex tex={`n = ${n}\\ \\text{sides} \;\\Rightarrow\; n - 2 = ${n - 2}\\ \\text{triangles}`} />
+          <Tex tex={`n = ${n}\\ \\text{sides} \\;\\Rightarrow\\; n - 2 = ${n - 2}\\ \\text{triangles}`} />
         </div>
         <div>
           <Tex tex={`\\text{sum of interior angles} = (${n} - 2)(180^\\circ) = ${sum.toLocaleString("en-US").replace(/,/g, "{,}")}^\\circ`} />

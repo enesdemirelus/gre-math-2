@@ -90,7 +90,7 @@ export function InequalityExplorer() {
     const good = lhs < o + p;
     return (
       <div key={name}>
-        <Tex tex={`${name} = ${lhs}\;${good ? "<" : "\\not<"}\; ${o} + ${p} = ${o + p}`} /> {good ? "✓" : "✗"}
+        <Tex tex={`${name} = ${lhs}\\;${good ? "<" : "\\not<"}\\; ${o} + ${p} = ${o + p}`} /> {good ? "✓" : "✗"}
       </div>
     );
   };

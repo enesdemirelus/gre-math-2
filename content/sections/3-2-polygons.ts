@@ -46,7 +46,7 @@ const section: Section = {
       kind: "aside",
       tone: "gre",
       title: "Names on the test",
-      text: String.raw`The GRE expects you to know the names up to the octagon at least, because a question can simply say "a regular hexagon" and give no figure. Memorise 3 triangle, 4 quadrilateral, 5 pentagon, 6 hexagon, 8 octagon; if a 7 or a 9 appears, the question will spell it out ("a 7-sided polygon").`,
+      text: String.raw`The GRE expects you to know the names up to the octagon at least, because a question can simply say "a regular hexagon" and give no figure. Memorise 3 triangle, 4 quadrilateral, 5 pentagon, 6 hexagon, 8 octagon.`,
     },
 
     /* ---------------------------------------------------------------- */
@@ -70,7 +70,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`A convex pentagon: $(5-2)(180^\circ) = 540^\circ$. A convex 7-sided polygon: $5 \cdot 180^\circ = 900^\circ$. A decagon: $8 \cdot 180^\circ = 1{,}440^\circ$. Notice that the formula depends only on the number of sides. A thin sliver and a nearly regular shape with the same number of sides have the same angle sum. Slide the number of sides in the explorer below and check the triangle count and the sum; then shuffle the shape and watch the individual angles change while their total stays fixed.`,
+      text: String.raw`A convex pentagon: $(5-2)(180^\circ) = 540^\circ$. A convex 7-sided polygon: $5 \cdot 180^\circ = 900^\circ$. A 9-sided polygon: $7 \cdot 180^\circ = 1{,}260^\circ$. Notice that the formula depends only on the number of sides. A thin sliver and a nearly regular shape with the same number of sides have the same angle sum. Slide the number of sides in the explorer below and check the triangle count and the sum; then shuffle the shape and watch the individual angles change while their total stays fixed.`,
     },
     {
       kind: "interactive",
@@ -98,7 +98,7 @@ const section: Section = {
     },
     {
       kind: "p",
-      text: String.raw`The Math Review shows this only through a single octagon example; the general formula is that same division written with $n$. For a regular 12-sided polygon: $\dfrac{10 \cdot 180^\circ}{12} = 150^\circ$. For a regular pentagon: $\dfrac{540^\circ}{5} = 108^\circ$. The GRE often runs the formula backwards: told that each angle is $144^\circ$, set $\dfrac{(n-2)(180)}{n} = 144$, so $180n - 360 = 144n$ and $n = 10$.`,
+      text: String.raw`The Math Review shows this only through a single octagon example; the general formula is that same division written with $n$. For a regular 12-sided polygon: $\dfrac{10 \cdot 180^\circ}{12} = 150^\circ$. For a regular pentagon: $\dfrac{540^\circ}{5} = 108^\circ$. The GRE often runs the formula backwards: told that each angle is $160^\circ$, set $\dfrac{(n-2)(180)}{n} = 160$, so $180n - 360 = 160n$ and $n = 18$.`,
     },
     {
       kind: "diagram",
@@ -119,7 +119,7 @@ const section: Section = {
     },
     {
       kind: "diagram",
-      diagram: { key: `${D}/perimeter`, caption: String.raw`Perimeter: add the five side lengths, $9 + 5 + 6 + 7 + 8 = 35$.` },
+      diagram: { key: `${D}/perimeter`, caption: String.raw`Perimeter: add the five side lengths, $9 + 5 + 6 + 7 + 8 = 35$. Note: Figure not drawn to scale.` },
     },
     {
       kind: "diagram",
@@ -226,7 +226,7 @@ const section: Section = {
       id: "decagon",
       term: "decagon",
       turkish: "ongen",
-      definition: String.raw`A polygon with 10 sides. Its interior angles add up to $(10-2)(180^\circ) = 1{,}440^\circ$.`,
+      definition: String.raw`A polygon with 10 sides.`,
       diagram: { key: `${D}/polygon`, props: { n: 10, shape: "regular", highlight: "none" } },
       source: "MR p. 116 (Exercise 4)",
       note: "Appears in the Math Review only in an exercise",
@@ -398,13 +398,13 @@ const section: Section = {
         id: "z3",
         type: "qc",
         difficulty: "medium",
-        quantityA: String.raw`The sum of the measures of two interior angles of a regular octagon`,
-        quantityB: String.raw`The sum of the measures of three interior angles of a regular hexagon`,
+        quantityA: String.raw`The sum of the measures of three interior angles of a regular 12-sided polygon`,
+        quantityB: String.raw`The sum of the measures of the interior angles of a pentagon`,
         answer: "B",
         explanation: [
-          String.raw`Regular octagon: each angle is $\frac{6 \cdot 180}{8} = 135$, so two angles sum to $270$.`,
-          String.raw`Regular hexagon: each angle is $\frac{4 \cdot 180}{6} = 120$, so three angles sum to $360$.`,
-          String.raw`$270 < 360$, so Quantity B is greater. Note that comparing a single octagon angle to a single hexagon angle would give the opposite order, so count the angles carefully.`,
+          String.raw`Regular 12-sided polygon: each angle is $\frac{10 \cdot 180}{12} = 150$, so three angles sum to $450$.`,
+          String.raw`Pentagon: the interior angles sum to $(5-2)(180) = 540$, whatever its shape.`,
+          String.raw`$450 < 540$, so Quantity B is greater. Trap: each 12-sided-polygon angle ($150$) is larger than a regular-pentagon angle ($108$), but the quantities are sums over different numbers of angles, so count the angles.`,
         ],
       },
       {
@@ -452,19 +452,19 @@ const section: Section = {
         id: "z7",
         type: "mcm",
         difficulty: "hard",
-        stem: String.raw`Which of the following statements must be true for every polygon (in the sense of the Math Review) with 8 sides? Indicate all such statements.`,
+        stem: String.raw`Which of the following statements must be true for every polygon (in the sense of the Math Review) with 9 sides? Indicate all such statements.`,
         choices: [
-          String.raw`The sum of the measures of its interior angles is $1{,}080^\circ$.`,
-          String.raw`Every interior angle measures $135^\circ$.`,
+          String.raw`The sum of the measures of its interior angles is $1{,}260^\circ$.`,
+          String.raw`Every interior angle measures $140^\circ$.`,
           String.raw`Every interior angle measures less than $180^\circ$.`,
-          String.raw`Diagonals drawn from one vertex to all non-adjacent vertices divide it into 6 triangles.`,
-          String.raw`At least one interior angle measures $135^\circ$ or more.`,
+          String.raw`Diagonals drawn from one vertex to all non-adjacent vertices divide it into 7 triangles.`,
+          String.raw`At least one interior angle measures $140^\circ$ or more.`,
           String.raw`All of its sides are congruent.`,
         ],
         answer: [0, 2, 3, 4],
         explanation: [
-          String.raw`(A) true: $(8-2)(180) = 1{,}080$. (B) false: that holds only if the octagon is regular, and nothing says so. (C) true: this is the definition of a polygon (convex) in the Math Review. (D) true: $n - 2 = 6$ triangles. (F) false: equal sides are part of "regular", not of every octagon.`,
-          String.raw`(E) is the tricky one: the eight angles sum to $1{,}080$, so their average is $135$. The angles cannot all be less than the average, so at least one is $135^\circ$ or more. True.`,
+          String.raw`(A) true: $(9-2)(180) = 1{,}260$. (B) false: that holds only if the polygon is regular, and nothing says so. (C) true: this is the definition of a polygon (convex) in the Math Review. (D) true: $n - 2 = 7$ triangles. (F) false: equal sides are part of "regular", not of every 9-sided polygon.`,
+          String.raw`(E) is the tricky one: the nine angles sum to $1{,}260$, so their average is $140$. The angles cannot all be less than the average, so at least one is $140^\circ$ or more. True.`,
           String.raw`Answer: A, C, D and E.`,
         ],
       },
