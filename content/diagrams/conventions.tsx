@@ -15,8 +15,8 @@ function Label({ at, children, cls = "dg-label" }: { at: Pt; children: React.Rea
 export function NotToScale() {
   const P: Pt = [50, 30];
   const Q: Pt = [50, 150];
-  const R: Pt = [290, 150];
-  const S: Pt = [165, 150];
+  const R: Pt = [300, 150];
+  const S: Pt = [170, 150];
   return (
     <svg viewBox="0 0 340 185" width={340} role="img" aria-label="Right angle at Q, point S on segment QR, segment PS">
       <path className="dg-fill" d={`M ${P.join(" ")} L ${Q.join(" ")} L ${R.join(" ")} Z`} />
