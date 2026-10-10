@@ -11,6 +11,7 @@ import { registry as s_2_3_linear_equations } from "./2-3-linear-equations";
 import { registry as s_2_4_quadratic_equations } from "./2-4-quadratic-equations";
 import { registry as s_2_5_linear_inequalities } from "./2-5-linear-inequalities";
 import { registry as s_2_7_applications } from "./2-7-applications";
+import { registry as s_2_8_coordinate_geometry } from "./2-8-coordinate-geometry";
 import { registry as s_3_5_circles } from "./3-5-circles";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -26,5 +27,6 @@ export const diagrams: Record<string, ComponentType<any>> = {
   ...s_2_4_quadratic_equations,
   ...s_2_5_linear_inequalities,
   ...s_2_7_applications,
+  ...s_2_8_coordinate_geometry,
   ...s_3_5_circles,
 };

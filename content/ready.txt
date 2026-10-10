@@ -12,3 +12,4 @@
 2-4-quadratic-equations
 2-3-linear-equations
 2-5-linear-inequalities
+2-8-coordinate-geometry
