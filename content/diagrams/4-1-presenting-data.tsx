@@ -130,19 +130,6 @@ function makeFrame(o: FrameOpts): Frame {
       <line x1={x0} x2={x1} y1={yBot} y2={yBot} className="dg-line" />
     </g>
   );
-  const extra = (
-    <g>
-      {o.title && (
-        <text x={(x0 + x1) / 2} y={16} textAnchor="middle" className="dg-text" style={TT}>
-          {o.title}
-        </text>
-      )}
-      {o.yLabel && (
-        <Lines x={12} y={(yTop + yBot) / 2} text={o.yLabel} style={T11} anchor="middle" />
-      )}
-    </g>
-  );
-  void extra;
   return { x0, x1, yTop, yBot, sy, base: yBot, grid, overlay };
 }
 
@@ -466,8 +453,9 @@ export interface ScatterProps {
   yLabel?: string;
   /** trend line through (x1,y1) and (x2,y2), drawn across the whole x range */
   trend?: [number, number, number, number];
-  /** label near the trend line */
+  /** label for the trend line and its position in data coordinates */
   trendLabel?: string;
+  trendLabelPos?: [number, number];
   /** vertical dashed guide at this x */
   guideX?: number;
   /** indices of points to emphasise */
@@ -497,8 +485,8 @@ export function Scatterplot(p: ScatterProps) {
     trend = (
       <g>
         <line x1={sx(p.xMin)} y1={f.sy(ya)} x2={sx(p.xMax)} y2={f.sy(yb)} className="dg-accent" />
-        {p.trendLabel && (
-          <text x={sx(p.xMax) - 4} y={f.sy(yb) - 7} textAnchor="end" className="dg-text" style={{ ...T11, fill: "var(--accent)" }}>
+        {p.trendLabel && p.trendLabelPos && (
+          <text x={sx(p.trendLabelPos[0])} y={f.sy(p.trendLabelPos[1])} textAnchor="middle" className="dg-text" style={{ ...T11, fill: "var(--accent)" }}>
             {p.trendLabel}
           </text>
         )}
