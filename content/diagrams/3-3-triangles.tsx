@@ -573,7 +573,7 @@ export function CongruentFigure({ highlight = "corr" }: { highlight?: CongHighli
   const mP: Pt = [0, 0];
   const mQ: Pt = [1.6, 3.3];
   const mR: Pt = [5, 0];
-  const off = 11.2;
+  const off = 13;
   const mirror = (p: Pt): Pt => [off - p[0], p[1]];
   const m = fitMap([mP, mQ, mR, mirror(mP), mirror(mR)], W, H, 22, 32);
   const P = m(mP);
@@ -643,7 +643,7 @@ export function SimilarFigure({ labels = true }: { labels?: boolean }) {
   const mC: Pt = [12, 0];
   const mB = fromSides(12, 6, 9);
   const k = 2 / 3;
-  const off = 14;
+  const off = 16;
   const mD: Pt = [off, 0];
   const mE: Pt = [off + mB[0] * k, mB[1] * k];
   const mF: Pt = [off + 12 * k, 0];
