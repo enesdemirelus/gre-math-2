@@ -8,3 +8,5 @@ sources/*.pdf
 sources/*.txt
 review/
 screenshots/
+_tmp*
+.render*
