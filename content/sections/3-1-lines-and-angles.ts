@@ -333,8 +333,8 @@ const section: Section = {
       choices: [String.raw`$25$`, String.raw`$30$`, String.raw`$32$`, String.raw`$35$`, String.raw`$37$`],
       answer: 2,
       explanation: [
-        String.raw`Decide first whether the two angles are equal or supplementary. At $k$ the labeled angle is above $k$ and left of $p$; at $m$ it is below $m$ and left of $p$. In the pattern of the eight angles these are in different groups: at each crossing, the upper-left and lower-left angles are neighbours along $p$... more simply, the upper-left angle at $m$ equals the upper-left angle at $k$, and the lower-left angle at $m$ is its neighbour along line $m$.`,
-        String.raw`So the two labeled angles add up to $180^\circ$: $(3x - 5) + (2x + 25) = 180$, so $5x + 20 = 180$ and $x = 32$.`,
+        String.raw`Decide first whether the two angles are equal or add up to $180^\circ$. The upper-left angle at $m$ equals the upper-left angle at $k$ (same position at the two crossings). The labeled angle at $m$ is the lower-left angle there, which is the neighbour of that upper-left angle along line $m$. So the two labeled angles add up to $180^\circ$.`,
+        String.raw`Therefore $(3x - 5) + (2x + 25) = 180$, so $5x + 20 = 180$ and $x = 32$.`,
         String.raw`Check: the angles are $91^\circ$ and $89^\circ$, one obtuse and one acute, as they must be. (The figure exaggerates the difference; it is not drawn to scale.)`,
         String.raw`Trap: setting the angles equal gives $3x - 5 = 2x + 25$, $x = 30$, which is choice (B).`,
       ],
@@ -397,9 +397,9 @@ const section: Section = {
     },
     {
       id: "q2",
-      prompt: String.raw`An angle measures $27^\circ$. What is the measure of an angle complementary to it? Supplementary to it?`,
+      prompt: String.raw`An angle measures $27^\circ$. What measure must a second angle have so that the two add up to $90^\circ$? To $180^\circ$?`,
       answer: String.raw`$63^\circ$ and $153^\circ$`,
-      explanation: String.raw`Complementary angles sum to $90^\circ$; supplementary angles sum to $180^\circ$.`,
+      explanation: String.raw`$90 - 27 = 63$ and $180 - 27 = 153$. (Prep books call these pairs complementary and supplementary angles; the ETS Math Review does not name them.)`,
     },
     {
       id: "q3",
