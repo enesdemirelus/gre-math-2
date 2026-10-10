@@ -23,6 +23,7 @@ import { registry as s_3_4_quadrilaterals } from "./3-4-quadrilaterals";
 import { registry as s_3_5_circles } from "./3-5-circles";
 import { registry as s_3_6_three_dimensional_figures } from "./3-6-three-dimensional-figures";
 import { registry as s_4_1_presenting_data } from "./4-1-presenting-data";
+import { registry as s_4_2_describing_data } from "./4-2-describing-data";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const interactives: Record<string, ComponentType<any>> = {
@@ -49,4 +50,5 @@ export const interactives: Record<string, ComponentType<any>> = {
   ...s_3_5_circles,
   ...s_3_6_three_dimensional_figures,
   ...s_4_1_presenting_data,
+  ...s_4_2_describing_data,
 };

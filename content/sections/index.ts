@@ -23,6 +23,7 @@ import s_3_4_quadrilaterals from "./3-4-quadrilaterals";
 import s_3_5_circles from "./3-5-circles";
 import s_3_6_three_dimensional_figures from "./3-6-three-dimensional-figures";
 import s_4_1_presenting_data from "./4-1-presenting-data";
+import s_4_2_describing_data from "./4-2-describing-data";
 
 export const SECTIONS: Record<string, Section> = {
   "1-1-integers": s_1_1_integers,
@@ -48,4 +49,5 @@ export const SECTIONS: Record<string, Section> = {
   "3-5-circles": s_3_5_circles,
   "3-6-three-dimensional-figures": s_3_6_three_dimensional_figures,
   "4-1-presenting-data": s_4_1_presenting_data,
+  "4-2-describing-data": s_4_2_describing_data,
 };
